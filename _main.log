@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.10.12)  18 APR 2023 14:49
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.10.12)  23 APR 2023 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -831,17 +831,278 @@ ex-text;!
 
 ]
 Chapter 1.
-Missing character: There is no 안 (U+C548) in font [lmroman10-regular]:mapping=t
+Missing character: There is no 소 (U+C18C) in font [lmroman12-bold]:mapping=tex-
+text;!
+Missing character: There is no 개 (U+AC1C) in font [lmroman12-bold]:mapping=tex-
+text;!
+Missing character: There is no 해 (U+D574) in font [lmroman10-regular]:mapping=t
 ex-text;!
-Missing character: There is no 녕 (U+B155) in font [lmroman10-regular]:mapping=t
+Missing character: There is no 양 (U+C591) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 분 (U+BD84) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 야 (U+C57C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 의 (U+C758) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 사 (U+C0AC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 전 (U+C804) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 예 (U+C608) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 방 (U+BC29) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 적 (U+C801) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 품 (U+D488) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 질 (U+C9C8) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 관 (U+AD00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 리 (U+B9AC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 기 (U+AE30) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 술 (U+C220) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 은 (U+C740) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 다 (U+B2E4) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 양 (U+C591) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 한 (U+D55C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 연 (U+C5F0) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 구 (U+AD6C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 사 (U+C0AC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 업 (U+C5C5) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 에 (U+C5D0) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 서 (U+C11C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 다 (U+B2E4) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 수 (U+C218) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 의 (U+C758) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 연 (U+C5F0) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 구 (U+AD6C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 자 (U+C790) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 들 (U+B4E4) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 이 (U+C774) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 생 (U+C0DD) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 산 (U+C0B0) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 한 (U+D55C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 자 (U+C790) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 료 (U+B8CC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 를 (U+B97C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 일 (U+C77C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 정 (U+C815) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 한 (U+D55C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 품 (U+D488) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 질 (U+C9C8) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 로 (U+B85C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 관 (U+AD00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 리 (U+B9AC) in font [lmroman10-regular]:mapping=t
 ex-text;!
 Missing character: There is no 하 (U+D558) in font [lmroman10-regular]:mapping=t
 ex-text;!
-Missing character: There is no 세 (U+C138) in font [lmroman10-regular]:mapping=t
+Missing character: There is no 기 (U+AE30) in font [lmroman10-regular]:mapping=t
 ex-text;!
-Missing character: There is no 요 (U+C694) in font [lmroman10-regular]:mapping=t
+Missing character: There is no 위 (U+C704) in font [lmroman10-regular]:mapping=t
 ex-text;!
-[5] [6
+Missing character: There is no 한 (U+D55C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 기 (U+AE30) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 준 (U+C900) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 으 (U+C73C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 로 (U+B85C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 활 (U+D65C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 용 (U+C6A9) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 될 (U+B420) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 것 (U+AC83) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 임 (U+C784) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 표 (U+D45C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 준 (U+C900) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 작 (U+C791) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 업 (U+C5C5) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 지 (U+C9C0) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 침 (U+CE68) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 서 (U+C11C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 는 (U+B294) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 고 (U+ACE0) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 품 (U+D488) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 질 (U+C9C8) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 의 (U+C758) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 해 (U+D574) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 양 (U+C591) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 관 (U+AD00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 측 (U+CE21) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 조 (U+C870) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 사 (U+C0AC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 자 (U+C790) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 료 (U+B8CC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 생 (U+C0DD) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 산 (U+C0B0) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 과 (U+ACFC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 구 (U+AD6C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 축 (U+CD95) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 을 (U+C744) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 위 (U+C704) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 한 (U+D55C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 자 (U+C790) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 료 (U+B8CC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 처 (U+CC98) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 리 (U+B9AC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 및 (U+BC0F) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 정 (U+C815) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 도 (U+B3C4) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 관 (U+AD00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 리 (U+B9AC) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 기 (U+AE30) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 술 (U+C220) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 로 (U+B85C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 활 (U+D65C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 용 (U+C6A9) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 될 (U+B420) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 것 (U+AC83) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 이 (U+C774) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 며 (U+BA70) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 장 (U+C7A5) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 기 (U+AE30) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 적 (U+C801) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 으 (U+C73C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 로 (U+B85C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 국 (U+AD6D) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 가 (U+AC00) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 표 (U+D45C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 준 (U+C900) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 화 (U+D654) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 를 (U+B97C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 위 (U+C704) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 한 (U+D55C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 기 (U+AE30) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 반 (U+BC18) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 기 (U+AE30) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 술 (U+C220) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 로 (U+B85C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 활 (U+D65C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 용 (U+C6A9) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 될 (U+B420) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 수 (U+C218) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 있 (U+C788) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no 음 (U+C74C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[5]
+Missing character: There is no 소 (U+C18C) in font [lmromanslant10-regular]:mapp
+ing=tex-text;!
+Missing character: There is no 개 (U+AC1C) in font [lmromanslant10-regular]:mapp
+ing=tex-text;!
+[6
 
 ]
 Chapter 2.
@@ -17970,23 +18231,23 @@ ex-text;!
 Missing character: There is no 데 (U+B370) in font [lmroman10-regular]:mapping=t
 ex-text;!
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 289.
+(Font)              scaled to size 7.0pt on input line 295.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 289.
+(Font)              scaled to size 5.0pt on input line 295.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 289.
+(Font)              scaled to size 10.00092pt on input line 295.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 289.
+(Font)              scaled to size 7.00064pt on input line 295.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 289.
+(Font)              scaled to size 5.00046pt on input line 295.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 289.
+(Font)              scaled to size 9.99893pt on input line 295.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 289.
+(Font)              scaled to size 6.99925pt on input line 295.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 289.
+(Font)              scaled to size 4.99947pt on input line 295.
 ! Undefined control sequence.
-l.289 ...=1.00024\times T_{90}(-2 \sim 35 \celsius
+l.295 ...=1.00024\times T_{90}(-2 \sim 35 \celsius
                                                   )\) 
 Here is how much of TeX's memory you used:
  17946 strings out of 476493
