@@ -77,7 +77,7 @@
 
 \title{표준운영절차서}
 \author{관할해역공동활용체계구축(2단계) (JOISS)}
-\date{2023-04-12}
+\date{2023-04-18}
 
 \begin{document}
 \maketitle
@@ -204,24 +204,1114 @@ Configure Outputs를 클릭한 후 SBE11plus Alarms를 연다(그림 21). altime
 
 Window display 화면은 sea-save 프로그램의 메뉴에서 창을 만들어준다. 그림 4-1처럼 크게 Fixed, Scrolled, Plot display 창으로 구성되며, 메뉴를 통해 새로운 창을 만들어준다. 화면상에서 주의할 것은 비록 자료는 24Hz 혹은 8Hz 등으로 얻어지지만 각각의 옵션에서 업데이트 되는 시간(초)를 지정할 수 있음에 유의한다. 즉, 1초로 설정되어 있으면, 1초 마다의 자료가 display 화면에 업데이트 되고, 0으로 설정되어 있으면 모든 자료가 빠르게 업데이트 된다.
 
-\hypertarget{uxc790uxb8ccuxcc98uxb9ac}{%
-\section{4. 자료처리}\label{uxc790uxb8ccuxcc98uxb9ac}}
+① Fixed display\\
+Fixed display는 해당되는 변수의 현재 값만을 표시하며(그림 4-1 그리고 4-2) 흔히 Scan number, Pressure(db), Depth(salt water, m), Temperature (ITS-90), Potential temperature(ITS-90), Salinity, Dissolved oxygen(ml/l 혹은 μmol/kg), altimeter 등 부착된 모든 센서의 정보와 함께, pump 정보가 선택될 수 있다. Fixed display의 변경은 오른쪽 마우스를 누르고 `Modify' 옵션을 선택하면 된다. 'Modify' 옵션에서는 각 변수의 소수점 이하 숫자수(pump의 경우에는 on/off), 텍스트의 색, 텍스트 바탕화면의 색을 지정할 수 있으며, Font의 size를 small/medium/large 등급에서 결정할 수 있으며, 새로운 변수를 추가하기 위해서는 오른쪽 해당 변수를 선택하고 `Add' (순서대로 추가), 'Insert'(기존의 변수들 사이에 삽입), `Change'(기존 변수를 새로운 변수로 교체)' 버튼을 누르면 된다. 삭제하기 위해서는 상단의 `Delete' 버튼을 누른다. 상단의 ``Seconds between updates'' 옵션은 Fixed display에서 업데이트 되는 시간 간격을 결정한다. 이것은 자료의 저장간격과는 무관하다. 만일 0이면 모든 자료를, 1이면 1초 간격으로 자료를 업데이트 한다. 흔히 0으로 둔다. Fixed display에서 오른쪽 마우스를 누르고 `Export display setting' 옵션을 선택하면 지정한 화면을 파일로 저장해 두어 필요할 때 불러들일 수 있다.
 
-\textbf{46페이지}\\
-4.5. CELLTM
+② Scrolled display\\
+Scrolled display는 Fixed display와 다르게 선택된 각 변수들에 대해 vertical column 상에서 최근 얻어진 자료까지 보여준다(그림 4-3). 설정 방법은 Fixed display와 유사하다. Scrolled display의 변경은 오른쪽 마우스를 누르고 `Modify' 옵션을 선택하면 된다. ``Rows to display''는 화면에서 동시에 보여줄 열(row)의 숫자(최대 40)이며, 'Total rows'는 표시할 전체 열의 숫자(최대 200)이다. 만일 Rows to display\textless{} Total rows 이면 화면에 scroll bar가 생기며, Rows to display= Total rows 이면 scroll bar가 사라진다. 바닥근처까지 관측할 때 Altimeter 정보를 이 화면에서 표시하면 유용하다. 상단의 ``Seconds between updates'' 옵션은 '0'으로 지정하는 것이 좋다.
+
+③ Plot display\\
+Plot display는 하나의 plot에 5개의 변수까지(1개 변수의 Y축과 4개 변수의 X축 혹은 1개 변수의 X축과 4개 변수의 Y축) 보여줄 수 있는 display이다. 필요한 경우(다른 스케일에서 보고자 하는 경우) 다수의 창을 만들 수 있다. `Plot Setup' 탭에서 환경을 설정한다 (그림 4-4). ``Number of seconds between plot updates''에서 데이터의 업데이트 간격을 초단위로 입력하며 (가능하면 0을 입력하여 모든 데이터를 plot한다), ``Plot type''에서 Single X-Multi Y 혹은 Single Y-Multi X(일반적)을 선택하며, ''Number of Axies''에서 plot할 변수축의 개수를 2\textasciitilde{} 5개범위에서 설정하며, ``Title''에서는 plot 의 title을 텍스트로 입력한다. ''Font size''에서 plot 되는 모든 텍스트의 크기를 small/medium/large 등급에서 설정한다.
+``Enable upcast line colors''를 선택하여 downcasting와 upcasting 할 때의 색이 구별되게 해주면 좋다. 각각의 색은 해당되는 축의 탭에서 선택하게 된다. 이때, ''Minimum pressure to determine upcast''와 ``Pressure decrease to determine upcast''가 활성화 된다. 이것은 Minimum pressure to determine upcast에서 입력되는 pressure 보다 관측 pressure가 클때, 관측되는 pressure가 최대 pressure보다 ''Pressure decrease to determine upcast``에서 입력되는 값만큼 적을 때 upcast에 지정된 색이 나타남을 의미한다. 예로서 ``Minimum \textasciitilde{}''의 값을 300으로 하고, ''Pressure \textasciitilde{}``를 30으로 설정하였다면, CTD가 300 dbar 이상 하강하고, 이때 만일 최대 관측 pressure가 310 dbar라면 280 dbar 에 올라왔을 때 upcast line에 해당되는 색이 표시된다.''Bottle display''의 ``Show bottle lines''를 선택하면 plot에 firing 되는 bottle의 number와 line이 표시되어 편리하다. ``Show fire sequence''를 선택하면 plot의 오른편에 순서대로 닫힌 bottle의 목록이 표시된다.
+``Mark line display''는 관측동안 특정 수심에서 특별한 현상이 있을 때 사용자가 이 수심의 다양한 센서 자료를 파일로 저장하고자 할 때 필요로 한다. 이를 위해서는 우선 상단의 ''Configure outputs''메뉴의 ``Mark variables'' 탭에서 저장하고자 하는 변수들을 지정해주고, 상단의 메뉴에서 ''Mark scan control''을 선택하여 이 메뉴를 활성화 주어야 한다. 관측동안 ''Mark scan control''의 창에서 특정 수심에서 ``Mark scan''을 누르면 Mark line이 표시되고 이러한 자료들은 *.mrk 라는 파일로 저장된다.
+``Redraw buffer size''는 buffer의 최대 scan 수이며, ''Queue size limit''는 queue의 최대 scan 수로, Sea-bird 사는 각각 4000, 10을 권장하고 있다.
+``Grid line use''는 plot에 표시되는 가로 세로 grid의 유무를 설정하며 (Horizontal and Vertical을 권장), ''Grid line style''은 plot에 표시되는 grid의 line style을 지정(dotted Line을 권장) 하며, plotting 되는 data 위에 grid를 표시할 경우 ``Grid in front''를 선택한다.
+각각의 변수들은 `Y-Axis' 등 각각의 탭에서 입력해주면 된다. 'X-Axis 1'의 탭에 potential temperature를 표시한 사례가 그림 4-5에 나타내었다. 그림에서 ``Auto page this axis''을 선택하면, 변수의 구간을 벗어나는 경우에 변수의 범위만큼 자동적으로 새로운 화면으로 이동하게 된다. 이러한 기능은 새로운 화면으로 넘어갈 때 기존 plot이 보이지 않으므로 불편한 점이 있으나 특정 depth 구간을 변경하면서 자료를 보고자할 때 유용하다. 예컨대 2500m까지 관측하는 경우, 새로운 plot display를 만들어 Y-Axis을 depth로 하고 Auto page를 선택해 놓고 depth 범위를 0\textasciitilde500까지 지정해 놓고, X-Axis에는 descent rate와 altimeter를 지정해 놓으면, 500m 단위로 화면이 이동하면서 descent rate(CTD 상승.하강 속도), altimeter data(바닥근처에서만 작동하므로)를 보여주므로 유용하게 활용할 수 있다. 그림 4-6에 plot 되는 화면을 나타내었다. 이 창에서 오른쪽 마우스를 클릭하면 각 변수를 변경할 수 있으며, 파일로 저장도 가능하다.
+
+④ Bottle firing display\\
+Bottle firing을 control 하는 창으로, 메뉴에서 를 눌러 파일을 저장하기 시작하면 자동적으로 창이 활성화 된다. 만일 창이 활성화 되지 않는 경우에는 메뉴의 을 선택해준다. 원하는 수심에서 ``Fire button''을 누르면 Bottle이 firing 된다. firing 되는 순서의 결정은 메뉴의 탭에서 지정해준다.
+
+\begin{quote}
+Bottle firing 시에 필요한 경우 특정 수심에서 여러 개의 bottle을 firing 하는 경우가 발생하는데, 이 때는 적절한 시간간격을 두어야 한다. Bottle firing 버튼을 누르면 Deck unit 전면부의 ``Water sampler control'' 의 오른쪽 버튼의 바로 왼쪽 LED가 on/off를 약 5초 동안 빠르게 반복하는데 이 동작이 마쳐지면 다음 bottle의 firing 작업을 수행하는 것이 좋다.
+\end{quote}
+
+\hypertarget{uxc591uxc9c8uxc758-uxc790uxb8cc-uxd68duxb4dduxc744-uxc704uxd55c-uxcd5cuxc801uxd654}{%
+\subsection{양질의 자료 획득을 위한 최적화}\label{uxc591uxc9c8uxc758-uxc790uxb8cc-uxd68duxb4dduxc744-uxc704uxd55c-uxcd5cuxc801uxd654}}
+
+SBE 9plus는 하강속도(profiling rate) 0.5∼2 m/s로 최적화 되어 있다. 일반적으로 자료의 품질(data quality)과 연직 해상도(profile resolution)가 가장 잘 절충된 속도는 1 m/s이다. CTD 하강속도는 바다 상태(sea state)에 따른 선박의 움직임을 고려하여 조절한다. 바다가 거칠 때는 선박의 요동에 의한 turbulent wake 때문에 자료의 품질이 나빠질 수 있기 때문에 CTD 하강속도를 빠르게 한다. 바다가 매우 잔잔할 때는 CTD 하강속도를 느리게 하여 (예; 10∼20 cm/s) 연직 해상도를 높일 수도 있다.
+CTD는 하강할 때 T-C duct의 입구가 교란되지 않은 해수를 지나가도록 센서 배치가 되어 있기 때문에 downcast data가 upcast data보다 품질이 좋다. 양질의 자료를 위해서는 센서를 지나는 해수를 다른 장비가 열적으로 오염시키지 않도록 T-C duct 입구의 위치를 조절해야 한다.
+추운 겨울에 CTD가 선상에 노출되어 있거나 햇볕에 의해 뜨거워지는 등 CTD가 보관된 곳의 온도와 해수의 수온이 매우 다른 경우 CTD를 표층에 수 분(3∼4분)간 담궈(soak) 해수의 수온과 동일하게 해야 좋은 자료를 획득할 수 있다.
+매우 거친 바다 상태에서는 선박의 움직임에 의해 CTD 하강이 멈추거나 오히려 상승하는 경우가 발생할 수 있다. 만약 winch 속도가 매우 높아 wire가 빨리 풀리거나 많이 풀려 있는 상황에서 CTD의 하강속도가 늦춰지면 kink가 발생할 수 있으며 특히 carousel이 조합된 상태라면 CTD만 있는 경우에 비해 drag가 더 커서 kink의 가능성이 더 높다. 100∼200 kg(경우에 따라 더 많은 중량)을 추가로 달면 drag 효과를 극복하는 데 도움이 된다.
+
+\hypertarget{uxc815uxc120-uxad00uxce21-uxc808uxcc28}{%
+\subsection{정선 관측 절차}\label{uxc815uxc120-uxad00uxce21-uxc808uxcc28}}
+
+① 케이블 연결과 configuration file 설정이 완료되면, 메뉴의 를 실행한다.\\
+② 메뉴의 ``Data Archiving Options''에서 Begin archiving data immediately (즉시 자료를 저장하는 경우), Begin archiving data when `Start Archiving' command is sent (Real-time Date 메뉴의 Start-Archiving 메뉴를 누르기 전까지 자료를 저장하지 않음), Do not archive data for this cast (자료를 저장하지 않고 단지 real-time으로 자료를 display만 하는 경우) 중 하나를 선택한다. (그림 3-12)\\
+③ ``Output data {[}.HEX{]} file''에서 저장할 디렉터리와 파일이름을 입력해준다. 만일 위에서 Do not archive data for this cast 이 선택되었다면 이 메뉴가 활성화되지 않는다.\\
+④ ``Configuration Options''에서는 설정한 configuration 파일을 변경할 때 사용한다. Configuration input 메뉴에서 저장된 파일이 자동적으로 지정되어 있다. 따로 변경해줄 필요는 없다.\\
+⑤ ``Timeout in seconds at startup'' 메뉴는 장비로부터 첫 번째 scan의 data를 받기전에 경과되는 시간(초)를 입력하며, 만일 data가 이 시간 내에 장비로부터 받지 못하면 자료 획득을 시도하는 것을 중단하게 된다. 아래의 `Start' 버튼을 누르면 몇 초 동안 waiting 창이 자동적으로 새롭게 display되면서(그림 3-13) computer에 입력된 정보를 deck unit를 통하여 underwater unit 에 보내게 되는데, 여기에서 설정된 시간내에 정보소통이 원활하지 않으면 error 메시지가 뜨게 된다. 10 이상의 숫자를 입력해주는 것이 좋다.\\
+⑥ ``Timeout in seconds between scans'' 메뉴는 첫 번째 scan의 자료를 획득하고 난 후 scan들 사이의 허용된 최대 gap 시간(초)를 입력하며, 만일 scan들 사이에 이 시간 내에 자료를 얻지 못하면 seasave 프로그램은 중단되게 된다. 통상 10을 넣어주었다.\\
+⑦ 아래의 `Start' 버튼을 누른다. 누른 후에 때때로 ``Header information''창이 새롭게 display 되는데, 사용자가 필요한 정보를 입력하고 'Ok' 버튼을 누르면 된다. 이 정보는 자동으로 생성되는 '*.hdr'파일에 저장된다. 만일 ''Header information'' 창을 원하지 않는 경우에는 메뉴의
+
+탭에서 ``Don't include Header information in file''을 선택하고 저장하면 된다. ''Header information''의 format 또한
+
+탭에서 변경할 수 있다. 또한 ``Data Archiving Options''에서 Begin archiving data when `Start Archiving' command is sent를 선택한 경우에 주의를 알리는 새로운 창이 뜨기도 한다.
+
+\begin{quote}
+주의사항 : `Start' 버튼을 누르기 전에 Deck unit가 power on 상태여야 하며, 자료가 다시 deck에 올라오면 'Stop' 버튼을 누른 후에 Deck unit를 power off 시켜야 한다. 만일 `Stop' 버튼을 누르지 않고 먼저 Deck unit 버튼을 누르면 자료 저장이 원활하지 않을 수 있다.
+\end{quote}
+
+⑧ 모든 연결이 올바르면 window 화면에서 실시간으로 자료가 display 되면서 저장을 시작한다. 이때 만일 ``Data Archiving Options''에서 Begin archiving data when `Start Archiving' command is sent를 선택한 경우에, 실시간으로 자료가 display 되지만 상단의 메뉴의 을 누르기 전까지 자료는 저장이 되지 않음에 주의한다. 이러한 경우를 방지하기 위해서 가능하면 ``Data Archiving Options''에서 Begin archiving data immediately를 선택해 주는 것이 좋다.\\
+⑨ 정점 관측이 종료되면, 상단의 메뉴의 메뉴를 실행하여 자료 저장을 종료시키고, Deck unit를 power off 한다. 저장되는 자료는 .hex 혹은 .dat 확장자로 자동저장된다. Rawdata의 확장자 이름은 SBE911plus CTD를 Seasave 6.0 버전 이상의 프로그램으로 실행하는 경우에 .dat 확장자로 저장되는 경우를 제외하고 모든 경우에 (SBE911plus CTD 외의 다른 CTD 혹은 SBE911plus CTD라도 Seasave 7.0 이상의 버전으로 실행되는 경우) .hex 파일로 저장된다.
+
+\hypertarget{uxad00uxce21uxd6c4-uxc808uxcc28}{%
+\subsection{관측후 절차}\label{uxad00uxce21uxd6c4-uxc808uxcc28}}
+
+\begin{itemize}
+\tightlist
+\item
+  CTD 전체를 깨끗한 물로 씻는다(그림 44).
+\item
+  0.1\% Triton X-100 용액을 주사기에 넣고 주사기를 T-C duct inlet에 꼽은 후 수 회 왕복하여 0.1\% Triton X-100 용액이 Conductivity cell을 청소하게 한다(그림 45). (※ 0.1\% Triton X-100 용액에 DO 센서를 장기간 노출시키는 것은 센서의 막에 해로우며 센서 drift가 발생하게 된다. DO 센서의 기름기를 제거하기 위해 0.1\% Triton X-100 용액을 사용하기는 하지만 표층에 기름이 많은 해역에서 관측하는 등 특별한 경우가 아니면 매 cast 후 마다 DO 센서를 0.1\% Triton X-100으로 세척할 필요가 없다. DO 센서에 영향을 주지 않고 conductivity cell을 세척하기 위해서 conductivity cell의 유출구에 부착된 관(Tyhon tube, 그림 46의 A)을 제거하고 0.1\% Triton X-100 용액을 왈칵 떠내려 보내야(flush) 하지만 매 cast 사이에 튜브를 제거하고 다시 장착하는 작업이 번거롭다. 그러므로 0.1\% Triton X-100 용액이 DO 센서에 들어가지 않도록 0.1\% Triton X-100 용액이 conductivity cell과 DO 센서를 연결한 관의 중간(A지점)까지 다다르도록 주사기를 밀고 당기는 과정을 수 회 되풀이 하여 flushing을 대신한다.)
+\item
+  다량의 증류수를 펌프의 유출구(Fi.g 46의 B)로 넣어 충분히 DO센서와 conductivity cell을 헹군다.( ※ conductivity cell을 충분히 헹구지 않으면 cell에 소금 결정이 생기며 이 소금 결정은 이후 CTD 사용 시 결정이 녹을 때까지 센서의 정확도에 영향을 미친다.)
+\item
+  선상에서 에어로졸이나 스프레이 등에 의해 오염되는 것을 방지하기 위해 500-100 ppm의 표백용액을 넣은 Tygon관을 conductivity 센서의 양 끝에 꼽아 cell을 표백용액으로 채운다(그림 47). 하지만 관측에서 매번 이렇게 보관하는 것이 번거롭기 때문에 증류수(없으면 깨끗한 청수)를 주사기에 채워 T-C duct에 꼽고 주사기를 밀어 증류수로 cell을 채운다(그림 34의 좌측 그림 참고). (※ 추운 날씨로 인해 센서가 얼 가능성이 있는 경우에는 빈 주사기 등을 이용하여 공기를 불어 넣어(압축공기 사용 금지) cell안의 물기를 제거하고 Tygon관을 양 끝에 꼽아 둔다.)
+\item
+  정점간 이동 등 CTD를 선상에 두어야 할 때 DO 센서에 직사광선이 닿지 않도록 하며 서늘하고 습기가 있게 보관한다.
+\end{itemize}
+
+\hypertarget{uxc790uxb8ccuxcc98uxb9ac}{%
+\section{자료처리}\label{uxc790uxb8ccuxcc98uxb9ac}}
+
+\hypertarget{data-conversion-datcnv}{%
+\subsection{Data Conversion (DATCNV)}\label{data-conversion-datcnv}}
+
+Rawdata(.hex 혹은 .dat)를 engineering unit의 .cnv 파일로 바꾸어주는 과정이며, 자료의 configuration 파일이 필요하다.\\
+① File setup 탭에서는 변환할 파일의 configuration 파일, rawdata의 디렉터리, 출력할 디렉터리를 지정한다. (그림 6-1). 출력할 디렉터리는 가능하면 rawdata의 디렉터리와 다르게 해준다. 같은 디렉터리가 되면 파일을 overwrite 하므로 불편함이 많다. ``Match Instrument configuration to input file''을 클릭하면 다수의 rawdata를 한번에 처리하는 경우에 각 rawdata에 해당하는 configuration 파일을 자동적으로 loading 한다. ''Input files''에서는 Select 버튼을 눌러 한 개의 파일 혹은 Shift key를 이용하여 다수의 파일을 동시에 선택할 수 있다.\\
+② Data setup 탭에서는 다양한 옵션을 지정해준다 (그림 6-2). ``Process scans to end of file''에서는 선택을 하면 각 파일의 모든 scan에 대해 실행하며, 선택하지 않으면 실행할 scan number의 범위를 지정해 줄 수 있다. 흔히 이 옵션을 선택하여 모든 scan에 대해 실행한다. ''Output format''은 Ascii와 Binary 중 Ascii를 선택한다. Binary를 선택하면 용량은 감소하지만 파일의 이상 유무를 확인할 수 없어 불편하다.
+``Convert data from''은 Upcast and down cast를 선택한다. 필요한 경우, down cast를 선택할 수 있다. ''Create file types''에서는 Create both data and bottle file/Create convert data file only/Create bottle file only중 하나를 선택하는데, Create both data and bottle file 해주는 것이 좋다.
+``Source of scan range data''에서는 생성되는 bottle file의 data 정보를 어디에서 얻을 것인가를 선택하는 옵션으로 SBE911plus CTD와 SBE32 Carosel water sampler를 사용한 경우 Bottle log(*.bl)file을 선택해준다. Scan range offset와 Scan range duration의 값을 지정한다. Bottle summary 과정에서 수심, 수온, 염분 정보 등은 scan number에 의한 특정 시간 동안의 자료를 평균하게 되는데, Scan range offset은 평균이 시작되는 시점과 관련되며 bottle이 firing 전(-) 혹은 후(+)의 초(second)를 지정한다. scan range duration은 초(second)단위로 전체 평균기간을 지정한다. 예로서, scan range offset을 -2(초)로, scan range duration을 4(초)로 지정하였을 때, SBE911plus CTD는 24Hz로 측정하므로, bottle firing이 시작되기 전 48개의 자료부터 모두 96개의 scan number 자료를 평균함을 의미한다.
+
+``Select Output Variables'' 탭에서는 다음 과정에서 필요한 변수를 선택하는 과정으로, 꼭 필요한 변수들은 scan number, pressure(db), temperature, conductivity (salinity는 이후의 과정에서 얻는다), oxygen 등을 선택하며, dual sensor로 관측한 경우에는 temperature, conductivity에 대해 primary와 secondary를 모두 선택한다. 또한 다른 변수들은 부착한 센서에 맞게 변수들을 추가적으로 선택한다. temperature에서 {[}ITS-90{]}과 {[}IPTS-68{]} 선택항목이 있는데,
+
+\(T_{68}=1.00024\times T_{90}(-2 \sim 35 \celsius)\)
+
+의 관계가 있다. 여기에서 ITS-90(International Temperature Scale of 1990)은 1989년 국제도량형위원회에서 승인된 국제눈금으로, IPTS-68(International Practical Temperature Scale of 1968)을 대체하고 있다.
+Oxygen에 대하여 최종적으로 oxygen를 계산할 때 필요한 변수들은 dissolved oxygen concentration(ml/l), temperature, pressure(db), salinity, oxygen saturation(ml/l), oxygen signal(volts) 이므로 이를 고려하여 변수를 지정해주는 것이 좋다.
+
+\begin{quote}
+Oxygen 값의 계산에서 SEASAVE 혹은 DATCNV에서 계산되는 방법과 DERIVE에서 계산되는 방법이 다름에 유의해야 한다. Oxygen 계산시 알고리듬은 시간에 대하여 Oxygen signal을 미분하는데, SEASAVE와 DATCNV에서는 주어진 window size에 걸쳐 signal을 시간에 대하여 backward 만으로 미분한다. 그러나 DERIVE에서는 주어진 window size에 걸쳐 시간에 대해 backward와 forward로 미분하는 centered window 방식을 취한다. 그러므로 DERIVE에서 더 정확한 Oxygen 값이 계산된다.
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  Scan count - 필수
+\item
+  Depth(salt meter, m) - 옵션 (Miscellaneous 탭에서 관측위도 입력 필요)
+\item
+  Pressure(db) - 필수
+\item
+  Temperature (ITS-90, oC) - 필수
+\item
+  Conductivity (S/m 혹은 ) - 필수
+\item
+  Salinity : 옵션 - bottle firing 정보 얻기 위해 혹은 최종값과 비교하기 위해
+\item
+  Oxygen (ml/l) - 권고
+\item
+  Oxygen Voltage (V) - 권고
+\item
+  Oxygen (µmol/kg) : 옵션 - 최종값과 비교를 위해 유용
+\item
+  Oxygen saturation (ml/l) - 권고
+\item
+  기타 추가된 센서 : 필수
+\end{itemize}
+
+③ Miscellaneous 탭에서는 특별한 변수(depth, average sound velocity, descent rate, acceleration, oxygen, plume anomaly, and potential temperature anomaly) 계산을 위한 옵션를 입력한다 (그림 6-4). ``Latitude when NMEA is not available''에는 Depth 혹은 Sound velocity 계산 시 필요한 위도 정보를 입력해준다. Oxygen 계산알고리듬은 시간에 대하여 Oxygen signal 값을 미분을 필요로 하는데 이때 필요한 window size를 지정한다.
+
+\begin{itemize}
+\item
+  plume anomaly = potential temperature (s, t, p, Reference Pressure) ― Theta-B ― Theta-Z / Salinity-Z * (salinity ― Salinity-B)
+\item
+  potential temperature anomaly = potential temperature - a0 - a1 x salinity or potential temperature - a0 - a1 x Sigma-theta (When you select potential temperature anomaly as a derived variable, SBE Data Processing prompts you to enter a0, a1, and the selection of salinity or sigma-theta.)
+\end{itemize}
+
+④ 하단의 'Start process'을 실행하면 출력디렉터리에 *.cnv 파일이 생성된다.
+
+\hypertarget{wild-edit}{%
+\subsection{Wild Edit}\label{wild-edit}}
+
+자료중에 비정상적인 자료(bad data)를 badflag로 대체함으로서 다음 과정에서 계산에서 제외시키는 기능을 한다. Wildedit는 하나의 scan에서 하나의 변수가 badflag가 되더라도 같은 scan상에 있는 모든 변수가 동시에 badflag이 되지 않고 선택된 변수에만 적용된다. 그림의 경우에는 100개의 scan을 한 block으로 정하여 이 block의 평균과 표준편차를 계산한 후에, 어떤 scan의 값이 그 block 평균과 표준편차의 2배 이상 차이 날 때 그 scan을 제거하고, 다시 100개 scan의 block 중에서 평균과 표준편차를 계산하고 마찬가지로 어떤 scan의 값이 그 block 평균과 표준편차의 20배 이상 차이날 때 그 scan을 badflag로 표시하게 된다.\\
+Pass 1, Pass 2, Per Block을 각각 2, 20, 100이 권장되지만, 자료에 따라 다른 값을 설정하는 것이 좋으며, 자료의 질이 좋지 않는 경우에는 위의 값을 변화시켜가며 WILDEDIT 과정을 여러 번 반복하는 것이 좋다. ``Keep data within this distance of the mean''은 자료 값이 비록 위의 지정된 표준편차를 넘어서더라도 만일 평균으로부터 지정된 값 범위내에 있으면 자료를 badflag하지 않는 경우에 사용된다.\\
+만일, 두 개의 센서의 range가 크게 차이가 난다면 (예로서 센서 A의 range는 1000, 센서 B의 range는 10) Keep data within this distance of the mean을 다르게 하면서 wild edit를 여러 번 수행하는 것이 좋다. 예를 들어 센서 A의 range는 1000, 센서 B의 range는 10 의 경우, Keep data within this distance of the mean을 10으로 하여 센서 A에 대해 wild edit를 수행하고 Keep data within this distance of the mean을 0.1로 하여 센서 B에 대해 wild edit를 수행한다.
+
+\hypertarget{filter}{%
+\subsection{FILTER}\label{filter}}
+
+현장에서 관측할 때 흔히 CTD는 일정하게 내려가는 것이 아니라, 배의 Pitching(앞뒤로 흔들림), Rolling(옆으로 기울림)에 따라 내려가다 서다를 반복하는 등 불규칙적인 모습을 보여, 마치 CTD가 계단 형태로 내려가는 과정을 보여준다.
+CTD 하강속도에 따른 bad data를 취급하는 이후의 LOOP EDIT 과정에서 이러한 계단 형태의 자료는 마치 CTD가 멈춘 것처럼 해석되어 bad data로 간주되므로 이런 문제를 해결하기 위하여 미리 FILTER 과정에서 pressure (depth)에 대하여 low pass filter를 해줌으로서 문제를 해결한다.
+SBE 911plus의 경우(24Hz로 자료취득)에는 0.15 초의 Low pass filter를 적용하고, SBE 25의 경우(8Hz로 자료취득)에는 0.5초의 Low pass filter를 적용하는 것이 권장되고 있다.
+Data Setup \textgreater{} Specify Filters 옵션에서 pressure에 대해서만, 적용할 필터를 선택한다.
+
+\hypertarget{alignctd}{%
+\subsection{ALIGNCTD}\label{alignctd}}
+
+염분, 용존산소 등의 값은 고유의 값으로 측정되는 값이 아니라 압력, 수온 등의 함수로 간접적으로 계산되는 값이다. 즉, 염분은 압력, 수온, 전기전도도의 함수로 계산된다. 그러므로 정확한 염분 계산을 위해서는 압력, 수온, 전기전도도가 동시에 측정되어야 한다. 그런데, 아래 그림처럼 센서 설치의 구조적인 이유로 수온과 전기전도도 센서에 도달하는 해수의 도달시간이 달라 약간의 시간차를 가지고 수온과 전기전도도가 측정된다. 이러한 문제의 원인은 각 센서 자체의 반응시간 혹은 profiling speed의 차이에 의해서도 발생한다. 이러한 문제는 thermocline 등 수온이 급격하게 변화하는 층에서 특히 증가되며, 이처럼 수온센서와 전기전도도 센서 사이의 불일치는 염분 스파이크(salinity spike)로 알려져 있다.
+
+이러한 염분 스파이크를 제거하기 위하여 수온센서와 전기전도도 센서의 시간차(time lag)를 조절하게 되는데, 이때 압력을 기준으로 각각의 센서에서 나온 모든 자료를 특정시간 만큼 앞/뒤로 움직여 보정한다.
+이를 위하여 조정할 시간을 결정해야 하는데, 흔히 두가지 방법이 사용된다. 1) 자료에 대하여 다양한 시간을 alignctd에 대입하여 나온 결과를 SEAPLOT를 이용하여 salinity의 그래프를 확인하며 어느 시간에 가장 spike가 적은가를 판단하는 방법이다. 2) 프로그램화 시켜 수온과 전기전도도 자료를 high pass filter시킨 후(SBE 911plus의 경우 1cps의 cuf-off frequency filter를 사용한다. Kim, 1996) 수온과 전기전도도가 서로 어느 시간에 correlation이 가장 높은가를 얻는 방법이다. 즉, 염분 스파이크가 있으면 correlation이 낮게 나타난다는 것을 고려한 방법으로 수온이 연직적으로 변화가 큰 수온약층 근처의 자료만을 선택하는 것이 좋다.(동해의 경우 약 300m 이내).
+SBE 25의 경우에는 Seabird 사에서 2000rpm pump에 대하여 전기전도도 센서를 온도센서에 대하여 0.1 sec로 앞당기라고 권장하고 있지만, 위의 방법에 의한 test 과정이 필요하다.
+
+\hypertarget{celltm}{%
+\subsection{CELLTM}\label{celltm}}
+
+CTD 센서가 hot water에서 cold water로 이동할 때, 전기전도도 센서 내부에 저장된 열이 sampling 되는 해수로 확산하게 되어 결과적으로 sampling water의 온도를 미약하게 상승시키게 된다. 이러한 현상은 free-stream value 상태에서 측정된 전기전도도 보다 높은 전기전도도를 얻게 한다. 결과적으로 유도된 염분은 원래의 값보다 높아지게 된다. 이러한 현상은 thermal-lag effect (센서에 남아있는 열 때문에 발생하는 효과)로 불려진다. (Morison et al., 1994, J. Atmos. Oceanic. Technol., 11, 1151-1164). CTD 관측시에 흔히 볼 수 있는 downcasting과 upcasting 사이의 상대적으로 큰 염분차이는 이러한 thermal-lag effect가 주요한 원인으로 알려져 있다. 이러한 현상은 수온약층처럼 수온이 급격하는 층에서 보다 명확해진다.
+자료처리 알고리즘은 적절한 Thermal anomaly amplitude(alpha)와 Thermal anomaly time constant(1/beta)를 결정하여 thermal-lag effect를 보정해준다. Sea-bird사는 아래 표에서처럼 SBE 9plus Underwater unit의 경우 각각 0.03, 7.0 그리고 SBE 25의 경우에는 각각 0.04, 8.0을 권장하고 있다. 그러나 김영규 박사(1996, 서울대학교 해양학과 박사학위 논문)는 동해의 경우 1994년 여름과 1995년 여름 관측자료를 이용하여 SBE 9plus의 권장값을 검토해본 결과, 각각 0.018, 9.0이 보다 적절하다는 결론을 얻은 바 있으며, 또한 경험적으로 보았을 때 매번 Cruise 마다 적절한 값이 변화함을 볼 수 있다. Lueck (1990, Thermal Inertia of Conductivity Cells: Theory., American Meteorological Society Oct 1990, 741-755)는 alpha와 beta를 결정하는 방법을 제시한 바가 있었다.
+
+참고로, Conductivity{[}S/m{]}는 아래의 식으로 계산된다.
 
 \(Conductivity = (g + hf^2 + if^3 + jf^4)/[10(1+ \delta t + \varepsilon p)] ~~~~ Siemens/meter\)
 
-\hypertarget{uxc5fcuxbd84uxce21uxc815-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11cuxc804uxae30uxc804uxb3c4uxb3c4uxbc95}{%
-\chapter{염분측정 표준운영절차서(전기전도도법)}\label{uxc5fcuxbd84uxce21uxc815-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11cuxc804uxae30uxc804uxb3c4uxb3c4uxbc95}}
+여기에서 는 configuration 파일에서 미리 정해주는 변수인데, 특히, δ는 bluk compressibility를 의미하여, ε는 cell의 열팽창계수를 나타낸다. 그리고 f는 instrument frequency(Hz), t는 temperature(℃), p는 pressure(decibars)를 나타낸다.
+
+\hypertarget{section}{%
+\subsection{SECTION}\label{section}}
+
+CTD를 바다에 투입한 후 약 2\textasciitilde3 분 동안 수심 약 5\textasciitilde10m에서 센서가 적당한 값을 얻거나 혹은 pump가 제대로 작동하도록 흔히 대기하게 되며, 이 과정 후에 다시 표층으로 올려 관측을 시작하게 된다. 또한 CTD가 다시 상승관측을 하고 난 후 갑판으로 장비를 올려 해수를 벗어날 때도 사용자의 여건에 따라서 여전히 CTD는 자료를 획득하는 경우가 있다. 이처럼 센서의 조절을 위한 관측이나 수면을 벗어날 때의 관측 자료를 제거해야 올바른 자료를 획득할 수 있으므로 SECTION 과정에서 이러한 자료를 제거한다.
+Variable을 흔히 scan number로 선택하고, 미리 SEASAVE를 통해 기록한 scan number를 기입해준다. 물론 이 과정 전에 SEASAVE를 통해 자료를 plot 하는 과정이 필요하다. 다른 과정은 특별한 경우를 제외하고 대부분 한번의 cruise 동안의 모든 파일을 동시에 처리할 수 있지만, Section 과정은 각 파일마다 각기 다른 scan number를 선택해주어야 하므로 시간이 소요되는 과정이다.
+
+\hypertarget{loopedit}{%
+\subsection{LOOPEDIT}\label{loopedit}}
+
+CTD 자료는 CTD가 계속 일정한 속도로 내려가는 경우에 좋으며, 선박의 움직임 등에 의해 상하운동을 반복하는 자료는 질이 좋지 않다. Loopedit는 이런 자료를 제거하기 위한 과정으로 Fixed Minimum velocity 혹은 Percent of mean speed를 기준으로 자료를 badflag로 지정함으로서 계산과정에서 제거하게 된다. 흔히 Fixed Minimum velocity을 기준으로 최소 0.25 m/s가 권장되고 있다. 보통 CTD 관측 속도는 1m/s로 하강 혹은 상승이 권장되고 있다. 주의할 것은 Loopedit를 실행하기에 앞서 pressure sensor의 noise로 인한 효과를 제거하기 위해 Filter 단계를 먼저 실행하는 것이 권장되고 있다.
+또한 Loopedit는 CTD가 해수에 입수한 직후 표층대기시간 동안의 자료를 badflag로 지정함으로서 이후 계산과정에서 제거할 수 있다. Remove surface soak 옵션을 선택하고, 아래의 그림처럼 적절한 Surface soak depth, minimum soak depth, maximum soak depth를 지정하면 된다. ``Exclude scans marked bad''는 Loopedit 이전의 계산단계에서 badflag로 지정된 scan을 계산과정에 포함시킬지 아니면 skip할지를 결정한다.
+
+\hypertarget{derive}{%
+\subsection{DERIVE}\label{derive}}
+
+pressure, temperature, conductivity를 이용하여 salinity나 density, potential temperature를 계산하는 과정으로, density, potential temperature 등은 자료처리 과정이 모두 끝난 뒤에 계산하는 것이 권장된다. 왜냐하면, WFILTER 과정에서 salinity가 재처리되므로 이 과정이 끝난 후에 density(수온, 염분, 압력의 함수)를 계산하는 것이 필요하기 때문이다.
+Derive에서 계산되는 변수들은\\
+- density (density, sigma-theta, sigma-1, sigma-2, sigma-4, sigma-t)\\
+- thermosteric anomaly\\
+- specific volume\\
+- specific volume anomaly\\
+- geopotential anomaly\\
+- dynamic meters\\
+- depth (salt water, fresh water)\\
+- salinity\\
+- sound velocity (Chen-Millero, DelGrosso, Wilson)\\
+- average sound velocity\\
+- potential temperature (reference pressure = 0.0 decibars)\\
+- potential temperature anomaly\\
+- specific conductivity\\
+- derivative variables (descent rate and acceleration) - if input file has not been averaged into pressure or depth bins\\
+- oxygen (if input file contains pressure, temperature, and either conductivity or salinity, and has not been averaged into pressure or depth bins) - also requires oxygen current and oxygen temperature (for SBE 13 or 23) or oxygen signal (for SBE 43)\\
+- corrected irradiance (CPAR) 이다.
+
+여기에서는 salinity, oxygen을 포함시키는 것이 권장된다. 또한 datcnv과정처럼 .con 파일이 필요로 한다. 여러 파일을 동시에 처리하는 경우에는 .con 파일을 입력 디렉터리에 미리 복사해두어야 한다. Derive에서 유도되는 변수들은 출력 디렉터리에 생성되는 파일Miscellaneous 탭에서는 특별한 변수(depth, average sound velocity, descent rate, acceleration, oxygen, plume anomaly, and potential temperature anomaly) 계산을 위한 옵션를 입력한다. ``Latitude when NMEA is not available''에는 Depth 혹은 Sound velocity 계산시 필요한 위도 정보를 입력해준다. Oxygen 계산알고리듬은 시간에 대하여 Oxygen signal 값을 미분을 필요로 하는데 이때 필요한 window size를 지정한다.
+
+\begin{quote}
+Oxygen 값의 계산에서 SEASAVE 혹은 DATCNV에서 계산되는 방법과 DERIVE에서 계산되는 방법이 다름에 유의해야 한다. Oxygen 계산시 알고리듬은 시간에 대하여 Oxygen signal을 미분하는데, SEASAVE와 DATCNV에서는 주어진 window size에 걸쳐 signal을 시간에 대하여 backward 만으로 미분한다. 그러나 DERIVE에서는 주어진 window size에 걸쳐 시간에 대해 backward와 forward로 미분하는 centered window 방식을 취한다. 그러므로 DERIVE에서 더 정확한 Oxygen 값이 계산된다.
+\end{quote}
+
+\hypertarget{wfilter}{%
+\subsection{WFILTER}\label{wfilter}}
+
+이전의 자료처리과정에서 여전히 남아있는 자료(특히, 염분)의 spike를 제거하는 과정으로, window filter(4종류)와 median filter를 사용하여 자료를 smoothing 시킨다.
+이 과정은 다른 물리량에도 적용가능하나, 자료의 질이 굳이 적용될 정도가 아니므로 보통 salinity 자료에만 적용되며, spike를 제거하는데 가장 유용한 median filter가 흔히 사용된다. SBE 911plus 자료의 경우 초당 24개의 자료가 획득되며, 최종적인 자료는 보통 1m 간격의 자료를 사용하므로(하강속도는 1m/s 정도), 자료의 성격이 바뀌는 것을 방지하기 위하여 window size를 25개로 선택(window size는 홀수로 선택된다)하는 것이 권장된다. 여기에서 주의해야 할 것은 기존의 Datcnv에서 선택된 변수 외에 Derive에서 추가적으로 동일한 변수를 계산하였다면, Derive에서 계산된 변수에 대하여 wfilter를 적용해야 한다 (아래 그림에서 salinity 처럼).
+
+\hypertarget{binavg}{%
+\subsection{BINAVG}\label{binavg}}
+
+Binavg과정은 pressure, depth, scan number, time에 의해 자료를 일정한 간격으로 평균하는 과정이다. Include surface bin 옵션은 pressure 혹은 depth에 의해 자료가 일정한 간격으로 평균될 때 surface bin에 대한 계산 방법을 결정한다. 만일 Include surface bin이 지정되지 않고, bin size가 10 db이라면, 그림 A처럼 평균된다. 그러나 Include surface bin이 지정되고, surface bin minimum value =0, surface bin maximum vale=3, surface bin vale=0 이라면, 그림 B처럼 target bin, 즉, surface bin value에 대해 추가적인 계산이 가능하다. 1 db 간격으로 평균된다면 생략해도 괜찮다.
+
+\hypertarget{asciiout}{%
+\subsection{ASCIIOUT}\label{asciiout}}
+
+Asciiout 과정은 최종적인 Software 과정으로, 앞서 처리에 사용된 변수 중에 사용자가 원하는 변수들만을 출력시키는데 사용된다. Options 메뉴에서 Output data file을 체크하고, Exclude scans marked bad를 체크하여 이전의 처리과정에서 badflag로 처리된 부분을 최종 자료에서 제외시키고, Label columns에서 ``Top of the file''을 선택하여 각 file의 맨 위 행에 column label를 붙여주는 것이 좋다. 특히, ''Select Output Variables\ldots'' 옵션을 선택하여, 원하는 변수를 클릭하면 되는데 이때 Derive과정에서 변수를 추가한 경우에는 이 변수를 최종 변수로 선택하는 것이 권장된다.
+Asciiout의 출력파일 예. Binavg에서 1 db 간격으로 평균하였다. 맨 위쪽 행에 column label이 출력되었다.
+
+※ Bottle firing 정보의 추출\\
+화학 및 생물팀에서는 채수한 수심에서의 정확한 수심, 수온(in-situ temperature), 염분, 밀도 정보 등을 필요로 한다. bottle firing은 두가지 방법으로 이루어지는데 1) Deck unit 후면부의 Modem channel을 통해 SBE32 water sampler가 연결되었을 때 window program 상에서 수행되거나 2) modem channel을 통해 sampler가 연결되지 않는 상태에서 deck unit 전면부의 fire button을 누름으로서 가능하다. 첫 번째의 경우로 firing이 되는 경우에만 SBE Data processing 프로그램의 Data conversion과 Bottle summary 절차를 실행함으로서 채수한 수심에서의 수심, 수온, 염분 정보를 얻을 수 있다. 그러나 두 번째의 경우에는 그러한 정보가 파일에 기록되지 않는다.
+
+\textbf{}\strut \\
+1.Data conversion을 실행한다.\\
+2.File setup 메뉴에서 해당하는 con 파일과 data 파일을 불러들이고, 출력할 디렉터리를 지정한다. 이때 data 파일과 con 파일은 같은 디렉터리에 있어야 한다.\\
+3. Data setup 메뉴에서 Output format : Ascii out, Convert from data : Upcast and downcast, Create file types : Create file (.ROS) file only, Source of scan range data : Bottle log (.BL) file를 선택한다.\\
+4. Scan range offset와 Scan range duration의 값을 지정한다. Bottle summary 과정에서 수심, 수온, 염분 정보 등은 scan number에 의한 특정 시간 동안의 자료를 평균하게 되는데, Scan range offset은 평균이 시작되는 시점과 관련되며 bottle이 firing 전(-) 혹은 후(+)의 초(second)를 지정한다. scan range duration은 초(second)단위로 전체 평균기간을 지정한다. 예로서, scan range offset을 -2(초)로, scan range duration을 4(초)로 지정하였을 때, SBE911plus CTD는 24Hz로 측정하므로, bottle firing이 시작되기 전 48개의 자료부터 모두 96개의 scan number 자료를 평균함을 의미한다.\\
+5. Select output variables 버튼을 클릭 하여 scan number, depth, pressure, temperature, salinity 및 부착된 센서의 변수를 포함한다.\\
+6. Start process 버튼을 눌러 실행한다. (\emph{.ros 파일이 생성된다)\\
+7. Bottle summary를 실행한다.\\
+8. File setup 메뉴에서 해당하는 con 파일과 data 파일을 불러들이고, 출력할 디렉터리를 지정한다. 이때 data 파일과 con 파일은 같은 디렉터리에 있어야 한다.\\
+9. Data setup 메뉴에서 Output min/max values for averaged data의 on/off, Select averages variables에서 출력할 변수의 지정(Data conversion 과정에서 지정한 변수만 선택된다), Select derives variables에서 추가로 출력할 변수를 지정한다.\\
+10. Start process 버튼을 눌러 실행한다. (}.btl 파일이 생성된다)
+
+\hypertarget{uxad00uxb9ac}{%
+\section{관리}\label{uxad00uxb9ac}}
+
+\hypertarget{uxb370uxc774uxd130-uxad00uxb9ac}{%
+\subsection{데이터 관리}\label{uxb370uxc774uxd130-uxad00uxb9ac}}
+
+CTD 관측 데이터는 반드시 백업을 포함하여 2벌 이상 복사하여야 한다. 휴대용 저장장치에 데이터를 복사한 후 이동하는 경우 분실을 방지하기 위하여 동일 데이터를 두 사람이상이 소지한다.
+
+\hypertarget{uxae30uxb85duxbb3c-uxad00uxb9ac}{%
+\subsection{기록물 관리}\label{uxae30uxb85duxbb3c-uxad00uxb9ac}}
+
+야장 원본은 보관함이 원칙이다. 야장 분실을 방지하고 데이터 이용시 참조를 위하여 야장의 내용을 파일로 기록하여 데이터와 함께 보관한다.
+
+\hypertarget{uxc7a5uxbe44-uxad00uxb9ac}{%
+\subsection{장비 관리}\label{uxc7a5uxbe44-uxad00uxb9ac}}
+
+관측 종료후 CTD를 깨끗하게 세척하고(7.4 참조) 보관한다. CTD 본체를 winch에서 분리하여 CTD 상자에 보관한다. T-C duct에 꼽은 Tygon관을 분리하고 sensor의 물기가 완전히 제거된 상태로 보관한다. 탐사장비 책임자는 의무적으로 탐사전후의 장비의 상태 및 문제점, 필요한 예비부품이나 소모품 등에 대해 정확히 기록하여야 한다.
+
+\hypertarget{uxc8fcuxc694-uxc810uxac80}{%
+\subsection{주요 점검}\label{uxc8fcuxc694-uxc810uxac80}}
+
+\hypertarget{uxd38cuxd504-uxc791uxb3d9-uxc810uxac80}{%
+\subsubsection{펌프 작동 점검}\label{uxd38cuxd504-uxc791uxb3d9-uxc810uxac80}}
+
+SBE는 공기중에서 펌프가 작동되는 것을 방지하기 위해 염분 약 8psu 이하에서는 작동하지 않도록 제작되어 있다. 펌프의 작동 여부를 육상에서 테스트하기 위해서는 주사기를 통해 10psu 이상의 물을 T sensor에 주입한 후에, 펌프 케이블을 연결한 상태에서 펌프를 SBE 본체에서 분리하여 물통에 펌프를 담가놓는다. 펌프가 정상적으로 작동하는 경우에 다량의 물이(콸콸 솟아 나올 정도로) 펌프 유출구를 통해 배출되어 나온다. 펌프가 정상적으로 작동하지 않은 경우에도 Window program에서 펌프가 on 상태로 표시될 수 있어서, 반드시 펌프의 유출구를 통해 다량의 물이 솟아 나오는지를 확인해야 한다.
+
+\hypertarget{sea-cableuxacfc-winch-wireuxc758-uxc5f0uxacb0}{%
+\subsubsection{Sea cable과 winch wire의 연결}\label{sea-cableuxacfc-winch-wireuxc758-uxc5f0uxacb0}}
+
+▲ wire의 제원 (직경 8.05mm의 경우)
+CTD 본체의 sea-cable과 wire(8.05mm)의 연결 작업이 수행되었다. 납땜으로 두 개의 선을 연결한 후, 고무 재질의 속이 비어 있는 보조라인을 라이터로 불을 쏘이며 녹이면서 signal과 ground선의 합선을 방지하기 위해 signal 납땜 부위를 덧 씌어준다 (이 보조라인은 납땜 전에 미리 끼워두어야 한다). 연결은 sea cable PIN 2와 wire 중간의 signal 선끼리, sea cable의 PIN 1과 wire 외부의 1\textasciitilde2개의 armor끼리 연결한다. 연결 후에 수압에 따른 누수 현상을 방지하기 위해 3M사의 고무테이프(Scotch 23, Rubber Splicing Tape, 자기 융착성 고무테이프)로 2\textasciitilde3회 감아준 후, 다시 절연테이프로 접촉부위를 감아주었다. 이때 접촉부위의 휨을 방지하기 위해 보조막대를 대주는 것이 좋다. 이번 조사에서 초기에 절연 테이프 만으로 감아주는 경우에 약 50미터 깊이에서 누수로 인한 자료 에러가 발생하는 현상이 발생하여 다시 고무테이프로 감아준 결과 이러한 에러 발생이 나타나지 않았다. 연결 전후에 드럼에 감겨 있는 와이어 끝단의 signal 선끼리 voltmeter로 저항을 측정하여 허용된 저항 이상치(예. 9.8 Ohm/km)가 나오면 (이상적으로는 저항이 0이어야 하지만)) 와이어의 누수를 의심해야 한다. 이러한 경우에 자료의 튐 현상이 발생한다.
+winch가 감겨 있는 drum에는 Slip ring이라고 하는 전기기계적 장치가 있다. slip ring은 drum에서 회전하는 sea cable과 실험실에 있는 SBE11plus deck unit로 연결하는 케이블 사이를 연결하는 커넥터 역할을 한다. Slip ring의 한쪽 편은 sea cable의 내부 커넥터와 sea cable의 armor에 연결되며, 다른 한쪽 편은 SBE 11plus deck unit에 연결된다.
+
+\hypertarget{conductivity-uxc13cuxc11cuxc758-cleaning}{%
+\subsubsection{Conductivity 센서의 cleaning}\label{conductivity-uxc13cuxc11cuxc758-cleaning}}
+
+전기전도도 센서의 셀은 주로 유리(glass)로 구성된 제품으로 쉽게 깨어질 수 있는 제품이다. 이러한 셀에는 관측 후에 셀 표면에 salt crystal이 부착되어 관측시에 이 salt crystal이 녹을 때까지 센서의 정확도에 영향을 미치게 되므로 Seabird 제작사는 관측후에 센서의 cleaning 작업을 권장하고 있다. 세척작업에는 0.1\%의 Triton X-100 용액이 필요하다. 세척전에 만일 SBE43 DO센서가 부착되어 있다면 DO 센서의 membrane과 Triton이 접촉하는 것을 방지하기 위해(Triton은 membrane에 손상을 미칠 수 있다) tube의 연결을 분리하는 것이 필요하다. 0.1\% Triton X-100용액을 주사기에 넣고 주사기의 물을 왕복시키면서 1분 이상 동안 세척작업을 실시한다. 세척작업이 완료된 이후에 청수로 용액을 완전히 씻겨준 후 물기를 빼내는 작업이 필요하다. 이번 조사에서는 두 대의 주사기(한대는 용액, 한대는 청수)를 사용하여 이러한 작업을 3\textasciitilde4차례 실시하였다. 이러한 세척작업 결과 염분의 튐 현상이 눈에 띄게 줄어드는 결과를 가져왔다.
+
+\hypertarget{do-uxc13cuxc11cuxac12uxc774-uxd280uxb294-uxbb38uxc81c-uxd574uxacb0}{%
+\subsubsection{DO 센서값이 튀는 문제 해결}\label{do-uxc13cuxc11cuxac12uxc774-uxd280uxb294-uxbb38uxc81c-uxd574uxacb0}}
+
+DO 센서값이 튀는 현상은 센서를 수중으로 내릴 때 공기방울의 영향으로 발생하는데 DO센서를 올바르게 부착하는 것으로 줄일 수 있다. CTD를 옆으로 눕히는 horizontal mount의 경우에 아래 그림처럼 설치되어야 한다. 즉, DO 센서의 유입구는 염분을 측정하는 전기전도 센서의 유출구 위에 설치되어야 하며, DO센서의 유입구 위 약 45도 방향으로 DO센서의 유출구를 배치시킨 후 그 위에 펌프의 유입구를 두어야 한다. 펌프의 유출구는 약 45도로 기울여 설치해야 한다. 또한 DO 센서의 유입구 및 유출구에는 내부 직경 9.5mm, 길이 12mm의 Tygon tubing위로 내부 직경 13mm의 Tygon tubing을 설치하도록 한다.
+
+\hypertarget{underwater-bulkhead-connector-uxc5f0uxacb0}{%
+\subsubsection{Underwater bulkhead connector 연결}\label{underwater-bulkhead-connector-uxc5f0uxacb0}}
+
+Bulkhead connector는 100\% 실리콘 그리스를 엷게 발라(light coating) 매끄럽게 되게 한다. 실리콘 그리스는 윤활제 및 밀폐제 역할을 하므로 실리콘 그리스를 바르는 것이 꼭 필요하다. cable을 커넥터로 연결할 때 흔히 연결부분 내부에 공기가 들어가는 경우가 발생한다. 공기의 유입을 방지하기 위해서는 커넥터를 연결할 때 커넥터 아래쪽으로 손가락을 이용하여 힘껏 밀어 공기를 뺀다. 커넥터에는 WD-40 같은 수나사와 암나사 사이의 흡착을 방해하는 윤활제의 사용을 피해야 한다. WD-40 같은 윤활제는 connector의 고무 부분과 underwater unit의 금속 부분 사이에서 봉인을 녹이거나 분리하게 하여 장비의 누수를 불러일으킬 수 있다.
+만일, 연결부분에 공기가 포함되어 있으면 심층으로 장비를 내릴수록 bulkhead와 케이블 사이의 공기가 압축되고 틈새로 해수가 연결부분 안쪽으로 스며들게 된다. 이때 power와 ground 사이에 수많은 통로가 존재하기 때문에, pin이 빠르게 침식된다. 만일 이러한 일이 진행되면, sensor 값이 noisy를 일으키거나 측정에 실패하게 되며, 혹은 장비를 작동하기에 필요한 main power를 얻을 수가 없다. 침식된 부분을 깨끗하게 청소한 후 사용할 수 있지만 가능하면 바로 pin을 교체하는 것을 권고한다.
+
+\hypertarget{uxacb0uxbe59uxd658uxacbduxc5d0uxc11cuxc758-uxc13cuxc11cuxc758-uxbcf4uxd638}{%
+\subsubsection{결빙환경에서의 센서의 보호}\label{uxacb0uxbe59uxd658uxacbduxc5d0uxc11cuxc758-uxc13cuxc11cuxc758-uxbcf4uxd638}}
+
+겨울철 관측 같은 결빙환경의 경우에 센서(특히 전기전도도)의 보호를 위한 조치가 필요하다. 전기전도도 센서는 주로 유리로 되어 있어 셀에 있는 물이 얼 때 깨어질 수 있다. 전기전도도 센서의 전극(electrode)에 반복된 얼음 부착은 0.001-0.020 psu 범위에서 calibration를 저하시킬 수 있다. 그러므로 갑판에 CTD가 있을때 전기전도도 센서 셀 내부의 모든 물을 제거해야 한다. 그리고 0.5 μm로 필터된 해수 또는 끓인 해수에 1\% Triton 용액으로 채워주거나 혹은 센서를 분리하여 실험실내에 보관해야 한다. 이때 글리콜이나 알코올 같은 부동 용액을 사용해서는 안 된다.
+
+\hypertarget{uxd488uxc9c8-uxad00uxb9acuxc640-uxd488uxc9c8-uxbcf4uxc99d}{%
+\section{품질 관리와 품질 보증}\label{uxd488uxc9c8-uxad00uxb9acuxc640-uxd488uxc9c8-uxbcf4uxc99d}}
+
+자료의 정확도를 높이 위해서는 탐사전이나 탐사후에 센서를 calibration해야 한다. 현실적으로 매번 calibration 하는 것이 어려운 경우라면 되도록 자주 calibration을 해서 센서의 drift를 보정해야 한다.
+
+\hypertarget{uxcc38uxace0uxbb38uxd5cc}{%
+\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc}}
+
+SBE 9plus CTD User's Manual, Version 13\\
+SBE Application Note 2D, ``Instructions for Care and Cleaning of Conductivity Cells'', 2008\\
+SBE Application Note 38, ``Fundamentals of the T-C Duct and Pump-Controlled Flow Used on Sea-Bird CTDs'', 1992\\
+SEASOFT V2:Seasave V7, ``CTD Real-Time Data Acquisition Software for Windows 2000 and later'' User's Manual, 2010\\
+SEASOFT V2: ``SBE Data Processing CTD Data Processing and Plotting Software for Windows 2000/XP'' User's Manual, 2009\\
+McTaggart, K. E., G. C. Johnson, M. C. Johnson, F. M. Delahoyde, and J. H. Swift, 2010; Notes on ctd/o2 data acquisition and processing using sea-bird hardware and software, IOCCP Report No.~14
+
+\hypertarget{uxae30uxccb4uxbd84uxc808-uxc790uxb3d9uxc601uxc591uxc5fc-uxbd84uxc11duxae30uxb97c-uxc774uxc6a9uxd55c-uxd574uxc218-uxc911-uxc6a9uxc874-uxc544uxc9c8uxc0b0uxc774uxc628-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}{%
+\chapter{기체분절 자동영양염 분석기를 이용한 해수 중 용존 아질산이온 분석 표준운영절차서}\label{uxae30uxccb4uxbd84uxc808-uxc790uxb3d9uxc601uxc591uxc5fc-uxbd84uxc11duxae30uxb97c-uxc774uxc6a9uxd55c-uxd574uxc218-uxc911-uxc6a9uxc874-uxc544uxc9c8uxc0b0uxc774uxc628-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}}
 
 \hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704}{%
 \section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704}}
 
-1.1 이 표준운영절차서는 해수 중 염분을 정밀하고 안정적으로 측정하기 위한 방법 중의 하나인 전기전도도법의 측정원리와 이 방법을 사용하는 다양한 기기인 Guildline사 의 Autosal 8400B laboratory salinometer, Seabird사의 SBE 4C센서계열, YSI/Hydrolab multiprobe sensor 등의 사용방법, 센서교정 및 검정, 유지보수등에 대한 내용을 포함한다.
+이 표준운영절차서는 해수 중 용존 아질산이온 농도를 안정적으로 저농도까지 분석하기 위해 기체분절 연속흐름법(gas-segmented continuous flow analysis method)의 기기 중 하나인 SEAL사 QuAAtro Stystem의 Q-035-04 Rev.7(multitest MT3B) 분석법을 해양과학기술원에서 변형한 방법에 관한 내용을 중심으로 측정원리, 분석준비, 분석과정 및 분석 후 자료처리 등을 포함한다.
 
 \hypertarget{uxce21uxc815-uxc6d0uxb9ac}{%
 \section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac}}
+
+해수 중의 아질산이온은 산성 조건하(pH\textless2)에서 일차적으로 방향족 질소화합물인 술퍼닐아미드(Sulfanilamide)와 반응하여 디아조늄이온(디아조화합물)을 형성한 후 이차적으로 디아조 화합물이 다른 방향족 질소화합물인 나프틸 에틸렌디아미드(NEDD)와 반응하여 붉은 보라색을 띠는 아조화합물을 생성한다. 아조화합물의 최대흡수 파장은 543 nm이다.
+1 nm 간격으로 파장을 분리할 수 있는 분광광도계를 사용할 때 최대 흡수 파장인 543nm에서 흡광도를 측정한다. 여광기(filter)를 사용하여 단일파장의 빛을 flowcell로 주사하는 자동분석기는 사용하는 여광기의 특성에 따라 최대흡수 파장과 유사한 파장의 빛을 주사하여 흡광도를 측정할 수 있다. QuAAtro system에서는 550 nm 빛을 주사하여 흡광도를 측정한다.
+시료의 아질산이온 농도 결정은 농도를 알고 있는 서로 다른 몇 개의 검량선용 표준용액열 (calibration standards)의 흡광도를 측정하여 농도-흡광도의 선형회귀 분석을 통하여 검량선을 작성하여 시료의 흡광도를 검량선에 대입하여 시료의 아질산이온 농도를 결정한다.
+이 방법의 정량범위는 저농도는 0\textasciitilde10 μmol NO2-/L, 검출한계는 0.02 μmol NO2-/L이다. QuAAtro system을 이용한 자동분석법의 검출한계는 해양환경공정시험법에 제시된 검출한계인 0.214 μM보다 훨씬 낮아 해양환경공정시험법의 대체로 적절한 것으로 판단된다. 하지만 실험실별 기기의 운영조건이나 능력이 차이가 나기 때문에 해양환경공정시험법을 대체하려는 실험실에서는 검출한계에 대한 자료를 제시하여야 한다.
+
+\hypertarget{uxbc29uxd574uxbb3c}{%
+\section{방해물}\label{uxbc29uxd574uxbb3c}}
+
+해수 중에 용존 된 황화수소 농도가 0.1 mg S/L 이상인 경우 카드뮴 환원관내에 침전물을 형성하여 아질산이온 분석을 간섭할 수 있다. 시료 중 황화수소는 카드뮴 또는 구리염을 제거하는 방법으로 반드시 제거되어야 한다.
+해수 중 용존 철, 구리 및 기타 중금속 농도가 1 mg/L 이상인 경우 카드뮴 컬럼의 효율을 저하 시킬 수 있다. EDTA를 첨가하여 이들 금속 이온들과 착화합물을 형성시켜 이들 금속이온들의 영향을 최소화한다.
+탁도가 높은 시료는 시료를 여과한 후 분석한다. 여과 시 약 50 mL의 시료를 여과지에 통과시켜 먼저 여과지를 세척한 다음 추가적으로 시료를 여과하여 시료 용기를 세척한 후 필요한 시료량 만큼 해수를 여과한다.
+이전 시료가 저농도 또는 고농도일 경우, 잔류영향 (carryover effect)을 보정하도록 시료 목록을 구성하여 분석프로그램에서 자동적으로 보정할 수 있도록 한다. 잔류영향을 보정하기 위한 시료목록 작성에 대한 내용은 기기에서 제공되는 시료목록작성 매뉴얼을 참고한다. 만약 자동적으로 보정을 원하지 않을 경우에 수동적으로 보정해야 하고 이를 위한 방법은 부록에 제시된 방법대로 시료를 분석하여 보정한다.
+
+\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30}{%
+\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30}}
+
+해수 중 아질산이온 분석에는 필요한 기구 및 기기는 유리 또는 플라스틱 재질의 부피정량기구(4.1), 시약, 시료, 검정곡선용 표준용액 등을 보관하는 용기(4.2), 시약 또는 검량선용 표준물질 제조 시 무게를 측정하는 저울(4.3), 부피정량을 위한 피펫(4.4), 그리고 분석기기인 QuAAtro system(4.5)이다. 실험에 사용되는 모든 초자류는 10\% 염산으로 씻은 후 초순수로 3회 헹구어 사용한다. 분석기기의 구성과 사용법은 부록에서 자세하게 다루고자 한다.
+
+\hypertarget{uxbd80uxd53cuxc815uxb7c9-uxae30uxad6c}{%
+\subsection{부피정량 기구}\label{uxbd80uxd53cuxc815uxb7c9-uxae30uxad6c}}
+
+부피플라스크는 일반적으로 NIST Class A 또는 이에 상응하는 성능으로 일반적으로 표시된 부피의 0.05\% 이하의 불확도를 가져야 한다. 부피정량에 사용되는 유리 또는 플라스틱 재질의 기구는 무게 법으로 부피보정을 실시하여야 한다. 특히 플라스틱 재질의 기구는 사용되는 실험실 온도의 2-3K 범위내로 보정된 것을 사용하여야 한다. 붕규산 재질의 부피플라스크의 온도가 부피에 미치는 영향은 잘 알려져서 보정 시 사용된 온도로부터 일반적인 실험실에서 기구가 사용될 때 온도에 의한 부피를 쉽게 계산할 수 있다(Kolthoff et al., 1969; Weast, 1985). 따라서 유리재질이 열팽창에 우수한 성능을 보이고 증류수를 사용하면 거의 녹지 않기 때문에 일반적으로 많이 이용된다.
+하지만 해수 분석에서 검정곡선용 표준용액열을 제조를 위해서 유리재질의 부피플라스크에 저영양염 해수 또는 인공해수로 희석할 때 규산이 녹아 나올 수 있어 유리재질 부피플라스크 사용이 제한된다. 일반적으로 사용되는 플라스틱은 polymethylpentene (PMP), polypropylene(PP)등의 고품질의 재질이 사용되고 화학적으로 내구성이 강한 테프론 재질이 사용되기도 한다. 특히 검량선용 표준용액열의 농도는 무게로 보정된 부피를 사용한다. 보정되지 않은 플라스틱 재질의 부피정량 기구를 사용하면 3\%이상의 누적 불확도를 일으킬 수 있다.
+
+\hypertarget{uxbcf4uxad00uxc6a9uxae30}{%
+\subsection{보관용기}\label{uxbcf4uxad00uxc6a9uxae30}}
+
+다른 용존 영양염 항목과 함께 용존실리카 분석을 병행한다면 미량이지만 용존실리카가 용출될 수 있으므로 공통적으로 사용되는 모든 시료병과 시약병 및 시험관 등은 반드시 플라스틱(예: HDPE, PP) 재질을 사용하기를 권장한다. 분석에 사용되는 모든 시약 용기는 반드시 10\% 염산 용액(5.1.5.1 참고)으로 씻은 후 초순수로 3회 이상 헹군 후 사용한다. 그리고 단단히 밀봉하여 시약별 보관 방법에 따라 보관한다.
+
+\hypertarget{uxc800uxc6b8}{%
+\subsection{저울}\label{uxc800uxc6b8}}
+
+표준원액 제조 시 분해능 0.01 mg 이상의 저울을 사용하고 표준용액열 제조 시 분해능 0.001 g 이상의 저울을 사용하여 제조하는 표준용액열의 농도를 일정하고 정확하게 유지한다.
+
+\hypertarget{uxd53cuxd3ab}{%
+\subsection{피펫}\label{uxd53cuxd3ab}}
+
+시료 및 시약을 분주할 때 가능한 정밀도가 높은 디지털피펫과 교차오염을 방지하기 위해 일회용 피펫 팁을 사용하는 것을 권장한다. 피펫의 경우는 보정 허용오차가 0.1\%보다 좋은 것을 사용해야 하며 일정한 온도와 습도조건 하에서 증류수의 무게로 실제 부피를 보정해야 한다. 특히 검정곡선용 표준용액열을 제조하기 위해 고농도의 표준원액을 분취하는데 피펫이 많이 사용된다. 분취된 표준원액 부피의 정확도에 따라 검정곡선 기울기가 변하므로 측정값의 정확도와 정밀도 향상을 위해 표준원액 분취에 사용되는 피펫의 정확도와 정밀도가 아주 중요하다.
+피펫을 사용하는 실험자의 숙련도가 분취되는 양의 정확도와 정밀도를 결정한다. 실험자에 따라 피펫으로 용액을 흡입/배출 속도, 용액의 흡입 및 배출시 피펫의 기울기, 피펫팁이 용액에 담기는 깊이 등이 차이가 나다. 또한 피펫 팁 내벽상태, 용액과 실험실 온도와 습도 등의 영향을 많이 받는다. 피펫을 이용하여 옮겨야 할 부피에 대해서 실험자에 따른 정확도와 정밀도를 확인하여 실험자의 숙련도에 따른 오차를 반영하여 옮겨진 부피를 보정한다. 실험자에 따라 피펫을 이용하여 옮겨진 부피의 불확도를 줄이기 위해서 용액을 흡입/배출할 때 속도를 일정하게 조절할 수 있는 전동피펫 사용을 권장한다. 또한 피펫의 각도를 일정하게 유지하기 위하여 전동피펫을 평면에 대해 수직으로 고정하고 옮기는 용액을 일정한 깊이에 넣어 흡입한 다음 옮겨지는 용기를 고정된 피펫 아래로 가져와 배출한다.
+
+\hypertarget{uxbd84uxc11duxae30uxae30}{%
+\subsection{분석기기}\label{uxbd84uxc11duxae30uxae30}}
+
+SEAL사의 기체분절 연속흐름 분석장비(CFA system)인 QuAAtro를 사용한다. Detector와 분석 manifold를 수정하여 최대 5채널까지 확장 가능하여 Phosphate, Nitrate+Nitrite, Ammonium, Silicate, Nitrite를 동시에 분석할 수 있다. 분석 운영프로그램은 최소 AACE 7.02 이상의 사용을 권장한다.
+
+\hypertarget{uxc2dcuxc57duxc81cuxc870}{%
+\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870}}
+
+아질산이온 분석에 사용되는 시약은 크게 시스템관리용 시약(5.1), 발색시약(5.2), 표준용액(5.3) 등으로 구분한다. 시약 제조는 특성에 따라서 제조 후 장기간(수개월) 보관할 수 있는 시약과 분석 직전에 제조해야 하는 당일 제조 시약(daily)으로 분류된다.
+
+\textbf{8페이지}\\
+\[
+C_6H_8N_2O_2S\\
+C_{12}H_{14}N_2 \cdot 2HCl\\
+HCl\\
+C_3H_4N_2\\
+CuSO_4 \cdot 5H_2O \\
+NaNO_2 \\
+NaHCO_3 \\
+NaCl\\
+(C_2H_4O)_n C_{14}H_{22}O
+\]
+\#\#\# 시스템 관리용 시약
+시스템 관리용 시약은 분석장비를 운용하고 유지·관리하는데 사용되는 기본시약으로 시약을 제조하는데 필요한 초순수(5.1.1), 표준용액열 희석용 인공해수(5.1.2), 기기동작 준비 및 분석완료 후에 사용되는 세척용액(5.1.4, 5.1.5) 등이 있다.
+
+\hypertarget{uxcd08uxc21cuxc218ultra-pure-water-upw}{%
+\subsubsection{초순수(Ultra Pure Water, UPW)}\label{uxcd08uxc21cuxc218ultra-pure-water-upw}}
+
+초순수는 수돗물을 역삼투필터(Reverse Osmosis Membrane, RO membrane)를 통과시킨 후 이차로 초순수 제조기의 이온교환수지를 통과시켜 이온을 추가로 제거하여 전기저항값이 18.2 MΩ 이상인 탈이온수이다. 원수를 처음으로 걸러주는 전처리 필터는 역삼투필터나 이온교환수지의 수명과 효율에 영향을 주기 때문에 필터의 색을 지속적으로 확인하고 짧은 주기로 교체한다. 역삼투필터나 이온교환수지는 초순수의 전기저항값이 18.2 MΩ이 정상적으로 나타나더라도 장비에 따라 주기적(분기별)로 점검 및 교체한다. 농도가 낮은 시료의 용존실리카 분석값이 음의 값일 경우 표준용액열 및 각종 시약제조에 사용된 초순수의 용존실리카 바탕값이 높을 가능성이 있으므로 역삼투필터와 이온교환수지를 더 짧은 간격으로 교체한다. 순도 높은 초순수 제조를 위해서는 유기물 및 박테리아 제거를 위한 램프와, 이온교환수지를 보완할 전기탈이온장치(Electrodeionization module, EDI module)를 추가로 설치하는 것을 권장한다.
+
+\hypertarget{uxc778uxacf5uxd574uxc218artifical-seawater-asw}{%
+\subsubsection{인공해수(Artifical Seawater, ASW)}\label{uxc778uxacf5uxd574uxc218artifical-seawater-asw}}
+
+인공해수는 표준용액열을 제조할 때 표준원액을 희석하는데 사용된다.
+
+\begin{itemize}
+\tightlist
+\item
+  Sodium chloride (NaCl) - 35 g\\
+\item
+  Sodium hydrogen carbonate (NaHCO3) - 0.5 g\\
+\item
+  1000 mL 플라스틱재질 부피플라스크(용존실리카를 동시분석 할 경우)에 Sodium chloride 35 g, Sodium hydrogen carbonate 0.5 g을 초순수 약 800 mL에 완전히 용해시킨 초순수를 추가하여 1000 mL까지 맞춘다.
+\end{itemize}
+
+\hypertarget{triton-x-100-uxc6a9uxc561}{%
+\subsubsection{50\% Triton X-100 용액}\label{triton-x-100-uxc6a9uxc561}}
+
+Sigma사의 Triton X-100 용액을 Isopropanol로 50:50으로 희석하여 제조한다. 전체 사용량을 고려하여 최종부피를 결정하여 제조한다. 해양과학기술원 분석실에서는 한 번에 약 100 mL를 만들어 1주일 정도 사용한다.
+
+\begin{itemize}
+\tightlist
+\item
+  Triton X-100 (Sigma) - 50 mL
+\item
+  Isopropanol or Ethanol - 50 mL
+\item
+  Triton X-100 50 mL와 Isopropanol(혹은 Ethanol) 50 mL를 100 mL 병에 넣어 완전히 혼합한다.
+\end{itemize}
+
+\hypertarget{wash-triton-x-100-uxc6a9uxc561}{%
+\subsubsection{Wash-Triton X-100 용액}\label{wash-triton-x-100-uxc6a9uxc561}}
+
+분석을 위해 기기를 작동시킬 때 분석관내부의 윤활 작용 및 세척을 위해 사용되거나 분석이 완료된 후 기기를 끄기 전에 분석관을 씻을 때 사용한다. 초순수 1000 mL에 50\% Triton X-100용액(5.1.3) 2 mL를 첨가한다.
+
+\hypertarget{n-uxc218uxc0b0uxd654uxb098uxd2b8uxb968uxc6a9uxc5611n-naoh}{%
+\subsubsection{1N 수산화나트륨용액(1N NaOH)}\label{n-uxc218uxc0b0uxd654uxb098uxd2b8uxb968uxc6a9uxc5611n-naoh}}
+
+세척을 위해 사용하며 기기를 주기적(일주일에 1회)으로 세척, 또는 유리로 된 분석관 코일에 침전이 보일 때 세척에 사용하는 용액이다.
+
+\begin{itemize}
+\tightlist
+\item
+  Sodium hydroxide(NaOH) - 20 g
+\item
+  초순수 약 300 mL가 담긴 500 mL에 Sodium hydroxide 20 g을 넣어 완전히 녹인 후 초순수로 500 mL까지 맞춘다. 시약을 용해할 때 열이 발생하기 때문에 상온으로 식힌 후 부피를 500mL까지 맞추고 플라스틱 용기에 보관한다.
+\end{itemize}
+
+\hypertarget{uxbc1cuxc0c9uxc2dcuxc57d-color-reagents}{%
+\subsection{발색시약 (Color Reagents)}\label{uxbc1cuxc0c9uxc2dcuxc57d-color-reagents}}
+
+해수 중 아질산이온과 반응하여 디아조화합물을 형성하는 술퍼닐아미드, 디아조화합물과 이차 반응하는 나프틸 에틸렌디아미드 등 발색반응에 직접 관여하는 시약, 반응을 촉진하는 촉매, 반응조건 유지, 다른 이온들의 반응을 억제하여 감도를 증가시키는 역할 등을 수행하는 시약들이다.
+
+\hypertarget{sulfanilamide}{%
+\subsubsection{Sulfanilamide}\label{sulfanilamide}}
+
+\begin{itemize}
+\tightlist
+\item
+  Sulfanilamide(C6H8N2O2S) - 5 g
+\item
+  염산(HCl) - 50 mL
+\item
+  50\% Triton X-100 (5.1.2) - 1 mL
+\item
+  500 mL 부피플라스크에 초순수 약 300 mL를 넣고 진한 염산 50 mL를 넣은 후 미리 무게를 측정해둔 Sulfanilamide 5 g을 첨가하여 완전히 용해시킨다.\\
+\item
+  이후 초순수를 부피플라스크의 500 mL 눈금까지 첨가하여 맞고 50\% Triton X-100(5.1.3) 1 mL를 첨가한다.
+\item
+  반드시 초순수를 300 mL 부피플라스크에 먼저 넣고 진한 염산 50 mL를 넣어야 한다. 시약을 빨리 녹이기 위해서 Sonification은 하지 않는다.
+\item
+  시약은 차광병에 보관해야 하며 시약의 흡광도가 규정된 요구 조건에 적합하면 계속 사용할 수 있으나 1달 이상 사용하지 않기를 권장한다.
+\end{itemize}
+
+\hypertarget{nedd-uxc6a9uxc561}{%
+\subsubsection{NEDD 용액}\label{nedd-uxc6a9uxc561}}
+
+\begin{itemize}
+\tightlist
+\item
+  N-(1-naphthyl) Ethylene Diamine Dihydrochloride (C12H14N2·2HCl) - 0.5 g
+\item
+  염산(HCl) - 5 mL
+\item
+  50\% Triton X-100(5.1.3) - 1 mL
+\item
+  500 mL 부피플라스크에 초순수 약 300 mL를 넣고 미리무게를 재어둔 NEDD 0.5 g을 넣어 녹인다. 진한 염산 5 mL를 추가하여 잘 혼합한다. 시약이 완전히 녹으면 초순수를 첨가하여 부피플라스크의 500 mL 눈금까지 맞춘다. 50\% Triton X-100 (5.1.3) 1 mL를 넣어서 잘 혼합한다.
+\item
+  시약은 차광병(amber)에 넣어서 보관해야 하며 시약의 흡광도가 규정된 요구조건에 적합하면 계속 사용할 수 있으나 최대 1달 이상 사용하지 않기를 권장함
+\end{itemize}
+
+\hypertarget{stock-imidazole-buffer}{%
+\subsubsection{Stock Imidazole buffer}\label{stock-imidazole-buffer}}
+
+\begin{itemize}
+\tightlist
+\item
+  Imidazole(C3H4N2) - 6.81 g
+\item
+  염산(HCl) - 약 1.5 mL
+\item
+  미리 무게를 측정한 Imidazole 6.81 g을 1000 mL 부피플라스크에 넣고 초순수 약 800 mL로 용해시킨다. 초순수를 추가하여 정확히 1000 mL까지 맞춘 후 1000 mL 시약병에 옮겨 담는다. 센서를 보정한 pH측정기로 pH를 측정하면서 진한 염산(HCl)을 조금씩 추가하여 완충용액의 pH를 7.8로 맞춘다.
+\end{itemize}
+
+\hypertarget{copper-sulfate-0.01-m}{%
+\subsubsection{Copper Sulfate 0.01 M}\label{copper-sulfate-0.01-m}}
+
+\begin{itemize}
+\tightlist
+\item
+  Copper Sulfate(CuSO4·5H2O) - 0.25 g
+\item
+  Copper Sulfate 0.25 g을 500 mL 부피플라스크에 넣고 초순수 약 300 mL를 넣어 완전히 녹인 후 초순수로 500 mL까지 맞춘다.
+\end{itemize}
+
+\hypertarget{daily-working-imidazole-buffer}{%
+\subsubsection{Daily Working Imidazole buffer}\label{daily-working-imidazole-buffer}}
+
+\begin{itemize}
+\tightlist
+\item
+  Stock Imidazole buffer(5.2.3): 200 mL
+\item
+  50\% Triton X-100 solution(5.1.3): 0.4 mL
+\item
+  Copper Sulfate ,0.01M(5.2.5): 1 mL
+\item
+  매스실린더로 Stock Imidaole buffer 200 mL를 계량하여 시약병에 넣고, 초순수 200 mL를 넣은 다음 Copper Sulfate 0.01 M 1 mL와 50\% Trioton X-100용액 0.4 mL를 첨가하여 완전히 혼합한다.
+\end{itemize}
+
+\hypertarget{uxd45cuxc900uxc6a9uxc561standard-solution}{%
+\subsection{표준용액(Standard Solution)}\label{uxd45cuxc900uxc6a9uxc561standard-solution}}
+
+\hypertarget{stock-nitrite-standard-solution10000-ux3bcm}{%
+\subsubsection{Stock Nitrite Standard Solution(10,000 μM)}\label{stock-nitrite-standard-solution10000-ux3bcm}}
+
+\begin{itemize}
+\tightlist
+\item
+  Sodium Nitrite(NaNO2) 시약을 0.1725 g을 정량하여 도가니에 넣고 덮개를 덮은 다음 자연대류식 건조기에서 105\textasciitilde110℃로 2시간 정도 건조한다. 건조된 시약을 건조기에서 꺼내 진공 데시케이터에서 상온으로 방냉한다.
+\item
+  건조하여 상온으로 방냉한 Sodium Nitrite 시약 0.1725 g을 0.01 mg 분해능의 저울을 이용하여 0.001 g까지 정확하게 무게를 정량하고 측정된 시약의 무게를 0.00001 g까지 정확하게 기록한다. 무게 측정시의 실험실 습도와 온도를 측정하여 부력 보정된 정확한 질량을 계산하여 사용한다(부록에 첨부된 중력보정 방법 참고).
+\item
+  250 mL 플라스틱 부피플라스크를 저울에 올려놓고 영점조정을 하여 플라스크의 무게가 0이 되게 한다. 무게를 측정한 시약을 넣고 초순수 약 150 mL를 부피플라스크에 넣고 조심스럽게 완전히 녹인다. 이때 주의해야 할 것은 저울을 추가로 조작하지 않고 이전에 측정된 약 150 mL의 무게가 변하지 않게 하여야 한다. Sodium Nitrite를 완전히 녹인 다음 부피플라스크를 저울에 올려 초순수로 250 mL까지 정확하게 맞추고 저울의 눈금을 읽어 그 무게를 기록한다.
+\item
+  이때 사용되는 초순수의 온도와 실험실 습도를 측정하여 부피플라스크로 측정된 무게를 보정하여 부력이 보정된 정확한 무게를 계산한다. 보정된 무게, 온도 그리고 초순수의 밀도를 이용하여 정확한 부피를 계산하여 표준원액의 농도를 정확하게 계산한다.
+\end{itemize}
+
+\hypertarget{daily-uxac80uxc815uxace1uxc120uxc6a9-no2-uxd45cuxc900uxc6a9uxc561uxc5f4calibation-standards-uxc81cuxc870}{%
+\subsubsection{Daily 검정곡선용 NO2 표준용액열(Calibation Standards) 제조}\label{daily-uxac80uxc815uxace1uxc120uxc6a9-no2-uxd45cuxc900uxc6a9uxc561uxc5f4calibation-standards-uxc81cuxc870}}
+
+\begin{itemize}
+\tightlist
+\item
+  Stock nitrite standard solution(5.3.1)을 이용하여 제조하는 검량선용 표준용액열 농도는 총 5개이며, 각각의 농도는 아래의 표와 같다.
+\item
+  가장 먼저, 농도가 제일 높은 표준용액 (Std.A, 5 μM)을 제조한다.
+\item
+  저울에 빈 500 mL 부피플라스크를 올려놓고 영점을 조정하여 무게를 0으로 맞춘다.
+\item
+  아질산이온 표준원액(5.3.1) 0.25 mL를 저울위에 있는 500 mL 부피플라스크에 옮긴 후 인공해수(5.1.2)를 첨가하여 500 mL로 맞춘다. 500 mL로 맞춘 표준용액의 무게를 측정하고 함께 습도와 온도로 중력보정을 실시하여 정확한 질량을 계산한다 (이때 농도단위는 μmol/kg이다). 이를 몰농도 (μmol/L, μM)로 전환하기 위해서 염분(35‰)과 실험실 온도로 검정곡선용 표준용액의 밀도를 계산하여 정확한 부피를 계산하여 몰농도로 전환한다.
+\item
+  다른 농도의 용액들도 위와 같은 방법으로 AACE Method에서 설정한 Calibrant 농도 값에 맞게 희석한다.
+\item
+  담수시료의 경우 인공해수 대신 초순수를 사용해 표준원액을 희석하여 위와 같이 제조한다.
+\end{itemize}
+
+\hypertarget{uxc2dcuxb8ccuxc758-uxc804uxcc98uxb9ac-uxbc0f-uxbcf4uxad00}{%
+\section{시료의 전처리 및 보관}\label{uxc2dcuxb8ccuxc758-uxc804uxcc98uxb9ac-uxbc0f-uxbcf4uxad00}}
+
+\begin{itemize}
+\tightlist
+\item
+  영양염 농도가 낮은 해수시료 채취는 가능한 깨끗한 환경에서 수행되어야 한다. 용존 영양염 분석을 위한 시료채취는 깨끗한 새용기 또는 10\%염산으로 세척하여 초순수로 헹군 고밀도 폴리에틸렌(High Density Polyethylene, HDPE) 혹인 폴리프로필렌(Polypropylene, PP) 용기에 채취하여 수 시간 내 현장에서 분석하는 것을 권장한다. 자동영양염 분석기로 분석할 때는 폴리프로필렌 재질의 15 mL 튜브에 직접 채수하여 별도의 분취과정 없이 자동영양염 분석기의 Sampler rack에 직접 넣어 분석할 수 있다. 시료채취 시 시료 오염을 예방하기 위해 맨손으로 시료를 채취하는 것을 지양하고 분말가루가 없는 라텍스장갑의 사용을 권장하며 니트릴 또는 네오프렌 장갑의 사용은 권장하지 않는다.
+\item
+  나노몰 수준의 영양염 분석(특히 나노몰수준의 암모늄이온 분석)을 위한 시료는 용존산소와 미량기체 시료채취 직후에 시료를 채취하고 영양염 시료 채취 이전에 다른 시료를 채취하는 사람도 실험장갑을 사용해야한다. 시료는 니스킨병의 시료채취 꼭지로부터 직접 채취할 수 있으나 니스킨병 외부나 CTD 프레임에서 유입된 물로 인해 시료가 오염될 수 있다. 일관성을 유지하기 위해서 타이곤 튜브를 니스킨병 꼭지에 연결하여 시료를 채취할 것을 권장한다. 이 튜브는 시료 채취 직전에 시료로 충분히 헹군 다음 시료를 채취한다. 시료병 및 튜브는 시료해수로 세 번 헹군 다음 시료를 채취한다.
+\item
+  해수 중에 입자가 아주적은 빈영양 외해역에서 채취한 시료는 시료 처리 과정에서 발생할 수 있는 불필요한 오염을 최소화하기 위해서 여과할 필요가 없지만, 시료에 부유물질이 많은 경우에 시료를 0.2 μm PES(Polyethersulfone) membrane 여과지로 여과한 후 분석한다. 여과를 해야 하는 시료는 산 세척된 HDPE 혹은 PP 500 mL 용기에 시료를 충분히 채취하여 실험실로 운반한 후 0.2 μm 공경 PES 여과지로 여과한다. 여과 시 약 50 mL의 시료를 먼저 통과시켜 여과지를 씻고 여과된 해수를 이용하여 시료 보관 용기를 3번 세척한 후 시료를 채취한다.
+\item
+  시료 분석은 선상에서 바로 수행하는 것이 원칙이고 불가피한 경우 냉장 보관하고 늦어도 채수 후 8시간 이내에 분석하여야 한다. 현장 사정 등으로 8시간 이내에 분석할 수 없거나 장기간 보관해야 하는 경우는 시료 채취 후 바로 급속냉동(-80 ℃)해야 한다. 냉동 시 부피팽창을 고려하여 시료를 시료 튜브에 가득 채우지 않고 약간의 여유를 둔다. 시료를 냉동 또는 냉장 보관할 때 시료 용기를 반드시 수직으로 세워 누수를 방지한다. 냉동 보관기간은 짧을수록 좋으며 분석을 위해서 냉동시료를 해동하는 경우 분석하기 전 시료 병을 충분히 흔들어 시료를 잘 혼합한 후 분석한다.
+\end{itemize}
+
+\hypertarget{uxac80uxb7c9uxc120-uxc791uxc131}{%
+\section{검량선 작성}\label{uxac80uxb7c9uxc120-uxc791uxc131}}
+
+분석당일 시약 및 아질산이온(5.3.2) 표준용액열을 준비한다. 준비된 표준용액을 시료분석과 동일한 과정으로 분석한다. 다만 표준용액 제조에 사용된 바탕용액과 표준용액은 각 농도별로 2개 이상 복수로 분석되어야 한다. 측정된 자료를 선형회귀분석법으로 농도와 흡광도사이의 검량선식을 구한다. 표준용액열과 동일한 방법으로 분석한 시료의 흡광도를 검량선식에 대입하여 시료의 용존 아질산이온 농도를 구한다.
+
+\hypertarget{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00quality-control-and-quality-assessment-qaqc}{%
+\section{품질관리 및 품질평가(Quality Control and Quality Assessment, QA/QC)}\label{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00quality-control-and-quality-assessment-qaqc}}
+
+\hypertarget{uxc815uxc758-uxbc0f-uxacb0uxc815uxbc29uxbc95}{%
+\subsection{정의 및 결정방법}\label{uxc815uxc758-uxbc0f-uxacb0uxc815uxbc29uxbc95}}
+
+품질관리 절차 및 자료의 품질평가는 측정의 정확도(Accuracy)와 정밀도(Precision)를 결정하는 수단을 제공한다. 분석자들이 품질관리(Quality Control, QC), 품질평가(Quality Assessment, QA), 정확도(Accuracy), 정밀도(Precision)사이의 차이를 이해하도록 정의를 하였다. 여기에 사용된 용어들의 정의는 Dickson(2007)의 ``Guide to Best Practices for Ocean CO2 Measurement'' 에 따른다.
+
+\hypertarget{uxd488uxc9c8uxad00uxb9acquality-control}{%
+\subsubsection{품질관리(Quality Control)}\label{uxd488uxc9c8uxad00uxb9acquality-control}}
+
+측정 자료의 품질이 사용자의 필요에 부합하도록 관리할 목적으로 수행되는 전체 활동체계를 말한다. 품질관리의 목적은 생산된 자료가 일정한 확률에서 목표하는 정확도를 가지고, 만족할만하고, 신뢰할 수 있으며, 경제적인 품질을 제공하도록 하는 것이다.
+
+\hypertarget{uxd488uxc9c8uxd3c9uxac00quality-assessment}{%
+\subsubsection{품질평가(Quality Assessment)}\label{uxd488uxc9c8uxd3c9uxac00quality-assessment}}
+
+품질평가가 효과적으로 수행되도록 보장할 목적으로 수행되는 전체 활동체계를 말한다. 품질평가는 분석과 분석체계 성능의 품질에 대한 지속적인 평가를 제공한다.
+
+\hypertarget{uxc815uxd655uxb3c4accuracy}{%
+\subsubsection{정확도(Accuracy)}\label{uxc815uxd655uxb3c4accuracy}}
+
+정확도는 측정값이 참값에 일치하는 정도를 반영하는 편이(Bias)와 정밀도(Precision)의 결합이다. 정확도는 측정값과 표준물질의 명시된 특성값과 일치하는 정도이다. 정확한 방법은 편이가 없는 결과를 제공한다. 정확도는 평가하기 몹시 어려운 정량평가이지만 계통오차를 일으키는 원인을 찾는데 활용한다.
+
+\hypertarget{uxc815uxbc00uxb3c4precision}{%
+\subsubsection{정밀도(Precision)}\label{uxc815uxbc00uxb3c4precision}}
+
+동일한 시료에서 분석하고자 하는 항목을 연속적으로 반복 실험할 때 발생하는 무작위오차(random error)를 의미하고, 특정한 실험과정의 재현성을 측정하는 항목이다. 최종결과 또는 시료채취에서 전처리 등을 포함하는 전체과정 또는 특정한 단계에 적용할 수 있다. 동일한 시료에 대한 반복측정 값의 평균과 표준편차로 평가한다. 동일한 시료의 반복 분석할 때 분석값들의 상호간에 가까운 정도를 설명하는 것으로 때로는 재현성으로 불리기도 한다. 정밀도는 절대표준편차(absolute standard deviation), 상대표준오차 (relative standard deviation, RSD), 분산(variance), 변동계수 (coefficient of variation, CV), 상대백분율차이(relative percent difference), 측정의 절대범위(absolute range of a series of measurement) 등으로 표시된다. RSD는 일반적으로 농도가 낮을수록 커지는 경향이 있다.
+
+\% RSD =
+
+\hypertarget{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4method-detection-limit-mdl}{%
+\subsubsection{방법검출한계(Method Detection Limit, MDL)}\label{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4method-detection-limit-mdl}}
+
+방법검출한계는 일정 농도의 시료를 반복 분석하여 특정 신뢰도 수준에서 바탕값과 다른가를 통계적으로 판단한 값으로 측정할 수 있는 분석성분의 최소한의 농도값이다. 이는 매질, 분석기기, 분석자에 따라 차이가 나기 때문에 잘 확립된 분석방법으로 숙련된 인력으로 결정한다. 방법검출한계는 같은 분석법을 사용하고 있는 다른 실험실들 사이의 분석능력을 비교하거나 같은 실험실에서 다른 분석방법간의 차이, 또는 분석 인력간의 차이를 비교하는 좋은 방법이다. 미국 EPA에서는 방법검출한계를 99\%의 신뢰도에서 분석성분 농도가 0보다 클 경우 이를 성분의 최소 측정 농도로 정의한다. 통계학적으로 99\%신뢰도 구간이 의미하는 것은 방법검출한계와 같은 농도로 분석하는 성분이 검출된 것은 이 성분의 농도가 0보다 높게 존재할 가능성이 99\%라는 것을 의미한다. 다른 말로는 1\%는 분석하는 성분 농도가 0이지만 실제 존재하고 있는 것으로 거짓으로 측정된 것을 의미한다. 방법검출한계는 통계적인 개념으로 분석성분이 방법검출한계보다 낮은 농도로 측정될 가능성이 충분히 있다(기기검출한계와는 구별되어야 함). 방법검출한계는 분석의 불확도를 다루는 절차일 뿐이고 시료의 채취, 운반, 보관, 분석의 전 과정에서 불확도의 요소가 있다.
+저농도 반복시료를 분석하여 방법검출한계를 계산하는 것은 많은 시간이 걸리고, 대부분의 실험실에서는 보고하기에 적당한 수를 얻기에 필요한 수십 번의 연구를 반복할 여유가 없다. 따라서 방법검출한계 측정을 무효화 할 수 있는 검정곡선 범위, 첨가정도, 바탕값의 오염 등과 같은 것을 잘 조절하는 것이 중요하다. 실험실에서는 최종적인 방법검출한계 계산 값에 도달하는 정확한 과정에 대해서 기록해야 하며, 방법검출한계는 분석값의 품질을 확인할 수 있는 중요한 자료이기 때문에 추적할 수 있어야 한다. 방법검출한계 측정방법은 8.6항의 순서를 따른다.
+
+\hypertarget{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00-uxc218uxd589-uxd45cuxc900uxc808uxcc28-standard-operating-procedures-sop}{%
+\subsection{품질관리 및 품질평가 수행 표준절차 (Standard Operating Procedures, SOP)}\label{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00-uxc218uxd589-uxd45cuxc900uxc808uxcc28-standard-operating-procedures-sop}}
+
+품질관리는 기기를 설치하는 것으로 시작하여, 분석관 구성 및 유지 보수와 같은 세심한 부분까지 포함한다. 일단 기기가 설치되면 표준운영절차를 확립하여 시료를 분석하여야한다. 다음의 사항들은 필수적으로 표준운영절차에 포함해야 한다.
+
+\begin{itemize}
+\tightlist
+\item
+  유리기구와 피펫의 교정
+\item
+  표준용액열과 검량선식
+\item
+  시스템의 일일점검사항 실시, 공기방울 형태의 점검, 시약을 분석관에 연결하기 전후의 기저선 변화의 지속적인 추적
+\item
+  같은 설정과 민감도로 시험시료(주로 가장 높은 농도의 표준용액)를 분석하여 기기의 작동상태 확인
+\end{itemize}
+
+특히 시약을 새롭게 바꾸거나 분석관의 튜브를 교체한 후 분석기의 민감도(gain)를 동일하게 설정하여 동일한 시험시료를 측정하는 것은 넓은 의미에서 좋은 품질관리 방법이다. 만약 이전의 측정값과 다르게 나온다면, 시약을 새롭게 만들거나 튜브를 교체한 후 분석기기에 변화가 있고 점검이 필요함을 조기에 파악할 수 있는 방법이다.
+Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 주는 기능이 포함되어있다. Water check, Reagent check 기능으로 분석 전 장비의 기저선, 기체분절 간격, detector energy를 분석 전 점검하여 기기의 상태를 일관성있게 관리할 수 있다. 또한 표준용액열 및 검량선 설정하여 분석 중 계산된 농도값을 확인가능하며 Drift correction, Baseline correction, Recovery detection 등의 기능으로 교정된 값을 얻을 수 있다.
+
+\hypertarget{uxb0b4uxbd80uxd655uxc778-internal-checks}{%
+\subsection{내부확인 (Internal Checks)}\label{uxb0b4uxbd80uxd655uxc778-internal-checks}}
+
+시료분석 동안의 자료품질 보증을 위해 내부확인이 반드시 사용되어야 한다. 내부확인에 사용되는 방법으로는 시료분석을 위해 기기를 작동할 때 마다 시료중복 분석, 확인시료 분석, 내부표준물질 분석을 실시하여야 한다.
+
+\begin{itemize}
+\item
+  시료중복 분석은 동일한 시료를 서로 상이한 분석에서 반복 측정하는 것으로 시료 중복분석 표준편차로 분석간의 자료품질을 더 정확하게 판단할 수 있다. 확인시료 또는 추적표준물질을 사용하여 분석간의 편차를 줄일 수 있으며 확인시료 또는 추적표준물질 값을 이용하여 분석자료를 조정한다.
+\item
+  확인(추적)시료는 관측초기에 심층해수(\textasciitilde1000미터 수심)를 채취해서 사용할 수 있다. 심층해수는 대부분의 영양염 (암모늄과 아질산이온 제외) 농도가 높으나, 검량선 범위를 벗어나지 않아야 한다. 채취된 심층해수를 포화 염화수은을 시료 10L에 1 mL에 해당하는 양을 첨가하여 보존한다. 앞서 시료를 보존할 때 카드뮴환원관의 환원효율에 영향을 미치기 때문에 독성물질을 사용하지 않기를 권장하였으나 시료분석 시 1개의 염화수은을 첨가한 시료를 분석하는 것은 카드뮴 환원 관의 환원 효율에 영향을 미치지 않는다. 확인(추적)시료의 분석값을 지속적으로 추적하는 것은 분석자에게 분석기의 성능이나 시약과 관련된 문제들에 대해 경각심을 주는데 도움이 된다. 자료보고서에 각 분석채널에서 확인(추적)시료의 분석값과 표준편차를 보여주는 표를 첨부하여 분석결과가 신뢰할 수 있음을 보여 주어야 한다. 앞서 언급하였듯이 확인(추적)시료의 분석값이 원하는 정밀도 범위 내(평균값의 1\%이내)에 있다면 이 값을 이용하여 분석자료의 값을 조정할 수 있다.
+\item
+  Van Ooijen and Bakker(1992)는 초순수에서 충분한 양의 혼합 농축 표준용액을 준비하여 포화 염화수은 첨가하여 보존한 내부표준물질 사용에 대해서 설명하였다. 이러한 내부표준물질은 분석에서 검량선 작성에 사용하는 일차 또는 작업용 표준용액열을 만드는 것과 독립적으로 준비해야 한다. 내부표준용액을 저영양염 해수로 적절히 희석하여 CFA분석기를 사용하여 분석할 때마다 사용한다. 이러한 추적용액은 한 번의 희석으로 만들어져 있어 재현성은 0.1\%이고 이는 피펫에 내재된 오차 때문이다. 이러한 추적용액은 현장에서 사용되는 시료와 같은 범위의 값이고, 전체 검량선 범위의 60\textasciitilde80\% 정도 내에 있을 때만 사용이 허용된다. 추적용액은 저영양염 해수로 희석하고 각 분석에서 시료와 시료사이에 측정하고 각 분석에서 여러 번 분석한다. 각 실험실은 일정기간 동안(1개월 정도동안 최소 10회 정도) 분석한 추적용액 또는 확인시료의 평균값을 계산하여 시료 분석값을 추후 조정한다.
+\end{itemize}
+
+\hypertarget{uxc678uxbd80-uxd488uxc9c8uxd655uxc778external-quality-checks}{%
+\subsection{외부 품질확인(External Quality Checks)}\label{uxc678uxbd80-uxd488uxc9c8uxd655uxc778external-quality-checks}}
+
+외부품질확인은 상이한 항해와 실험실간 분석자료의 상호비교를 평가하는데 사용한다. 국내 또는 국제적인 상호비교실험 등은 외부품질확인의 예이다. 또 다른 형태의 외부품질확인은 시료분석 시 인증표준물질(Certified Reference Materials, CRM), 표준물질 (Reference Materials, RM) 등을 동시에 분석한다. 이렇게 사용되는 인증표준물질과 표준물질은 보존처리가 이루어지고 영양염 농도를 잘 결정된 실제 해수 시료이다. 인증표준물질과 표준물질은 항차 내(정점 간, 새로운 시약이나 표준용액열을 만든 후), 다른 항차 간, 또는 다른 실험실에 의해서 수행된 분석 결과의 일관성을 보장하기 위해서 사용된다. 인증표준물질은 다양한 농도로 구성되고 다양한 해양조건과 염분을 대표할 수 있는 염분값을 가지고 있다. 모든 영양염 분석에서는 인증표준물질을 사용하도록 강력하게 권장하고 있으며, 특히 국제적인 프로그램(GO-SHIP,CLIVAR, GEOTRACES)과 같이 정확도가 아주 높은 자료를 생산하는 항차 또는 실험실은 영양염 인증표준물질의 사용이 필수적이다.
+
+\hypertarget{uxc778uxc99duxd45cuxc900uxbb3cuxc9c8}{%
+\subsubsection{인증표준물질}\label{uxc778uxc99duxd45cuxc900uxbb3cuxc9c8}}
+
+최근 일본 KANSO Technos사에서 해수 영양염 표준물질(RMNS)을 개발하여 생산하고 있는 것이 국제적으로 많이 사용되고 있으며 SCOR Nutrient WG147은 JAMSTEC과 협조하여 총 5세트 (태평양 2세트와 대서양 3세트)의 영양염 표준물질을 생산하여 보급하고 있다. 이 표준물질은 100 mL 플라스틱 용기에 담겨 있다. 한국해양과학기술원과 Eurofins등도 해수 영양염 표준물질을 생산하고 있다. 분석 시 깨끗한 시료 튜브에 옮겨 담아 매 분석 시 최소 하루에 1회 이상 시료와 함께 분석되어야 한다. SCOR-JAMSTEC과 KANSO 인증표준물질은 별도의 검정절차를 통하여 국제도량체계(SI)에 연결되어 있다. 질산이온, 아질산이온, 인산이온 검량선은 Chemicals Evaluation and Research Institute(CERI)의 Japan Calibration Service System(JCSS), National Metrology Institute of Japan(NMIJ)등의 표준용액을 사용하였으며 표준용액의 불확도가 포함되어 있다. 용존실리카 검량선은 Merck KGaA에서 생산한 표준용액과 National Institute of Standards and Technology(NIST) 표준용액(SRM3150)을 사용하였으며 각각의 불확도를 가지고 있다. 인증표준물질을 사용하여 GO-SHIP에서 기술된 영양염 분석방법으로 기기의 검량선을 작성하였으므로 영양염 분석결과의 상호비교가 가능하고 명확히 SI에 연결되어 있다.
+
+\hypertarget{uxc778uxc99duxd45cuxc900uxbb3cuxc9c8uxd45cuxc900uxbb3cuxc9c8-uxc0acuxc6a9}{%
+\subsubsection{인증표준물질/표준물질 사용}\label{uxc778uxc99duxd45cuxc900uxbb3cuxc9c8uxd45cuxc900uxbb3cuxc9c8-uxc0acuxc6a9}}
+
+각 분석 시 앞서 언급된 내부확인 시료와 추적시료를 시료와 함께 분석되어야 하며 최소 하루에 한 번은 분석되어야 한다. 이론적으로는 매번 새로운 인증표준물질을 열어 사용할 것을 권장한다. 그러나 실제 대부분의 실험실에서는 비용적으로 부담을 많이 느낀다. Scripps Institute of Oceanography와 Royal Netherlands Institute for Sea Research의 실험실은 표준물질병을 열고 최대 2일까지 사용하는 경우도 있으나 한번 사용한 표준물질을 당일 이후에 사용할 때에 오염되지 않도록 주의하여야 한다.
+일부 실험실에서 농도가 다른 여러 개의 표준물질로 검량선을 작성하려는 시도가 있다. 그러나 농도가 다른 여러 종류의 표준물질을 구비하는 것은 비용적으로 상당한 부담이 될 수 있다. 매월 각 채널에서 시료와 함께 분석된 인증표준물질과 표준물질의 참값(특성값) 및 분석평균값과 표준편차를 포함하는 표를 자료보고서에 포함하여야 한다. 이상적으로는 인증표준물질과 표준물질의 분석값은 참값(특성값)과 같아 자료의 추가적인 보정이 없어야 한다. 만약 인증표준물질과 표준물질의 분석값이 참값(특성값)과 다르면, 다른 것을 표시하여 주의를 할 수 있도록 해야 한다. 아직 인증표준물질과 표준물질을 이용하여 자료를 조정 또는 수정하는 것에 대한 이견이 있다. 만약 인증표준물질과 표준물질을 미지의 시료로 분석하였다면, 시료의 분석값을 인증표준물질 또는 표준물질의 분석값(특성값)을 이용하여 보정할 것을 권장한다. 실제 시료분석을 담당하는 분석자가 분석 시 기기상태를 잘 알고 있기 때문에, 인증표준물질과 표준물질 분석값을 이용하여 시료의 분석값을 조정 또는 수정을 직접 하는 것이 바람직하다. 조정 내용을 문서화할 때 조정/수정된 값을 인정표준물질의 참값(특성값) 및 분석값(평균과 표준편차)과 함께 보고하여야 한다.
+
+\hypertarget{uxc790uxb8ccuxbe44uxad50}{%
+\subsection{자료비교}\label{uxc790uxb8ccuxbe44uxad50}}
+
+먼저 초기 확인과 수정을 수행한 후, 일차 또는 이차 품질관리(Quality Control, QC) 점검들이 수행되어야 한다. 일차 품질관리는 특이값 및 명백한 오류를 식별하기 위해 자료를 연구하는 과정입니다. 이러한 특이값은 별도로 표시하거나, 수정 가능한 오류를 식별할 수 있는 경우 자료를 수정한다. 이차 품질관리는 보고된 값의 계통 편향을 정량화하기 위해 자료를 객관적으로 연구하는 과정이다.
+
+\begin{itemize}
+\item
+  일차 품질관리로 시료채취병(니스킨 등)의 시료채취 수심이 잘못되었거나, 시료채취병 이상으로 인한 누수, 시료채취 및 분석 시 오염 등의 문제로 인해 발생할 수 있는 오차 등을 확인한다. 다음에 분석된 시료값과 시료를 채수한 수심의 다른 물리/화학적 자료로 함께 그림을 그려 비교한다. 예를 들어 영양염 자료를 염분, 수온, 용존산소, 용존 무기탄소과 함께 그림을 그려 분포특성 또는 특이값이 다른 자료에서도 나타나는가를 확인한다. 질산이온+아질산이온(암모늄이온이 분석되었다면 포함하여) 대 인산이온 그림, 용존실리카 대 용존산소 그림을 통해 어떤 값이 문제가 있는지 확인한다. 이러한 그림은 각 정점에서 영양염과 함께 다른 자료가 모두 분석하여 각 정점별로 수행할 것을 권장한다. 연속되는 정점의 값들을 자세히 살펴보고 값의 변이가 진짜인지 아니면 감도, 분석 또는 오염의 문제는 아닌지 확인해야한다.
+\item
+  이차 품질관리는 역사적인 자료를 이용하여 계통 편향을 감지하기 위해서 사용될 수 있다. 전 대양에 있는 GO-SHIP (이전 CLIVAR)과 WOCE 단면도 자료를 공공자료로 CCHDO(cchdo.ucsd.edu)와 같은 자료실을 통해 접근할 수 있다. GLODAP에 있는 편향이 조정된 자료를 사용할 것을 권장한다. 분석 중에 잠재적인 편향을 발견하게 되면 분석 절차상 편향을 낼 수 있는 가능한 요소를 찾아낸다. 그리고 편향 수정을 하지 않고 메타데이터에 편향 문제에 반드시 기록하여야 한다.
+\end{itemize}
+
+\hypertarget{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxce21uxc815uxbc29uxbc95}{%
+\subsection{방법검출한계 측정방법}\label{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxce21uxc815uxbc29uxbc95}}
+
+\hypertarget{uxbd84uxc11duxc2dcuxc2a4uxd15c-uxc900uxbe44}{%
+\subsubsection{분석시스템 준비}\label{uxbd84uxc11duxc2dcuxc2a4uxd15c-uxc900uxbe44}}
+
+방법검출한계 시료는 방법 선택에 명시되어 있는 필수 품질관리 확인 사항을 통과하고 동작이 적절한 기계를 사용해서 분석한다. 분석시스템의 청결이 방법검출한계 계산에 영향을 미친다. 따라서 이미 사용하고 있던 분석기의 방법검출한계를 측정할 때는 이전 시료로부터 발생하는 오염을 피하기 위한 사전예방 조처를 해야 한다. 대부분의 실험실에서는 정기적으로 분석기 유지보수를 수행하여 분석기가 아주 깨끗하고 적절히 반응하도록 해야 한다.
+
+\hypertarget{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxc218uxd589uxc744-uxc704uxd55c-uxac80uxc815}{%
+\subsubsection{방법검출한계 수행을 위한 검정}\label{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxc218uxd589uxc744-uxc704uxd55c-uxac80uxc815}}
+
+적절한 교정은 유효한 방법검출한계 결정을 위한 핵심 요소이지만 종종 그 중요성이 간과된다. 분석법에서 올바른 검증은 분석될 시료의 예상 농도값을 포함해야 한다. 방법검출한계는 시료 분석에 사용되는 검정곡선과 같은 식으로 계산되어야 한다. 일반적으로 가장 낮은 검정곡선용 표준용액 농도는 정량한계(또는 예상되는 정량한계)와 대략 비슷해야 한다. 아주 높은 농도를 분석할 때는 낮은 방법검출한계 달성이 쉽지 않다. 실험실에서 정량한계보다 낮은 시료분석이 빈번히 수행되지 않는다면 많이 요구되는 방법검출한계 달성이 불가능하다. 일반적으로 분석기기 제조사에서 기기의 정량한계를 명시하는데, 통계결정에 필요한 충분한 자료가 없다면 이 값을 실험실의 정량한계로 간주할 수 있다.
+
+\hypertarget{uxc801uxc808uxd55c-uxcca8uxac00-uxc815uxb3c4uxc758-uxc120uxd0dd}{%
+\subsubsection{적절한 첨가 정도의 선택}\label{uxc801uxc808uxd55c-uxcca8uxac00-uxc815uxb3c4uxc758-uxc120uxd0dd}}
+
+방법검출한계는 동일한 조건에서 7번 이상의 반복측정의 정밀도 또는 변동성에 기반하고 있다. 정밀도는 시료결과의 표준편차를 이용하여 계산되기 때문에 농도에 의존하기 때문에 방법검출한계 실험에 사용되는 시료의 농도 선택이 아주 중요하다. 방법검출한계는 검정곡선의 가장 낮은 농도수준 추정에 사용되기 때문에 최상의 첨가 수준은 예상되는 검출 수준의 1\textasciitilde5배 정도이다. 정밀도는 농도에 의존하기 때문에 계산된 방법검출한계는 첨가 수준의 10분의 1보다 커야한다. 이 값이 방법검출한계 연구를 위한 최대값이고, 이 값보다 낮은 농도를 첨가하는 것이 바람직하다. 계산된 방법검출한계는 방법검출한계 측정을 위해 첨가한 수준보다 높지 않아야 한다. 논리적으로 계산된 방법검출한계가 첨가 수준보다 높다면 통계학적으로 첨가시료와 바탕값을 구별할 수 없다. 그리고 정밀도가 아주 나쁘다. 다음의 부등식이 계산된 방법검출한계를 평가하기에 유용하다.
+
+\hypertarget{uxacc4uxc0b0uxb41c-uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxcca8uxac00uxc218uxc900-10uxacc4uxc0b0uxb41c-uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4}{%
+\subsubsection{계산된 방법검출한계 \textless{} 첨가수준 \textless{} 10*계산된 방법검출한계}\label{uxacc4uxc0b0uxb41c-uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxcca8uxac00uxc218uxc900-10uxacc4uxc0b0uxb41c-uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4}}
+
+위의 조건이 달성되면 첨가수준이 적절한 것이고 그렇지 않다면 방법검출한계를 다시 계산해야 한다.
+
+\hypertarget{uxbc18uxbcf5uxc2dcuxb8cc-uxc900uxbe44}{%
+\subsubsection{반복시료 준비}\label{uxbc18uxbcf5uxc2dcuxb8cc-uxc900uxbe44}}
+
+최소 7개의 반복시료를 준비한다. 그러나 혹시 이상값이 발생하여 제거하는 것을 고려해서 8개 시료를 준비할 것을 권장한다. 반복시료들은 분석 방법에 설명되어있는 시료 준비와 같은 방법으로 준비 및 처리(예를 들어 추출, 대용물 추가, 분해 등) 되어야 한다. 시료와 같이 처리되지 않은 반복시료로부터 계산된 방법검출한계는 받아들일 수 없고 진정한 방법검출한계를 대표할 수 없다. 대부분의 환경 분석에서는 초순수에 분석대상 성분을 위에서 설명한 적당량을 첨가하여 방법검출한계를 측정하는데 필요한 최소 7번 이상의 반복측정을 할 수 있도록 반복측정 시료원액 1개를 준비한다. 그러나 일부 휘발성 유기성분 또는 대용량 추출시료 분석에는 한 개의 시료로 여러 번 반복측정 하는 방법은 적합하지 않고 개별포장의 반복시료를 만들어 측정해야 한다. 또한 해수 시료의 경우 매질 효과로 인한 오차를 최소화하기 위해 해수 매질(저영양염 해수, 인공해수) 기반에 분석성분을 첨가하고 최소 7번 이상의 반복분석을 할 수 있는 양을 제조해야 한다.
+
+\hypertarget{uxbc14uxd0d5uxac12-uxce21uxc815}{%
+\subsubsection{바탕값 측정}\label{uxbc14uxd0d5uxac12-uxce21uxc815}}
+
+배경 오염을 측정하기 위해서 최소 1개의 방법 바탕값이 각각의 방법검출한계 시료세트와 함께 분석되어야 하고 실험실 인정을 위해서는 바탕값 측정결과를 보고해야 한다. 바탕값은 계산된 방법검출한계의 유효여부를 알 수 있는 중요한 품질관리 수단이다. 실험방법이 시료 결과로부터 바탕값을 빼야하는 경우, 각각의 시료에 대해서 쌍으로 방법 바탕을 분석해야 하고 절차에 명시된 것처럼 시료로부터 바탕값 평균을 뺀다.
+
+\hypertarget{uxc77cuxc77cuxbcc0uxb3d9}{%
+\subsubsection{일일변동}\label{uxc77cuxc77cuxbcc0uxb3d9}}
+
+실제 분석에서는 방법검출한계 값이 분석 때 마다 변한다. 이러한 변동성을 고려하여 실제 방법검출한계를 계산하기 위해서는 다른 batches에서 7개 이상의 반복시료를 준비하여 분석하거나, 다른 날에 분석한 방법검출한계 값을 모아 사용한다. 또 다른 방법은 장기간의 변화를 고려하기 위해서 일정기간 이상 측정된 방법검출한계 자료를 모아서 표준통계절차를 사용하여 실험실의 일상적인 방법검출한계로 한다.
+
+\hypertarget{uxbc14uxd0d5uxac80uxcd9cuxd55cuxacc4-uxacc4uxc0b0}{%
+\subsubsection{바탕검출한계 계산}\label{uxbc14uxd0d5uxac80uxcd9cuxd55cuxacc4-uxacc4uxc0b0}}
+
+바탕검출한계를 계산할 때 주의사항은
+(1) 시료 표준편차(s) 사용\\
+(2) 올바른 Students t-value 사용\\
+(3) 모든 유효숫자사용\\
+바탕검출한계 계산에서 흔히 하는 실수는 시료표준편차(s) 대신 모집단 표준편차(σ)를 사용하는 것이다.
+
+앞에서 계산한 방법검출한계를 위한 95\% 신뢰도 구간 추정은 자유도 분포 분의 chi 제곱(X2/df)의 백분위 수로부터 유도된 다음식에 따라 계산된다.
+
+여기서 LCL과 UCL은 7번의 측정값에 기초한 95\% 신뢰도 구간의 낮은 쪽과 높은 쪽의 값이다.
+
+모집단 표준편차는 참모집단 자료가 존재할 때만 사용하는 것이다. 그러나 대부분의 실험실에서는 모집단을 가정할 수 있는 정도의 충분한 반복자료가 없기 때문에 항상 시료 표준편차를 사용한다. 대부분의 프로그램은 둘 다 수행이 가능하기 때문에 올바른 것을 사용해야 한다. 계산과정에서는 모든 유효숫자를 사용하고 방법에 관한 결과 보고 시 마지막 바탕 검출한계 값의 유효숫자를 정한다. 예를 들어 계산된 바탕검출한계 값이 0.15이면 유효숫자가 하나일 경우 0.2로 반올림한다.
+
+\hypertarget{snuxc2dcuxd5d8}{%
+\subsubsection{S/N시험}\label{snuxc2dcuxd5d8}}
+
+바탕검출한계 과정에서 검출한계는 신호/잡음의 비가 2.5-5일 때 추정된다. S/N비는 초기 검출한계 추정과 최종 바탕검출한계 결정을 평가하는데 유용하다. 신호/잡음비가 2.5보다 작은 것은 연속 반복측정의 임의 오차가 아주 높아 측정된 바탕검출한계가 높다는 것이다. 이는 반복시료에 첨가를 더 많이 하여 신호를 높여야 한다. 만약 신호/잡음의 비가 10보다 커다면 첨가 농도가 너무 높아 계산된 바탕검출한계가 실제 검출한계를 대표할 수 없다. 이 경우에 첨가를 적게 하여야 한다. 신호/잡음의 비가 10이상이더라도 분석방법이 아주 정확할 수도 있다. 이 경우에는 분석자의 경험이 아주 중요하다.
+(S/N) est = Xave/s
+Xave: 계산된 농도나 반복측정의 분석 신호의 평균
+s: 반복 측정되는 시료 표준편차
+
+\hypertarget{uxbc14uxd0d5uxac80uxcd9cuxd55cuxacc4-uxacb0uxc815uxc8fcuxae30}{%
+\subsubsection{바탕검출한계 결정주기}\label{uxbc14uxd0d5uxac80uxcd9cuxd55cuxacc4-uxacb0uxc815uxc8fcuxae30}}
+
+바탕검출한계가 여러 가지 이유로 시간에 따라 변하기 때문에 필요하면 주기적으로 바탕검출한계 계산을 수행한다(새로운 분석법을 사용하기 전 또는 1년 주기로 갱신함). 만약 방법에 특정한 주기를 명시되어 있지 않으면 새로운 분석자가 분석을 시작하거나 분석시스템의 성능이 변하거나 하면 방법검출한계 시험을 시행한다. 그리고 분석과정이 변경될 때마다 재계산해야 한다. 일부 시험실에서는 1년 단위로 방법검출한계의 유효기간을 정하여 항상 사용이 가능한 방법검출한계 값을 유지한다.
+계산된 방법검출한계 값을 보고하기 전에 아래 5가지 확인 사항을 충족하는지 점검하여야 한다.
+
+\begin{verbatim}
+(1) 첨가 수준이 방법검출한계 값의 10배를 초과하는가? 그렇다면 첨가 수준이 너무 높다.  
+(2) 방법검출한계 값이 첨가 수준보다 높은가? 만약 그렇다면 첨가수준이 너무 낮다.  
+(3) 계산된 방법검출한계 값이 과제에서 요구되는 규정 요구사항을 충족하는가?  
+(4) Signal/Noise (S/N)비가 적정한 범위에 있는가?  
+(5) 반복시료의 회수율은 적당한가?    
+\end{verbatim}
+
+\hypertarget{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxacc4uxc0b0uxc608uxc81c}{%
+\subsubsection{방법검출한계 계산예제}\label{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxacc4uxc0b0uxc608uxc81c}}
+
+이온선택성 전극에 의한 암모늄 이온 측정용 전극의 제조사 검출한계가 0.05 mg/L라고 명시되어 있다. 방법검출한계를 확인하고자 한다. 먼저 전극을 1, 5, 10 mg/L, 바탕값으로 교정을 하였다. 1단계로 제조사의 주장이 시작점이다. 제조사 검출한계인 0.05 mg/L에 5배를 곱하여 나온 0.25 mg/L를 초기 첨가 수준으로 한다. 0.05\textasciitilde0.25 mg/L사이의 어떤 값도 첨가 수준이 될 수 있다. 측정값과 계산은 MDL\_cal\_example.xlsx를 참고한다.
+
+\hypertarget{uxbb38uxc11cuxd654}{%
+\subsection{문서화}\label{uxbb38uxc11cuxd654}}
+
+\hypertarget{uxad00uxce21uxbcf4uxace0uxc11c}{%
+\subsubsection{관측보고서}\label{uxad00uxce21uxbcf4uxace0uxc11c}}
+
+관측보고서에는 다음과 같은 사항이 포함되어야 한다.
+
+\begin{itemize}
+\tightlist
+\item
+  항차 명칭과 연구 책임자
+\item
+  시료 분석자의 이름과 소속
+\item
+  총 분석시료 수, 사용한 표준물질 종류, 분석기 튜브 및 카드뮴 교체횟수, 기타 필요한 통계
+\item
+  사용한 분석기기, 분석방법, 시약
+\item
+  시료채취방법 및 저장방법
+\item
+  검량선용 표준용액 정보, 방법, 그리고 농도
+\item
+  자료획득 및 처리 절차들
+\item
+  유리초자 및 피펫 교정
+\item
+  분석 중 발생한 문제와 이를 해결하기 위한 방법 등에 대한 자세한 서술
+\item
+  품질관리/품질보증
+\item
+  정해진 정확도와 정밀도
+\item
+  최소 검출한계
+\item
+  확인(추적)시료 분석값
+\item
+  인증표준물질 또는 표준물질 분석값(사용한 표준물질 또는 인증표준물질 종류와 특성값을 함께 기록)
+\item
+  확인(추적)시료 또는 인정표준물질, 표준물질을 이용하여 분석값을 조정 또는 수정하였으면 조정 또는 수정 방법에 대해 자세히 기술
+\item
+  참고문헌
+\end{itemize}
+
+\hypertarget{uxcc44uxc218uxc790uxb8ccuxd30cuxc77c}{%
+\subsubsection{채수자료파일}\label{uxcc44uxc218uxc790uxb8ccuxd30cuxc77c}}
+
+영양염 분석값 보고 파일에는 시료 채취 시 획득된 센서 정보 및 다른 화학 변수들의 분석값과 통합하여 보고한다. 파일에는 보고된 각 항목들의 자료 품질관리와 관련한 플래그를 반드시 포함해야 한다.
+
+\hypertarget{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxc6a9uxc874-uxc601uxc591uxc5fc-uxbd84uxc11duxc808uxcc28}{%
+\section{기체분절 영양염 자동분석기를 사용한 해수 중 용존 영양염 분석절차}\label{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxc6a9uxc874-uxc601uxc591uxc5fc-uxbd84uxc11duxc808uxcc28}}
+
+\hypertarget{uxbd84uxc11d-uxc0acuxc804uxc900uxbe44}{%
+\subsection{분석 사전준비}\label{uxbd84uxc11d-uxc0acuxc804uxc900uxbe44}}
+
+\hypertarget{uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxae30-uxc900uxbe44}{%
+\subsubsection{영양염 자동분석기기 준비}\label{uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxae30-uxc900uxbe44}}
+
+1.1.1.1. 용존 영양염 분석에 사용되는 QuAAtro console, sampler, 외부 detector, 컴퓨터 전원을 켠다.
+1.1.1.2. Sample Wash solution을 준비한다.
+(1) 기기를 처음 작동하였을 때는 초순수를 sample wash solution으로 사용하고 시료분석이 시작되면 인공해수나 저영양염 해수를 sample wash solution으로 사용한다. 따라서 초순수와 인공해수 또는 저영양염 자연해수를 wash solution으로 사용한다. 따라서 두 개의 wash solution bottle과 각각의 용액을 준비한다.
+(2) 분석도중 Wash solution을 추가 할 경우 baseline의 상승 또는 하강하는 현상이 나타날 수 있기 때문에 매일 분석에 소비되는 양을 계산하여 Sample Wash solution을 만들어 사용하고 분석도중 sample wash solution을 교체하지 않도록 한다 (분석시간 * wash solution flow rate).
+1.1.1.3. 시약튜브를 미리 준비한 system wash solution(N계열: wash triton-X, Phosphate와 Silicate: wash SDS)에 넣는다.\\
+1.1.1.4. 각각의 분석채널에 연결되어 있는 각 종 시약 및 시료 튜브의 상태를 눈으로 점검하여 튜브가 찢어진 곳이 있는지 점검한다. 이상이 있을 시에는 튜브를 교체한다.
+1.1.1.5. 펌프 덮개를 닫아준다 (부록 장비 구성 참조)
+
+\hypertarget{uxcef4uxd4e8uxd130uxc5d0uxc11c-uxbd84uxc11duxd504uxb85cuxadf8uxb7a8-aaceuxc758-uxc900uxbe44}{%
+\subsubsection{컴퓨터에서 분석프로그램 (AACE)의 준비}\label{uxcef4uxd4e8uxd130uxc5d0uxc11c-uxbd84uxc11duxd504uxb85cuxadf8uxb7a8-aaceuxc758-uxc900uxbe44}}
+
+1.1.1.1. AACE 프로그램을 실행한다.
+1.1.1.1. AACE 프로그램을 실행하면 아래와 같은 화면이 나타난다.\\
+1.1.1.1. 시스템창의 charting 버튼을 클릭하면 5항목(NO2-N, NO2+NO3-N, NH4-N, SiO2-Si, PO4-P)의 분석창이 뜨면서 장비가 작동하게 된다.
+1.1.1.1. 각 창에 마우스 커서를 두고 우클릭하여 smoothing을 0으로 설정하고 암모늄이온 분석창은 smoothing을 8로 설정한다. 피크 정상부분이 평평하지 않으면 smoothing값을 높여 피크정상부분을 평형하게 하려는 시도가 종종 있으나 이는 권장하지 않는다. Smoothing 값을 크게 하면 분석 시 피크가 완만하게 상승하고 피크 정상 부분의 평평한 상태로 유지되는 시간이 짧아 피크가 뾰족한 모양으로 나와 안정된 분석값을 얻기 어렵다.
+
+\hypertarget{uxae30uxae30uxc138uxcc99-uxbc0f-uxc548uxc815uxd654}{%
+\subsubsection{기기세척 및 안정화}\label{uxae30uxae30uxc138uxcc99-uxbc0f-uxc548uxc815uxd654}}
+
+펌프의 시약튜브를 System Wash solution(5.1.4)에 담가 sampler의 sample wash solution에 증류수를 연결하여 펌프를 작동시키면서 분석기기가 안정될 때까지 기다린다. 안정화는 흡광도가 baseline 값인 5\%에서 ±0.1\% 범위내로 일정하게 유지되는 상태이다. 기기를 켠 후 약 1시간이 소요된다. baseline 값이 5\%에서 ±0.1\% 이상 벗어나게 되면 아래 9.2.2.1의 내용처럼 set base를 실시하여 baseline을 조정한다.
+
+\hypertarget{uxc2dcuxc57d-uxc81cuxc870}{%
+\subsubsection{시약 제조}\label{uxc2dcuxc57d-uxc81cuxc870}}
+
+1.1.1.1. 냉장고에서 standard stock(5.4.1)을 꺼내서 실온으로 맞춘다. 온도차이로 인해 피펫팅 시 부피가 변하지 않도록 일정한 온도를 유지하도록 노력한다.
+1.1.1.2. 발색 시약제조법(5.2)을 참고하여 분석 전 혹은 분석 당일 발색시약을 제조하고, 5.3을 참고하여 5개 이상 농도구간의 용존 아질산이온 표준용액을 만든다.
+
+\hypertarget{uxc2dcuxb8ccuxc758-uxc900uxbe44}{%
+\subsubsection{시료의 준비}\label{uxc2dcuxb8ccuxc758-uxc900uxbe44}}
+
+1.1.1.1. 냉동시료는 해동하는 데 시간이 많이 소요되므로 해동하는 시점을 잘 정해야 한다. 분석기기가 준비되기 전에 미리 시료를 해동했는데 분석기기에 문제가 생기면 분석을 할 수 없어 해동한 시료의 처리가 곤란하므로 적절한 시점에 녹여야 한다. 약 10 mL 시료의 경우 미온수에 1시간 이상 해동이 필요하고 50 mL 이상 용량의 시료는 2\textasciitilde3시간 이상 해동이 필요하다. 해동된 시료는 분석 전 상온에 보관하여 실온에 맞춘다.
+
+1.1.1.2. 용존실리카의 경우 특수한 경우를 제외하면 24시간 이상 해동이 필요하므로 해동 한 다음 날 추가분석이 필요하다. 아래는 24시간 이상 해동이 필요하지 않은 시료의 조건이다(아래의 조건을 모두 충족해야한다).
+
+\begin{itemize}
+\tightlist
+\item
+  용량 15 mL 이하
+\item
+  채수 직후 --80 ℃ 초저온 냉동 보관
+\item
+  보관 기간 한 달 이내
+\end{itemize}
+
+\hypertarget{uxbd84uxc11duxc900uxbe44}{%
+\subsection{분석준비}\label{uxbd84uxc11duxc900uxbe44}}
+
+\hypertarget{quaatro-uxbd84uxc11duxd504uxb85cuxadf8uxb7a8-aace-uxbd84uxc11duxd30cuxc77c-uxc791uxc131}{%
+\subsubsection{QuAAtro 분석프로그램 (AACE) 분석파일 작성}\label{quaatro-uxbd84uxc11duxd504uxb85cuxadf8uxb7a8-aace-uxbd84uxc11duxd30cuxc77c-uxc791uxc131}}
+
+1.1.1.1. Set up - Analysis - New analysis에서 새로운 Analysis file을 생성한다(아래 그림 참조).
+1.1.1.1. 위에서 New analysis 항목을 선택하게 되면 아래와 같이 Set Up: Analysis-new****.anl 창이 나타난다. 이 창에는 Main Page, Tray Protocol, Channel 1\textasciitilde5 탭들을 확인할 수 있다.
+1.1.1.1. Main Page : 각 채널들에 공통적으로 적용되는 항목을 설정하며 분석명과 Sample/Wash time을 설정할 수 있다. 한국해양과학기술원에서는 Sample/Wash time을 45초/15초로 설정하여 사용하고 있다. 이 시간을 변경하게 되면 peak 정상부분이 변형되는 ISAC현상이 나타날 수 있으니 변경 시에는 충분한 검토가 필요하다. Peak 정상부분에 ISAC현상이 일어날 경우에 대한 조치는 제조사에서 제공한 매뉴얼(부록4)을 참고하여 조치를 해야한다.
+1.1.1.1. Tray Protocol : 분석 시 필요한 시료 목록을 작성한다.
+
+\begin{itemize}
+\item
+  primer: 분석기기의 시작을 위해 맨 처음 분석되는 시료로 분석기기의 운용 프로그램에서 primer를 peak로 인식해야만 그 후 분석하는 시료의 peak와 tray protocol에 입력한 분석 순서를 일치시킬 수 있다. primer의 peak 높이는 약 30\%로 설정되어 있으며(분석기기 매뉴얼 권장 사항) 5가지 영양염 항목들이 모두 포함되어있어야 한다. primer의 피크 높이는 main page에서 수정 가능하다.
+\item
+  calibrants: 농도계산에 사용될 검정곡선을 위한 표준용액열이다. 표준용액열의 최대 농도는 예상되는 시료의 최대 농도보다 높은 농도로 준비한다. Channel 탭(9.2.1.5)에 표준용액열의 농도를 입력하고 검량선 종류를 선택하면 프로그램에서 환산한 농도를 분석창에서 확인할 수 있다.
+\item
+  drift: 분석 중 발색시약의 변화와 같은 분석 조건의 변화에 의한 시료 농도값 변화에 영향을 주는 것을 보정하기 위한 시료이다.
+\item
+  carry over: 앞에 분석된 고농도 또는 저농도 시료가 다음 시료에 미치는 영향을 보정하기 위한 것으로 high-low-low순서 또는 low-low-high 순으로 표준용액열의 가장 높은 농도와 가장 낮은 농도('0'값 제외)를 차례로 분석하게 하면 프로그램에서 자동적으로 보정할 수 있다. 이 순서는 검정곡선에 사용되는 표준용액열과 시료를 분석할 때 고농도에서 저농도 (high-low-low) 또는 저농도에서 고농도 (low-low-high)로 분석하느냐에 따라 다르게 사용된다.
+\item
+  baseline: 미량의 영양염 분석을 위해 초순수를 baseline용액으로 이용한다. 초순수를 세 번 반복 분석하여 마지막 peak를 baseline으로 설정한다. 표준용액열 전 후, 인증 표준물질 전 후, 시료 약 20개 분석 전 후로 초순수를 분석하여 baseline을 주기적으로 분석한다. 또한 고농도 시료 분석 후 저농도 시료 분석 시 잔류영향(Carryover effect)를 제거하기 위해 초순수를 분석한다.
+\item
+  Sample: 시료분석 순서는 저농도에서 고농도로 시료를 배치하고 정점과 정점 사이에 증류수를 분석하여 정점을 구분한다. 정점 당 시료의 개수가 12개 미만이면 두 개 정점을 분석한 후에 drift를 넣어 이를 보정할 수도 있다. 분석할 시료수가 많으면, 검량선의 유효성을 확인하기 위해서 시료 20-24개마다 baseline(증류수)과 drift (primer)를 분석한다. Drifter의 평균회수율이 80\textasciitilde120\%이면 시험에 사용된 검정곡선을 유효한 것으로 보며 그 변화된 값을 보정해준다 (drift correction). drift 시료는 두 번 이상 분석하여 마지막 결과를 사용하여 보정에 이용한다.
+\item
+  MDL시료: 제조사의 검출한계나 예상 검출한계의 5배의 농도로 결정된 시료(용존 아질산이온 약 0.1 μM, 용존 질산이온 약 1 μM, 용존 암모늄이온 0.2 μM, 용존실리카 3.5 μM, 용존 인산이온 0.1 μM). 방법검출한계 측정용 첨가시료로 매 분석 시 7번 반복 분석하여 방법검출한계 점검(8.7 방법검출한계 계산 방법 참고).
+\item
+  NO3 Recovery: 5μM로 농도가 동일한 NO2, NO3 용액을 매 분석마다 분석하여 카드뮴-구리 환원관의 환원효율을 점검하고 환원효율이 95\% 이하일 경우 충분히 환원되지 않았다고 판단되므로 카드뮴-구리 환원관을 교체한다.
+  분석 전 환원용액의 결과를 알기 어렵기 때문에 NO2,NO3의 gain값 및 std A 표준용액의 peak 높이(\%)를 관찰한다. peak가 이전에 비해 낮아지고, gain이 높아졌다면 이전에 비해 환원율이 떨어졌다는 의미로 카드뮴-구리 환원관을 교체 후 시료를 분석한다.
+\item
+  QC: 안정성이 뛰어난 표준물질 여러 종류를 매 분석마다 3번씩 반복 분석하여 분석 정밀도를 계산한다(8.2.3). 농도가 검증된 인증 표준물질을 이용할 경우 3번 반복 분석한 결과로 분석 정확도(8.2.2)를 계산하여 분석 품질을 평가하고 관리할 수 있다.
+\item
+  Cup: 시료를 sampler의 rack에 배치한 후 sampler rack의 번호를 입력하는 칸. cup 번호를 정확히 입력해야만 올바른 시료를 sampler가 흡입할 수 있다.
+\end{itemize}
+
+1.1.1.1. Channel : 각각의 channel을 선택하면 각 channel에 할당된 분석방법 (method), baseline, drift, carryover correction등의 실행 여부를 프로그램에서 자동적으로 선택할 수 있다. 검정곡선에 사용되는 용액의 농도(calibrants 1\textasciitilde10), 검정곡선 fitting의 종류, 신호의 순간적인 변동(noise)에 의한 오차를 줄이는 smoothing, peak determination window time 등을 설정한다. 일반적으로 질산이온, 아질산이온, 인산이온, 용존실리카 등은 smoothing을 0으로 설정하여 분석한다. 그러나 암모늄이온은 smoothing을 8로 설정한다(JAMSTEC, Coverly recommendation). 각각에 대한 자세한 설명은 기기 매뉴얼을 참고한다.
+1.1.1.1. 위의 창에서 채널별로 설정을 모두 완성한 후 OK를 클릭하면 Main 창의 analysis 칸에 기입한 이름(분석명.anl)으로 저장된다. 추후 분석 시 Set up - Analysis 항목에서 저장된 Analysis file을 선택하거나 위의 system 창 좌측하단 분석명이 있는 곳을 더블 클릭하여 기존에 작성된 파일에서 sample table 등을 포함한 기타 수정사항을 변경하여 사용한다.
+
+\hypertarget{uxc81cuxc870uxd55c-uxc2dcuxc57d-uxc5f0uxacb0-uxbc0f-baseline-uxd655uxc778}{%
+\subsubsection{제조한 시약 연결 및 baseline 확인}\label{uxc81cuxc870uxd55c-uxc2dcuxc57d-uxc5f0uxacb0-uxbc0f-baseline-uxd655uxc778}}
+
+1.1.2.1. 9.1.3의 상태에서 흡광도 값이 5\%를 벗어나면 set base를 클릭하여 baseline을 5\%로 맞춘다(UPW baseline). 기기 내부 공기방울 패턴이 일정한지 확인한다. 시스템 창에서 charting button아래에 있는 체크표시를 눌러 water check를 실시한다. water check 실시 동안에 charting창을 닫아도 되는지, 기기의 램프 덮개가 닫혀있는지 묻는 창이 나타나면 OK를 눌러 water check를 실시한다. water check동안에 램프의 정상작동여부, 공기방울 패턴, 램프 에너지 상태 등을 확인한다. water check 결과는 종료 직후 눈으로 확인할 수 있고 프린터를 할 수도 있다. water check 결과는 30개까지 시스템 내부에 저장되고, 메인창의 retrieve메뉴에서 performance log에서 확인할 수 있다.
+1.1.2.2. water check 이후에 모든 창이 꺼진 상태이기 때문에 charting을 눌러 다시 분석창을 열고 baseline을 확인하고 smoothing을 다시 설정한다. 암모늄이온 분석채널은 smoothing을 8로 설정하고 나머지 채널들의 smoothing은 0으로 설정한다.
+1.1.2.3. System wash solutions(Wash SDS, Wash Triton-X)에 연결되어 있던 각각의 시약 튜브를 각 분석 항목별 시약 용기에 연결하여 기기가 안정되기를 기다린다.
+1.1.2.4. 발색시약으로 인해 baseline이 변한다(reagent baseline, RB). RB값이 5\%를 벗어나면 다시 set base를 실시하여 RB 값을 5\%로 설정한다.
+1.1.2.5. Gain값 설정: 표준용액열 중 가장 농도가 높은 std A용액을 1분 동안 흡입하고 초순수를 1분 동안 흡입하는 과정을 세 번 반복한다. 약 10분 후 peak가 분석창에 나타나면 시스템창의 channel을 열어 peak의 정상부분이 90\%에 위치하도록 분석창을 우클릭 한 후 set gain을 실시한다. baseline과 gain 설정은 분석 범위를 설정하기 위한 단계인 동시에 시약, 분석환경 등의 변화를 관찰할 방법으로 baseline과 gain값이 일정한지 지속적인 점검이 필요하다.
+
+\hypertarget{uxc2dcuxb8cc-uxbd84uxc11d-uxc2dcuxc791-uxbc0f-uxc885uxb8cc}{%
+\subsubsection{시료 분석 시작 및 종료}\label{uxc2dcuxb8cc-uxbd84uxc11d-uxc2dcuxc791-uxbc0f-uxc885uxb8cc}}
+
+1.1.1.1. 9.2.2의 전 과정이 끝나면 sample table에 작성한 시료 번호대로 rack(부록3 참고)에 시료를 꽂는다. rack holder에 rack을 정확히 꽂아야 sample probe가 정확히 시료를 찍을 수 있으니 유의해야한다. 해수 분석 시 sample wash solution을 초순수에서 저영양염 해수 또는 인공해수로 바꾸어 matrix effect를 감소시킨다.\\
+1.1.1.2. 시스템창의 run을 누른 후 미리 준비 해둔 분석파일(9.2.1)을 선택한다.
+1.1.1.3. 시료분석이 완료된 후 baseline이 안정화되어 분석창이 자동으로 꺼질 때까지 기다린다. 만약 마지막에 baseline 불안정하여 분석이 자동으로 종료되지 않으면 강제로 분석을 종료를 하고 재계산을 통해서 자료를 회수한다.
+
+\hypertarget{uxbd84uxc11duxc885uxb8cc-uxd6c4-uxcc98uxb9ac}{%
+\subsubsection{분석종료 후 처리}\label{uxbd84uxc11duxc885uxb8cc-uxd6c4-uxcc98uxb9ac}}
+
+1.1.1.1. 분석종료 후에는 카드뮴-구리 환원관 밸브를 닫고 시약에 꽂아두었던 시약튜브를 빼서 증류수를 담은 병에 꽂아 장비의 manifold를 세척한다.
+1.1.1.2. 약 1시간 정도 씻은 후 시약튜브를 닦아 호일로 감싸 기기의 manifold속 용액을 모두 비운다.
+1.1.1.3. 시스템창의 stop을 눌러 분석창을 닫은 후 분석기기와 sampler의 전원을 끄고 펌프덮개를 열어 펌프튜브의 손상을 방지한다.
+1.1.1.4. 사용한 시약병/부피플라스크 등은 씻어 다음 분석 시 사용될 수 있도록 준비한다(세척순서 : 초순수 -- 10\% 염산 -- 초순수 3번 -- 건조).
+
+\hypertarget{uxc790uxb8cc-uxbd84uxc11d-uxbc0f-uxacc4uxc0b0}{%
+\section{자료 분석 및 계산}\label{uxc790uxb8cc-uxbd84uxc11d-uxbc0f-uxacc4uxc0b0}}
+
+1.1. 분석이 완료되면 retrieve - view chart를 클릭하면 분석한 파일 이름을 선택할 수 있고 파일을 선택하면 아래 그림과 같이 피크가 나온다. 모든 분석결과에 대해 아래 빨간색 박스로 표시된 부분을 눌러 피크의 위치를 조정한다. 피크위치를 설정할 때는 peak window에서 일정한 위치를 선정하여 일관성을 유지하도록 한다. 박스안의 계산기 버튼을 눌러 농도를 재계산한다.
+
+1.1. 엑셀을 이용하여 자료를 재계산할 경우 {[}file{]} - {[}export{]} - {[}ASCⅡ file{]} - chart를 선택 후, sylk format으로 내보낸다. 파일은 설정한 경로에 excel파일로 저장된다.
+
+1.1. 시료 분석값이 검량곡선에 사용된 가장 높은 표준용액열 보다 높은 경우 시료를 희석하여 재분석한다.
+
+\hypertarget{uxcc38uxace0uxbb38uxd5cc-1}{%
+\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-1}}
+
+1.1. QuAAtro operation manual system
+
+1.2. 해양환경공정시험기준, 2021, p.74 \textasciitilde{} 80
+
+\hypertarget{uxbd80uxb85d-1.-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30quaatrouxc758-uxc7a5uxbe44uxad6cuxc131uxacfc-uxae30uxb2a5}{%
+\section{부록 1. 영양염 자동분석기(QuAAtro)의 장비구성과 기능}\label{uxbd80uxb85d-1.-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30quaatrouxc758-uxc7a5uxbe44uxad6cuxc131uxacfc-uxae30uxb2a5}}
+
+\hypertarget{uxce21uxc815uxc6d0uxb9ac}{%
+\subsection{측정원리}\label{uxce21uxc815uxc6d0uxb9ac}}
+
+연속흐름분석법(CFA, Continuous Flow Analysis)은, 분석관 내부에 일정량의 시약과 시료를 주입하고 공기를 규칙적으로 주입하여 분절하면서 시료와 시약을 잘 혼합하여 발색시켜 flowcell이 장착된 비식계로 흡광도를 측정하여 농도를 결정한다.
+
+\hypertarget{uxc7a5uxbe44uxad6cuxc131-uxbc0f-uxae30uxb2a5}{%
+\subsection{장비구성 및 기능}\label{uxc7a5uxbe44uxad6cuxc131-uxbc0f-uxae30uxb2a5}}
+
+\hypertarget{consoleuxcf58uxc194-uxbcf8uxccb4}{%
+\subsubsection{Console(콘솔, 본체)}\label{consoleuxcf58uxc194-uxbcf8uxccb4}}
+
+\hypertarget{uxd38cuxd504}{%
+\subsubsection{펌프}\label{uxd38cuxd504}}
+
+3개의 proportional pump로 각각의 펌프는 시약 및 시료를 분석관에 주입 할 수 있는 튜브를 10개씩 부착한다. 각각의 펌프는 펌프튜브를 눌러주는 platen과 12개의 롤러로 구성되어 있고 펌프가 한 바퀴 회전하는데 12초가 걸린다.
+
+\hypertarget{uxd38cuxd504-uxd29cuxbe0c}{%
+\subsubsection{펌프 튜브}\label{uxd38cuxd504-uxd29cuxbe0c}}
+
+1.2.3.1 분석항목에 따라 들어가는 시약의 양이 다르므로 튜브의 Flow rate를 조절하기 위해 각각 다른 튜브를 사용한다. 튜브의 굵기는 color code로 구분한다. 튜브별 flow rate와 color code는 아래 표에 정리되어 있다.
+1.2.3.2 튜브의 굵기는 Color Code로 구분한다.
+1.2.3.3 튜브 교체시기 : 분석항목과 시약에 따라 차이가 발생 할 수 있으나, 보통 운전 150\textasciitilde200시간마다 교체한다.
+
+\hypertarget{uxbd84uxc11duxad00manifold}{%
+\subsubsection{분석관(Manifold)}\label{uxbd84uxc11duxad00manifold}}
+
+혼합코일, 카드뮴코일의 교환밸브 등으로 이루어져 있으며, 시료가 시약과 혼합이 되어 비색계로 들어간다.
+
+\hypertarget{uxbe44uxc0c9uxacc4}{%
+\subsubsection{비색계}\label{uxbe44uxc0c9uxacc4}}
+
+1.2.5.1 10mm 길이의 Flow cell이 장착된 비색계가 기본 4대 장착되어 있으며 본체 외부로 추가할 수 있다.
+1.2.5.2 또한 Software로 비색계의 감도(Gain) 및 Baseline을 조정할 수 있다.
+
+\hypertarget{sampler}{%
+\subsection{Sampler}\label{sampler}}
+
+Sample probe는 재질에 따라 선택 가능하며, tray는 60x2 / 90x2 Sample rack으로 선택 가능하다.
+
+\hypertarget{uxbd80uxb85d-2.-flow-diagram}{%
+\section{부록 2. Flow Diagram}\label{uxbd80uxb85d-2.-flow-diagram}}
+
+\hypertarget{uxbd80uxb85d-3.-sample-rack-position}{%
+\section{부록 3. Sample rack position}\label{uxbd80uxb85d-3.-sample-rack-position}}
+
+\hypertarget{standard-rack-position}{%
+\subsection{Standard rack position}\label{standard-rack-position}}
+
+0은 분석 시 sample probe를 세척하고 시료와 시료 간 sample wash solution이 들어가는 부분이기 때문에 실제 시료 및 표준용액을 높는 위치는 1부터 시작한다.
+
+1 : STD.A, 2 : STD.B, 3 : STD.C, 4 : STD.D, 5 : STD.E
+
+\hypertarget{sample-rack-position}{%
+\subsection{3.2 Sample rack position}\label{sample-rack-position}}
+
+\hypertarget{uxbd80uxb85d-4.-uxc2dcuxb8ccuxc0acuxc774-uxacf5uxae30uxc218uxcd95inter-sample-air-compression-isac}{%
+\section{부록 4. 시료사이 공기수축(Inter Sample Air Compression, ISAC)}\label{uxbd80uxb85d-4.-uxc2dcuxb8ccuxc0acuxc774-uxacf5uxae30uxc218uxcd95inter-sample-air-compression-isac}}
+
+시료 간 공기수축(ISAC)은 자동시료주입기에서 시료 흡입을 마친 후 다음 시료를 흡입 할 준비를 위해서 세척액으로 이동할 때, 그리고 세척을 마친후 다음 시료로 이동하는 동안 흡입된 공기방울이 펌프롤러에 눌리면서 시료주입 튜브 내 압력이 대기압과 유사하거나 약간 낮아져 발생하는 현상이다. 시료주입 튜브 내 압력이 감소하면서 눌려진 공기방울 앞쪽의 시료 흐름이 순간적으로 감소하고 시약과 혼합되는 시료의 부피가 감소된다. 결과적으로, 이러한 압력의 변화로 정상적일 때 보다 적은 양의 시료가 주입되어 농도가 낮은 구간이 발생한다.
+따라서 긴 시료를 흡입 할 경우 다이어그램에 표시된 것처럼 시료피크 정상의 끝부분에서 피크가 움푹 파인 모양이 나타난다. 움푹 파인 정도가 크거나, 피크의 중간부분에 위치할 경우 분석결과의 정확도가 떨어진다. 이를 방지하기 위해 펌프와 시료주입 피팅 사이의 시료주입 튜브 의 길이를 조정하여 ISAC구간을 피크정상에서 벗어나 피크의 시작부분이나 끝부분에 위치하게끔 조절해야한다. ISAC구간을 계산하는 방법은 다음과 같다. 공기방울이 펌프를 지나 주입피팅에 도달하는데 걸리는 시간이 시료 당 분석 소요시간(시료주입+세척시간)보다 약 2\textasciitilde8초(목표는 3초) 짧아야한다.
+현재 한국해양과학기술원에서 시간당 시료분석 개수는 60개이고, 자동 시료주입구의 시료와 세척의 시간 비는 3:1이다.
+
+\begin{itemize}
+\tightlist
+\item
+  시료주입:45초
+\item
+  세척시간:15초
+\item
+  시료 당 분석 소요 시간: 60초
+\end{itemize}
+
+따라서 펌프와 주입피팅 사이의 이동 시간은 52\textasciitilde58초(목표는 57초)이다.
+
+시료주입 튜브 길이 조정 방법\\
+가. 펌프에서 시료주입 피팅 사이의 시료주입 튜브의 길이를 충분히 길게 준비한다.\\
+나. 기기를 동작시키고 시료 간 공기방울이 펌프를 지날 때 자세히 살핀다.\\
+다. 공기방울이 펌프를 벗어나는 것이 보이는 순간은 공기방울이 펌프롤러를 지난 후 이미 2초 경과한 상태이다. 목표한 시간까지 계속 시간을 측정한다(시계가 없을 경우에는 공기밸브가 2초마다 작동하므로 이를 이용하여 시간을 측정할 수 있음). 목표로 한 시간에 공기방울 위치를 시료주입 튜브에 표시한다.\\
+라. 펌프 동작을 멈추고 시료주입 튜브를 자르고 주입피팅에 연결한 뒤 펌프를 작동시킨다.\\
+마. 만약 튜브의 적정 길이가 너무 짧아 주입피팅까지 도달하지 않으면 목표시간을 한 번 더 더해줄 수 있다.\\
+Double ISAC = 목표시간 +시료주입시간+세척시간\\
+= 57초 + 45초 + 15초 = 117초
+
+\hypertarget{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxc6a9uxc874-uxc601uxc591uxc5fc-uxbd84uxc11duxc808uxcc28-1}{%
+\section{기체분절 영양염 자동분석기를 사용한 해수 중 용존 영양염 분석절차}\label{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxc6a9uxc874-uxc601uxc591uxc5fc-uxbd84uxc11duxc808uxcc28-1}}
+
+\hypertarget{uxc790uxb8cc-uxbd84uxc11d-uxbc0f-uxacc4uxc0b0-1}{%
+\section{자료 분석 및 계산}\label{uxc790uxb8cc-uxbd84uxc11d-uxbc0f-uxacc4uxc0b0-1}}
+
+\hypertarget{uxcc38uxace0uxbb38uxd5cc-2}{%
+\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-2}}
+
+\hypertarget{uxbd80uxb85d1.-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30quaatrouxc758-uxc7a5uxbe44uxad6cuxc131uxacfc-uxae30uxb2a5}{%
+\section{부록1. 영양염 자동분석기(QuAAtro)의 장비구성과 기능}\label{uxbd80uxb85d1.-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30quaatrouxc758-uxc7a5uxbe44uxad6cuxc131uxacfc-uxae30uxb2a5}}
+
+\hypertarget{uxbd80uxb85d2.-flow-diagram}{%
+\section{부록2. Flow Diagram}\label{uxbd80uxb85d2.-flow-diagram}}
+
+\hypertarget{uxbd80uxb85d3.-sample-rack-position}{%
+\section{부록3. Sample rack position}\label{uxbd80uxb85d3.-sample-rack-position}}
+
+\hypertarget{uxbd80uxb85d4.-uxc2dcuxb8ccuxc0acuxc774-uxacf5uxae30uxc218uxcd95inter-sample-air-compression-isac}{%
+\section{부록4. 시료사이 공기수축(Inter Sample Air Compression, ISAC)}\label{uxbd80uxb85d4.-uxc2dcuxb8ccuxc0acuxc774-uxacf5uxae30uxc218uxcd95inter-sample-air-compression-isac}}
+
+\textbf{9페이지}\\
+5.1.2. 인공해수\\
+Sodium chloride(NaCl) - 35 g\\
+Sodium hydrogen carbonate(NaHCO\textsubscript{3}) - 0.5 g
+
+\textbf{10페이지}\\
+5.2.1. Sulfanilamide\\
+5.2.1.1. Sulfanilamide(C\textsubscript{6}H\textsubscript{8}N\textsubscript{2}O\textsubscript{2}S) - 5 g
+
+5.2.2. NEDD 용액\\
+5.2.2.1. N-(1-naphthyl) Ethylene Diamine Dihydrochloride (C\textsubscript{12}H\textsubscript{14}N\textsubscript{2}·2HCl) - 0.5 g
+
+\textbf{11페이지}\\
+5.2.3. Stock Imidazole buffer\\
+5.2.3.1. Imidazole(C\textsubscript{3}H\textsubscript{4}N\textsubscript{2}) - 6.81 g
+
+5.2.4. Copper Sulfate 0.01 M\\
+5.2.4.1. Copper Sulfate(CuSO\textsubscript{4}·5H\textsubscript{2}O) - 0.25 g
+
+\hypertarget{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00}{%
+\section{8. 품질관리 및 품질평가}\label{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00}}
+
+\textbf{17페이지}\\
+정확도(Accuracy)\\
+정확도 = {[}측정값 - 표준물질특성값/측정평균{]} × 100
+
+\textbf{18페이지}\\
+정밀도(Precision)\\
+\% RSD = {[}표준편차(s)/측정평균{]} × 100
+
+\textbf{26페이지}\\
+8.6.8. 바탕검출한계 계산\\
+Sample standard deviation (s):\\
+\[
+s=\sqrt{\frac {\Sigma {(x- \bar x)}^{2}} {n-1}}
+\]
+\(\bar x\): sample mean; n-1: degree of freedom;
+
+Population standard deviation (σ):
+\[
+\sigma=\sqrt{\frac {\Sigma {(x- \mu)}^{2}} {n}}
+\]
+\(\mu\): population mean; n: number of population
+
+방법검출한계 \(={t_{(n-1, ~1-\infty=0.99)}\times s}\)\\
+\(t_{(n-1, ~1-\infty=0.99)}\): 99\%신뢰도 수준과 자유도 n-1에서 추정된 표준편차에 대한 students' t value\\
+\(s\) : 반복분석의 표준편차
+
+\textbf{28페이지}\\
+(S/N)\textsubscript{est} = X\textsubscript{ave}/s\\
+X\textsubscript{ave}: 계산된 농도나 반복측정의 분석 신호의 평균\\
+s: 반복 측정되는 시료 표준편차
+
+\hypertarget{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxcd1duxc9c8uxc18c-uxbd84uxc11duxc808uxcc28}{%
+\section{9. 기체분절 영양염 자동분석기를 사용한 해수 중 총질소 분석절차}\label{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxcd1duxc9c8uxc18c-uxbd84uxc11duxc808uxcc28}}
+
+\textbf{36페이지}\\
+- NO3 Recovery\\
+환원효율 \(= \frac{5\mu M ~ NO_{3} 분석결과}{5\mu M ~ NO_{2} 분석결과}~~~ \times 100\) (\%)
+
+\hypertarget{uxc5fcuxbd84uxce21uxc815-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11cuxc804uxae30uxc804uxb3c4uxb3c4uxbc95}{%
+\chapter{염분측정 표준운영절차서(전기전도도법)}\label{uxc5fcuxbd84uxce21uxc815-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11cuxc804uxae30uxc804uxb3c4uxb3c4uxbc95}}
+
+\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-1}{%
+\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-1}}
+
+1.1 이 표준운영절차서는 해수 중 염분을 정밀하고 안정적으로 측정하기 위한 방법 중의 하나인 전기전도도법의 측정원리와 이 방법을 사용하는 다양한 기기인 Guildline사 의 Autosal 8400B laboratory salinometer, Seabird사의 SBE 4C센서계열, YSI/Hydrolab multiprobe sensor 등의 사용방법, 센서교정 및 검정, 유지보수등에 대한 내용을 포함한다.
+
+\hypertarget{uxce21uxc815-uxc6d0uxb9ac-1}{%
+\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-1}}
 
 2.1 전기전도도법을 이용한 해수 중 염분측정은 해수에 존재하는 이온들이 대부분 강전해질이기 때문에 이온의 양이 많을수록 전기전도도가 증가하는 원리를 이용하여 전기전도도를 측정하여 염분으로 계산하는 방법이다. Cox 등(1967)은 발트해, 흑해, 지중해를 포함한 표층 100미터 이내에서 채수한 자연해수시료 135개의 염소량과 전기전도도 비를 정밀하게 측정하였다. 측정된 염소량을 식(1)을 이용하여 염분값으로 전환하여 새로운 염소량과 염분과의 관계식 (2)을 유도 하였다. 새로운 염소량과 염분 관계식(2)을 이용하여 염소량을 염분값으로 전환한 후 염분과 전기전도도비 사이의 관계인 아래의 다항식(3)을 구하였다.
 
@@ -667,8 +1757,8 @@ Autosal Warming-up 종료 후 표준화 할 수 있다.\\
 (9)display의 마지막 ±1 digit 차이는 대략 0.0002psu에 해당한다(35psu일 때).\\
 (10)bath temperature ±0.5 mK 차이는 ±2 digits에 해당한다.
 
-\hypertarget{uxcc38uxace0uxbb38uxd5cc}{%
-\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc}}
+\hypertarget{uxcc38uxace0uxbb38uxd5cc-3}{%
+\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-3}}
 
 Cox, R.A., Culkin, F., Riley, J.P. (1967) The electrical conductivity/chlorinity relationship in natural sea water. Deep-Sea Research, 14:203-220
 Saunders, P.M. (1990) The international temperature scale of 1990, ITS-90. WOCE Newsl. No.~10
@@ -679,13 +1769,13 @@ Muller, T.J. (1999) Determination of salinity. In Methods of Seawater Analysis. 
 \hypertarget{uxd654uxd559uxc801-uxc0b0uxc18cuxc694uxad6cuxb7c9-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}{%
 \chapter{화학적 산소요구량 분석 표준운영절차서}\label{uxd654uxd559uxc801-uxc0b0uxc18cuxc694uxad6cuxb7c9-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}}
 
-\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-1}{%
-\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-1}}
+\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-2}{%
+\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-2}}
 
 화학적 산소요구량은 해수시료를 알카리성으로 하여 산화제인 과망간산칼륨을 일정량 넣은 다음 60분간 중탕 가열반응 시켜 화학적으로 산화시킬수 있는 물질을 산화시킬 때 소비되는 과망간산칼륨의 양으로부터 산소량을 유추하여 해수 시료 중 유기물의 양을 간접적으로 표현한다. 이 표준운영절차서는 해양수산부의 해양환경공정시행법 (2013-230)에서 반응시 Grahm 응축기를 부착한 250ml Erlenmeyer Flask를 대신하여 Borosilicate Watch Glass와 100ml Borosilicate 비이커를 반응용기로 사용하여 많은 수의 시료를 동시에 분석할 수 있는 장점을 가지고 있다. 한국해양과학기술원에서 변형한 방법(KIOST modified MOF 2013-203)에 대한 내용을 중심으로 측정원리, 분석준비, 분석과정 및 분석 후 자료처리 등을 포함한다.
 
-\hypertarget{uxce21uxc815uxc6d0uxb9ac}{%
-\section{측정원리}\label{uxce21uxc815uxc6d0uxb9ac}}
+\hypertarget{uxce21uxc815uxc6d0uxb9ac-1}{%
+\section{측정원리}\label{uxce21uxc815uxc6d0uxb9ac-1}}
 
 해수시료를 알칼리성으로 하여 산화제인 과망간산칼륨을 일정량 과량으로 넣은 다음 60분간 가열 반응시켜 화학적으로 산화시킬 수 있는 물질을 산화시키며, 이때 소비되는 과망간산칼륨의 양으로부터 산소량을 유추하는 것으로 해수 시료 중 유기물의 양을 간접적으로 표현할 수 있다.
 
@@ -715,13 +1805,13 @@ Muller, T.J. (1999) Determination of salinity. In Methods of Seawater Analysis. 
 유기물이 없는 바탕용액(초순수수)에서 동일한 실험을 수행하여 사용된 시약등에 의해 소비되는 과망간산카륨을 제외하여 순수하게 시료에 포함된 유기물을 산화하는데 사용되어진 과망간산칼륨의 양을 계산한다. 위 반응식에서 유기물을 분해하는데 소비되어진 과망간산칼륨의 양은 바로 같은 유기물을 분해하는데 요구되어지는 산소의 양과 같으므로 이를 화학적산소요구량(Biochemical Oxygen Demand)이라고 하며, 이 반응에 참여한 과망간산칼륨의 당량은 산소의 당량과 같으므로 이 관계식으로부터 화학적산소요구량을 계산할 수 있다.
 이 방법의 정량범위는 0.18\textasciitilde8 mgO\textsubscript{2}/L 이고, 95\% 신뢰도(k=2) 수준에서 검출한계(MDL)는 0.18 mgO2/L 이고 불확도는 0.11 mgO\textsubscript{2}/L이다. 60분간 가열하였을 때 최초에 첨가한 과망간산칼륨용액의 약 1/2이 잔존할 수 있는 양을 시료의 양으로 한다. 단 알칼리성 과망간산칼륨법에 의한 산소요구량이 8 mg O\textsubscript{2}/L 이하인 경우에는 시료양을 50 mL로 한다.
 
-\hypertarget{uxbc29uxd574uxbb3c}{%
-\section{방해물}\label{uxbc29uxd574uxbb3c}}
+\hypertarget{uxbc29uxd574uxbb3c-1}{%
+\section{방해물}\label{uxbc29uxd574uxbb3c-1}}
 
 유기물의 난분해성 정도와 염분 등의 간섭조건에 따라 산화정도 차이가 크다. 자연시료를 측정할 경우 총 유기탄소 측정에 근거한 이론적산소요구량을 기준으로 대체로 30～50\%의 산화효율을 보이고 있어 해수시료중의 유기물 농도의 간접적인 지표로 이용하기에 신뢰성이 낮다. 중크롬산칼륨은 과망간산칼륨보다 강력한 산화제로서 상대적으로 산화효율은 높으나 해수시료의 경우 염소계 이온에 의한 간섭효과가 큰 문제점이 있다.
 
-\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30}{%
-\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30}}
+\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-1}{%
+\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-1}}
 
 해수중 화학적 산소요구량 분석에는 필요한 기구 및 기기는 반응용기(4.1), 항온수조(4.2), 시계접시(4.3), 피펫류(4.4), 적정용 자동뷰렛(4.5)등이 있다. 실험에 사용되는 초자류를 10\%의 염산으로 세척한 후 초순수수로 3회 헹구어 사용한다. 분석기기의 구성과 사용법은 부록에서 자세하게 다루고자 한다.
 
@@ -740,8 +1830,8 @@ Muller, T.J. (1999) Determination of salinity. In Methods of Seawater Analysis. 
 
 100ml 원형 비이커를 정확히 덮을 수 있는 크기
 
-\hypertarget{uxd53cuxd3ab}{%
-\subsection{피펫}\label{uxd53cuxd3ab}}
+\hypertarget{uxd53cuxd3ab-1}{%
+\subsection{피펫}\label{uxd53cuxd3ab-1}}
 
 시료 및 시약을 분주할 때 정밀도가 높은 디지털식 피펫과 교차오염을 방지하기 위해 일회용 피펫 팁을 사용해야 한다.
 
@@ -750,8 +1840,8 @@ Muller, T.J. (1999) Determination of salinity. In Methods of Seawater Analysis. 
 
 정밀한 적정을 위해 가급적 유리뷰렛 대신 정밀한 자동뷰렛을 사용하도록 한다(예; Metrohm사의 665 Dosimat burette, SCHOTT Instruments사의 TITRONICⓡ universal).
 
-\hypertarget{uxc2dcuxc57duxc81cuxc870}{%
-\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870}}
+\hypertarget{uxc2dcuxc57duxc81cuxc870-1}{%
+\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-1}}
 
 화학적 산소요구량 분석에 사용되는 시약은 수산화나트륨(5.1), 요오드화칼륨(5.2), 황산용액(5.3), 녹말지시약(5.4), 과망간산칼륨(5.5), 티오황산나트륨(5.6). 요오드화칼륨(5.7)등 이다.
 
@@ -863,8 +1953,8 @@ V_{Na_2S_2O_3 \cdot 5H_2O}: Na_2S_2O_3 \cdot 5H_2O의 ~ 적정부피(mL)
 \hypertarget{adcpuxb97c-uxc774uxc6a9uxd55c-uxd574uxb958uxad00uxce21-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}{%
 \chapter{ADCP를 이용한 해류관측 표준운영절차서}\label{adcpuxb97c-uxc774uxc6a9uxd55c-uxd574uxb958uxad00uxce21-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}}
 
-\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-2}{%
-\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-2}}
+\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-3}{%
+\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-3}}
 
 이 표준운영절차서는 Acoustic Doppler Current Profilers(ADCP)를 해저나 수중에 계류(fixed-mounted)하거나 선박에 장착(vessel-mounted)할 때 ADCP의 운영, 유지관리 및 보수, 교정 등을 위한 표준운영절차서이다. 이 표준운영절차서는 ADCP를 연안 및 내륙의 해수나 담수에서 사용할 때 적용가능하다.
 
@@ -1054,14 +2144,14 @@ ADCP에 데이터 케이블을 연결하여 WinSC 소프트웨어를 통해서 �
 1.1.1.1. 모든 기·장비는 깨끗한 물로 씻어야 하며, 부착된 이물질을 제거해야한다. 그리고 보관하기 전에 잘 건조시켜야 한다. 미생물부착으로 인한 biofouling이 제거되어야 하는데, 특히 ADCP의 트랜스듀서 헤드부분을 청소 할 때는 상당한 주의를 기울여야 한다.\\
 1.1.1.2. 모든 기어는 보관장소에 제대로 보관이 되어야 한다. 보관에 대한 의문점이 있으면 출장 코디네이터에게 문의를 한다. 밧줄은 로프 보관 장소에 저장하며 mount는 야외에 보관하는 것도 괜찮으나 직사광선에 바로 노출된 장소는 피하는 것이 좋다. ADCP와 음향분리기 그리고 신호발생기 등은 해양관측장비 보관 장소에 잘 포장하여 보관한다.
 
-\hypertarget{uxad00uxb9ac}{%
-\section{관리}\label{uxad00uxb9ac}}
+\hypertarget{uxad00uxb9ac-1}{%
+\section{관리}\label{uxad00uxb9ac-1}}
 
-\hypertarget{uxb370uxc774uxd130-uxad00uxb9ac}{%
-\subsection{데이터 관리}\label{uxb370uxc774uxd130-uxad00uxb9ac}}
+\hypertarget{uxb370uxc774uxd130-uxad00uxb9ac-1}{%
+\subsection{데이터 관리}\label{uxb370uxc774uxd130-uxad00uxb9ac-1}}
 
-\hypertarget{uxae30uxb85duxbb3c-uxad00uxb9ac}{%
-\subsection{기록물 관리}\label{uxae30uxb85duxbb3c-uxad00uxb9ac}}
+\hypertarget{uxae30uxb85duxbb3c-uxad00uxb9ac-1}{%
+\subsection{기록물 관리}\label{uxae30uxb85duxbb3c-uxad00uxb9ac-1}}
 
 1.2.1. 수중계류 ADCP가 설치된 각각의 사이트에 대한 표준화된 필드 로그 시트(부록 A참조)를 사용하여서 필드의 상태, 위치, 장비의 시리얼 넘버 그리고 중요하게 고려되어야 할 다른 정보들 등과 같은 사이트에 대한 정보를 반드시 기록한다. 선박장착 ADCP의 경우, 마찬가지로 부록 B를 참고하여 필드 로그시트를 사용하여 기록을 한다. Operation Center(OC)에 돌아왔을 때, 장비는 반드시 세척되어야 하고 장기간의 보관을 위해서 건조되어야 한다. 수중계류와 선박장착의 경우 모두 출장이 완료된 후 필드 스태프에 의해서 그 로그시트는 전자 데이터베이스에 입력되어야 한다.
 
@@ -1071,8 +2161,8 @@ ADCP에 데이터 케이블을 연결하여 WinSC 소프트웨어를 통해서 �
 1.2.3. 선박장착 ADCP의 저장디렉토리는 다음과 같다.
 ( 웹하드 디렉토리 )
 
-\hypertarget{uxc7a5uxbe44-uxad00uxb9ac}{%
-\subsection{장비 관리}\label{uxc7a5uxbe44-uxad00uxb9ac}}
+\hypertarget{uxc7a5uxbe44-uxad00uxb9ac-1}{%
+\subsection{장비 관리}\label{uxc7a5uxbe44-uxad00uxb9ac-1}}
 
 1.3.1. 주기적 점검 사항
 1.3.1.1. 수중계류 ADCP의 보수점검은 계류 시에 매번 시행한다. ADCP 통제 및 자료저자용 컴퓨터의 유지보수 간격은 1개월을 원칙으로 한다.
@@ -1188,8 +2278,8 @@ ADCP에 데이터 케이블을 연결하여 WinSC 소프트웨어를 통해서 �
 
 1.1.1.2. 관측 후 점검 사항(부록 B 참조)
 
-\hypertarget{uxd488uxc9c8-uxad00uxb9acuxc640-uxd488uxc9c8-uxbcf4uxc99d}{%
-\section{품질 관리와 품질 보증}\label{uxd488uxc9c8-uxad00uxb9acuxc640-uxd488uxc9c8-uxbcf4uxc99d}}
+\hypertarget{uxd488uxc9c8-uxad00uxb9acuxc640-uxd488uxc9c8-uxbcf4uxc99d-1}{%
+\section{품질 관리와 품질 보증}\label{uxd488uxc9c8-uxad00uxb9acuxc640-uxd488uxc9c8-uxbcf4uxc99d-1}}
 
 \hypertarget{uxd544uxb4dc-uxd488uxc9c8-uxad00uxb9ac}{%
 \subsection{필드 품질 관리}\label{uxd544uxb4dc-uxd488uxc9c8-uxad00uxb9ac}}
@@ -1208,8 +2298,8 @@ ADCP에 데이터 케이블을 연결하여 WinSC 소프트웨어를 통해서 �
 
 1.2. MSDS 화학약품에 대한 정보, 저장, 폐기, 그리고 안전사항들을 의무적으로 숙지하고 있어야 한다(MSDS Trilux White = \url{http://www.yachtpaint.com/msds_pdf/YBA068_GBR_ENG.pdf}). EAP HQ safey Manual을 참조한다.
 
-\hypertarget{uxcc38uxace0uxbb38uxd5cc-1}{%
-\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-1}}
+\hypertarget{uxcc38uxace0uxbb38uxd5cc-4}{%
+\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-4}}
 
 1.1. Environmental Assessment Program, 2006. Environmental Assessment Program Safety Manual. March 2006. Washington State Department of Ecology. Olympia, WA.
 
@@ -1637,13 +2727,13 @@ Wrenches
 \hypertarget{uxcd1duxc9c8uxc18c-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11cuxae30uxccb4uxbd84uxc808-uxc790uxb3d9uxc601uxc591uxc5fc-uxbd84uxc11duxae30}{%
 \chapter{총질소 분석 표준운영절차서(기체분절 자동영양염 분석기)}\label{uxcd1duxc9c8uxc18c-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11cuxae30uxccb4uxbd84uxc808-uxc790uxb3d9uxc601uxc591uxc5fc-uxbd84uxc11duxae30}}
 
-\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-3}{%
-\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-3}}
+\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-4}{%
+\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-4}}
 
 총 질소는 유기성 질소와 무기성 질소를 의미한다. 유기성 질소에는 알부미노이드성 질소, 요산이 있고, 무기성 질소는 아질산성, 질산성, 암모니아성 질소가 있다. 오염에 주요 원인이 되는 지표는 무기성 질소이다. 이 분석법은 해수시료의 모든 질소화합물인 무기성 질소, 유기성질소와 입자성질소 등을 자동 전처리 장비를 통해 산화, 분해하여 질산성 질소(NO3-) 형태로 변화시킨 후 카드뮴-구리 환원 칼럼을 이용하여 아질산성 질소(NO2-)로 환원시켜 연속 분절 흐름식(Continuous flow analysis, CFA) 자동 영양염 분석 장비를 이용하여 550nm 파장에서 Sulfanilamide와 NEDD 시약과 반응하여 총 질소를 정량하는 방법이다. 자동 전처리 장비에 주입되는 알칼리성 과황산칼륨 용액은 Method of Seawater Analysis(1999, 3판)에서 제시하는 Mg(OH)2를 발생시키지 않기 위한 NaOH비율을 따르고 있다. 또한 연속 분절 흐름식 자동 영양염 분석 장비는 시료를 공기 방울로 나눔으로 시료의 분산을 막고 시료와 시약의 혼합을 증가시켜 수동 습식분석에 비해 적은 시료를 더욱 정확하고 신속하게 분석할 수 있다.
 
-\hypertarget{uxce21uxc815-uxc6d0uxb9ac-1}{%
-\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-1}}
+\hypertarget{uxce21uxc815-uxc6d0uxb9ac-2}{%
+\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-2}}
 
 해수시료 중 총 질소화합물(용존성 질소, 입자성 질소 또는 무기성 질소, 유기성 질소)은 황산과 알칼리성 과황산칼륨을 자동으로 주입하고 온도가 110℃로 유지되는 자동 전처리 장비를 통과하면서(약 20분 소요) 모두 질산이온 형태로 산화된다. 질산이온으로 산화된 시료는 CFA 자동 영양염 분석 장비로 이동하여 카드뮴-구리 환원관을 거치며 질산이온이 아질산 이온으로 환원되어 일정하게 주입되는 sulfanilamide와 NEDD 시약과 반응시켜 550nm에서 비색 정량한다.
 단계별로 살펴보면 먼저 자동 전처리 장비에서 해수 시료가 알칼리성 과황산칼륨 용액과 황산과 반응하며 모든 질소화합물이 질산이온으로 산화된다((1)식). 질산이온으로 변환된 해수시료는 자동 영양염 분석 장비로 이동하여 카드뮴-구리 환원관을 통과하면서 아질산 이온으로 환원된다((2)식). 산성 조건하에서 환원된 아질산 이온은 방향족 질소화합물인 술퍼닐아미드와 반응하여 디아조늄이온(디아조화합물)을 형성한다((3)식). 여기에 다른 방향족 질소화합물인 나프틸에틸렌디아미드를 넣어주면 이와 반응하여 분홍색의 용액(아조화합물)을 생성하게 된다((4)식). 이를 550 nm에서 최종 발색된 용액의 흡광도를 측정해 농도를 구할 수 있다.
@@ -1662,45 +2752,45 @@ Wrenches
 
 SFA 자동 총질소 분석 방법과 수동 습식 총질소 분석법을 비교한 논문에 따르면(김기동 외 2, 2006) 기체분절(Segmented flow analysis, SFA) 자동 총질소 분석법에서 표준용액열의 범위 0\textasciitilde6 mg N/L(0\textasciitilde43 μmol N/L)에서 직선성이 확보되며, 0.2 mg N/L(1.43 μmol N/L)의 시료를 7번 반복 측정한 결과 0.02 mg/L(0.14 μmol N/L)의 방법검출한계를 나타냈다. 5 mg N/L(35.7 μmol N/L)을 10회 반복 분석한 결과 변동계수는(CV) 3\% 이하였다.
 
-\hypertarget{uxbc29uxd574uxbb3c-1}{%
-\section{방해물}\label{uxbc29uxd574uxbb3c-1}}
+\hypertarget{uxbc29uxd574uxbb3c-2}{%
+\section{방해물}\label{uxbc29uxd574uxbb3c-2}}
 
 이 방법은 축산폐수와 같은 많은 유기물을 함유한 시료는 분석이 어려우며 부유물질이 많을 경우 흡광도에 영향을 주기 때문에 필터 하여 용존 총 질소를 측정한다. 자동분석장치를 이용한 총질소 분석 시 염소와 브롬이 방해하는 것으로 알려져 있으며 U.S. EPA Method 353.2를 참고한다.
 
-\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-1}{%
-\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-1}}
+\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-2}{%
+\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-2}}
 
 해수 중 총질소 분석에 필요한 기구 및 기기는 유리 또는 플라스틱 재질의 부피정량기구(4.1), 시약, 시료, 검정곡선용 표준용액 등을 보관하는 용기(4.2), 시약 또는 검량선용 표준물질 제조 시 무게를 측정하는 저울(4.3), 부피정량을 위한 피펫(4.4), 그리고 분석기기인 TrAAcs800 system(4.5)이다. 실험에 사용되는 모든 초자류는 10\% 염산으로 씻은 후 초순수로 3회 헹구어 사용한다. 분석기기의 구성과 사용법은 부록에서 자세하게 다루고자 한다.
 
-\hypertarget{uxbd80uxd53cuxc815uxb7c9-uxae30uxad6c}{%
-\subsection{부피정량 기구}\label{uxbd80uxd53cuxc815uxb7c9-uxae30uxad6c}}
+\hypertarget{uxbd80uxd53cuxc815uxb7c9-uxae30uxad6c-1}{%
+\subsection{부피정량 기구}\label{uxbd80uxd53cuxc815uxb7c9-uxae30uxad6c-1}}
 
 부피플라스크는 일반적으로 NIST Class A 또는 이에 상응하는 성능으로 일반적으로 표시된 부피의 0.05\% 이하의 불확도를 가져야 한다. 부피정량에 사용되는 유리 또는 플라스틱 재질의 기구는 무게 법으로 부피보정을 실시하여야 한다. 특히 플라스틱 재질의 기구는 사용되는 실험실 온도의 2-3K 범위내로 보정된 것을 사용하여야 한다. 붕규산 재질의 부피플라스크의 온도가 부피에 미치는 영향은 잘 알려져 있기 때문에 보정 시 사용된 온도로부터 일반적인 실험실에서 기구가 사용될 때 온도에 의한 부피를 쉽게 계산할 수 있다(Kolthoff et al., 1969; Weast, 1985). 따라서 유리재질이 열팽창에 우수한 성능을 보이고 증류수를 사용하면 거의 녹지 않기 때문에 일반적으로 많이 이용된다.
 하지만 해수 분석에서 검정곡선용 표준용액열을 제조를 위해서 유리재질의 부피플라스크에 저영양염 해수 또는 인공해수로 희석할 경우 규산이 녹아 나올 수 있어 사용이 제한된다. 일반적으로 사용되는 플라스틱은 polymethylpentene (PMP), polypropylene(PP)등의 고품질의 재질이 사용되고 화학적으로 내구성이 강한 테프론 재질이 사용되기도 한다. 특히 검량선용 표준용액열의 농도는 무게로 보정된 부피를 사용한다. 보정되지 않은 플라스틱 재질의 부피정량 기구를 사용하면 3\%이상의 누적 불확도를 일으킬 수 있다.
 
-\hypertarget{uxbcf4uxad00uxc6a9uxae30}{%
-\subsection{보관용기}\label{uxbcf4uxad00uxc6a9uxae30}}
+\hypertarget{uxbcf4uxad00uxc6a9uxae30-1}{%
+\subsection{보관용기}\label{uxbcf4uxad00uxc6a9uxae30-1}}
 
 다른 용존 영양염 항목과 함께 용존실리카 분석을 병행한다면 미량이지만 용존실리카가 용출될 수 있으므로 공통적으로 사용되는 모든 시료병과 시약병 및 시험관 등은 반드시 플라스틱(예: HDPE, PP) 재질을 사용하기를 권장한다. 분석에 사용되는 모든 시약 용기는 반드시 10\% 염산 용액(5.1.5.1 참고)으로 씻은 후 초순수로 3회 이상 헹군 후 사용한다. 그리고 단단히 밀봉하여 시약별 보관 방법에 따라 보관한다.
 
-\hypertarget{uxc800uxc6b8}{%
-\subsection{저울}\label{uxc800uxc6b8}}
+\hypertarget{uxc800uxc6b8-1}{%
+\subsection{저울}\label{uxc800uxc6b8-1}}
 
 표준원액 제조 시 분해능 0.01 mg 이상의 저울을 사용하고 표준용액열 제조 시 분해능 0.001 g 이상의 저울을 사용하여 제조하는 표준용액열의 농도를 일정하고 정확하게 유지한다.
 
-\hypertarget{uxd53cuxd3ab-1}{%
-\subsection{피펫}\label{uxd53cuxd3ab-1}}
+\hypertarget{uxd53cuxd3ab-2}{%
+\subsection{피펫}\label{uxd53cuxd3ab-2}}
 
 시료 및 시약을 분주할 때 가능한 정밀도가 높은 디지털피펫과 교차오염을 방지하기 위해 일회용 피펫 팁을 사용하는 것을 권장한다. 피펫의 경우는 보정 허용오차가 0.1\%보다 좋은 것을 사용해야 하며 일정한 온도와 습도조건 하에서 증류수의 무게로 실제 부피를 보정해야 한다. 특히 검정곡선용 표준용액열을 제조하기 위해 고농도의 표준원액을 분취하는데 피펫이 많이 사용된다. 분취된 표준원액 부피의 정확도에 따라 검정곡선 기울기가 변하므로 측정값의 정확도와 정밀도 향상을 위해 표준원액 분취에 사용되는 피펫의 정확도와 정밀도가 아주 중요하다.
 피펫을 사용하는 실험자의 숙련도가 분취되는 양의 정확도와 정밀도를 결정한다. 실험자에 따라 피펫으로 용액을 흡입/배출 속도, 용액의 흡입 및 배출시 피펫의 기울기, 피펫팁이 용액에 담기는 깊이 등이 차이가 나다. 또한 피펫 팁 내벽상태, 용액과 실험실 온도와 습도 등의 영향을 많이 받는다. 피펫을 이용하여 옮겨야 할 부피에 대해서 실험자에 따른 정확도와 정밀도를 확인하여 실험자의 숙련도에 따른 오차를 반영하여 옮겨진 부피를 보정한다. 실험자에 따라 피펫을 이용하여 옮겨진 부피의 불확도를 줄이기 위해서 용액을 흡입/배출할 때 속도를 일정하게 조절할 수 있는 전동피펫 사용을 권장한다. 또한 피펫의 각도를 일정하게 유지하기 위하여 전동피펫을 평면에 대해 수직으로 고정하고 옮기는 용액을 일정한 깊이에 넣어 흡입한 다음 옮겨지는 용기를 고정된 피펫 아래로 가져와 배출한다.
 
-\hypertarget{uxbd84uxc11duxae30uxae30}{%
-\subsection{분석기기}\label{uxbd84uxc11duxae30uxae30}}
+\hypertarget{uxbd84uxc11duxae30uxae30-1}{%
+\subsection{분석기기}\label{uxbd84uxc11duxae30uxae30-1}}
 
 SEAL사의 기체분절 연속흐름 분석장비인 TrAAcs800을 사용한다. 전처리장치(D2BX-02)와 연결되어 총질소, 총인을 동시에 산화시킬 수 있다. 전처리장치 내부에서도 기체방울로 시료를 분절시켜 시료 간 간섭을 방지하고 수동 전처리와 달리 자동으로 산화시킴으로써 분석 안정성을 높일 수 있다. 또한 전처리된 시료를 재분배 할 때 컴프레셔를 연결하여(약 1.3 kgf/cm2(0.13MPa)) 시료의 흐름 속도를 낮추어 반응성을 높일 수 있다.
 
-\hypertarget{uxc2dcuxc57duxc81cuxc870-1}{%
-\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-1}}
+\hypertarget{uxc2dcuxc57duxc81cuxc870-2}{%
+\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-2}}
 
 총질소 분석에 사용되는 시약은 시스템 관리용 시약 (5.1), 산화 및 발색시약(5.2), 카드뮴환원관 활성시약(5.3), 표준용액(5.4)로 구분한다. 시약제조는 특성에 따라서 제조 후 냉장 보관 할 시약과 실온 보관 할 시약으로 분류되며 제조 후 사용기간이 1개월 넘지 않도록 관리한다.\\
 \textless 표1. 사용되는 시약 목록\textgreater{}
@@ -1792,8 +2882,8 @@ Cd^{2+} + 2NH_{3} → [Cd(NH_{3})_{2}]^{2+}~~~~~~~(3)
 
 1.1.2. Daily Working Imidazole buffer(용존 질산이온 표준운영절차서 5.2.5참고)
 
-\hypertarget{uxd45cuxc900uxc6a9uxc561standard-solution}{%
-\subsection{표준용액(Standard Solution)}\label{uxd45cuxc900uxc6a9uxc561standard-solution}}
+\hypertarget{uxd45cuxc900uxc6a9uxc561standard-solution-1}{%
+\subsection{표준용액(Standard Solution)}\label{uxd45cuxc900uxc6a9uxc561standard-solution-1}}
 
 1.1.1. Stock Nitrate Standard Solution(10,000 μM)
 
@@ -1811,24 +2901,24 @@ Cd^{2+} + 2NH_{3} → [Cd(NH_{3})_{2}]^{2+}~~~~~~~(3)
 
 1.1.2.6. 담수시료의 경우 인공해수 대신 초순수를 사용해 표준원액을 희석하여 위와 같이 제조한다.
 
-\hypertarget{uxc2dcuxb8ccuxc758-uxc804uxcc98uxb9ac-uxbc0f-uxbcf4uxad00}{%
-\section{시료의 전처리 및 보관}\label{uxc2dcuxb8ccuxc758-uxc804uxcc98uxb9ac-uxbc0f-uxbcf4uxad00}}
+\hypertarget{uxc2dcuxb8ccuxc758-uxc804uxcc98uxb9ac-uxbc0f-uxbcf4uxad00-1}{%
+\section{시료의 전처리 및 보관}\label{uxc2dcuxb8ccuxc758-uxc804uxcc98uxb9ac-uxbc0f-uxbcf4uxad00-1}}
 
 1.1. 총질소 농도가 낮은 해수시료 채취는 가능한 깨끗한 환경에서 수행되어야 한다. 용존 영양염 분석을 위한 시료채취는 깨끗한 새용기 또는 10\%염산으로 세척하여 초순수로 헹군 고밀도 폴리에틸렌(High Density Polyethylene, HDPE) 혹인 폴리프로필렌(Polypropylene, PP) 용기에 채취하여 수 시간 내 현장에서 분석하는 것을 권장한다. 자동영양염 분석기로 분석할 때는 폴리프로필렌 재질의 15 mL 튜브에 직접 채수하여 별도의 분취과정 없이 자동영양염 분석기의 Sampler rack에 직접 넣어 분석할 수 있다. 시료채취 시 시료오염을 예방하기 위해 맨손으로 시료를 채취하는 것을 지양하고 분말가루가 없는 라텍스장갑의 사용을 권장하며 니트릴 또는 네오프렌 장갑의 사용은 권장하지 않는다.
 1.2. 나노몰 수준의 영양염 분석(특히 나노몰수준의 암모늄이온분석)을 위한 시료는 용존산소와 미량기체 시료채취 직후에 시료를 채취하고 영양염 시료 채취 이전에 다른 시료를 채취하는 사람도 실험장갑을 사용해야한다. 시료는 니스킨병의 시료채취 꼭지로부터 직접 채취할 수 있으나 니스킨병 외부나 CTD 프레임에서 유입된 물로 인해 시료가 오염될 수 있다. 일관성을 유지하기 위해서 타이곤 튜브를 니스킨병 꼭지에 연결하여 시료를 채취할 것을 권장한다. 이 튜브는 시료 채취 직전에 시료로 충분히 헹군 다음 시료를 채취한다. 시료병 및 튜브는 시료해수로 세 번 헹군 다음 시료를 채취한다.
 1.3. 헤수 중에 입자가 아주적은 빈영양 외해역에서 채취한 시료는 시료 처리 과정에서 발생할 수 있는 불필요한 오염을 최소화하기 위해서 여과할 필요가 없지만, 시료에 부유물질이 많은 경우에 시료를 0.2 μm PES(Polyethersulfone) membrane 여과지로 여과한 후 분석한다. 여과를 해야하는 시료는 산세척된 HDPE 혹은 PP 500 mL 용기에 시료를 충분히 채취하여 실험실로 운반한 후 0.2 μm 공경 PES 여과지로 여과한다. 여과 시 약 50 mL의 시료를 먼저 통과시켜 여과지를 씻고 여과된 해수를 이용하여 시료 보관 용기를 3번 세척한 후 시료를 채취한다.
 1.4. 시료 분석은 선상에서 바로 수행하는 것이 원칙이고 불가피한 경우 냉장 보관하고 늦어도 채수 후 8시간 이내에 분석하여야 한다. 현장 사정 등으로 8시간 이내에 분석할 수 없거나 장기간 보관해야 하는 경우는 시료 채취 후 바로 급속냉동(-80 ℃)해야 한다. 냉동 시 부피팽창을 고려하여 시료를 시료 튜브에 가득 채우지 않고 약간의 여유를 둔다. 시료를 냉동 또는 냉장 보관할 때 시료 용기를 반드시 수직으로 세워 누수를 방지한다. 냉동 보관기간은 짧을수록 좋으며 분석을 위해서 냉동시료를 해동하는 경우 분석하기 전 시료 병을 충분히 흔들어 시료를 잘 혼합한 후 분석한다.
 
-\hypertarget{uxac80uxb7c9uxc120-uxc791uxc131}{%
-\section{검량선 작성}\label{uxac80uxb7c9uxc120-uxc791uxc131}}
+\hypertarget{uxac80uxb7c9uxc120-uxc791uxc131-1}{%
+\section{검량선 작성}\label{uxac80uxb7c9uxc120-uxc791uxc131-1}}
 
 분석당일 시약 및 용존 질산이온(5.4.2) 표준용액열을 준비한다. 준비된 표준용액을 시료분석과 동일한 과정으로 분석한다. 다만 표준용액 제조에 사용된 바탕용액과 표준용액은 각 농도별로 2개 이상 복수로 분석되어야 한다. 측정된 자료를 선형회귀분석법으로 농도와 흡광도사이의 검량선식을 구한다. 표준용액열과 동일한 방법으로 분석한 시료의 흡광도를 검량선식에 대입하여 시료의 총질소 농도를 구한다.
 
-\hypertarget{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00quality-control-and-quality-assessment-qaqc}{%
-\section{품질관리 및 품질평가(Quality Control and Quality Assessment, QA/QC)}\label{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00quality-control-and-quality-assessment-qaqc}}
+\hypertarget{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00quality-control-and-quality-assessment-qaqc-1}{%
+\section{품질관리 및 품질평가(Quality Control and Quality Assessment, QA/QC)}\label{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00quality-control-and-quality-assessment-qaqc-1}}
 
-\hypertarget{uxc815uxc758-uxbc0f-uxacb0uxc815uxbc29uxbc95}{%
-\subsection{정의 및 결정방법}\label{uxc815uxc758-uxbc0f-uxacb0uxc815uxbc29uxbc95}}
+\hypertarget{uxc815uxc758-uxbc0f-uxacb0uxc815uxbc29uxbc95-1}{%
+\subsection{정의 및 결정방법}\label{uxc815uxc758-uxbc0f-uxacb0uxc815uxbc29uxbc95-1}}
 
 품질관리 절차 및 자료의 품질평가는 측정의 정확도(Accuracy)와 정밀도(Precision)를 결정하는 수단을 제공한다. 분석자들이 품질관리(Quality Control, QC), 품질평가(Quality Assessment, QA), 정확도(Accuracy), 정밀도(Precision)사이의 차이를 이해하도록 정의를 하였다. 여기에 사용된 용어들의 정의는 Dickson(2007)의 ``Guide to Best Practices for Ocean CO2 Measurement'' 에 따른다.
 
@@ -1852,8 +2942,8 @@ Cd^{2+} + 2NH_{3} → [Cd(NH_{3})_{2}]^{2+}~~~~~~~(3)
 방법검출한계는 일정 농도의 시료를 반복 분석하여 특정 신뢰도 수준에서 바탕값과 다른가를 통계적으로 판단한 값으로 측정할 수 있는 분석성분의 최소한의 농도값이다. 이는 매질, 분석기기, 분석자에 따라 차이가 나기 때문에 잘 확립된 분석방법으로 숙련된 인력으로 결정한다. 방법검출한계는 같은 분석법을 사용하고 있는 다른 실험실들 사이의 분석능력을 비교하거나 같은 실험실에서 다른 분석방법간의 차이, 또는 분석 인력간의 차이를 비교하는 좋은 방법이다. 미국 EPA에서는 방법검출한계를 99\%의 신뢰도에서 분석성분 농도가 0보다 클 때 이를 성분의 최소 측정 농도로 정의한다. 통계학적으로 99\% 신뢰도 구간이 의미하는 것은 방법검출한계와 같은 농도로 분석하는 성분이 검출된 것은 이 성분의 농도가 0보다 높게 존재할 가능성이 99\%라는 것을 의미한다. 다른 말로는 1\%는 분석하는 성분 농도가 0이지만 실제 존재하고 있는 것으로 거짓 측정된 것을 의미한다. 방법검출한계는 통계적인 개념으로 분석성분이 방법검출한계보다 낮은 농도로 측정될 가능성이 충분히 있다(기기검출한계와는 구별되어야 함). 방법검출한계는 분석의 불확도를 다루는 절차일 뿐이고 시료의 채취, 운반, 보관, 분석의 전 과정에서 불확도의 요소가 있다.
 저농도 반복시료를 분석하여 방법검출한계를 계산하는 것은 많은 시간이 걸리고, 대부분의 실험실에서는 보고하기에 적당한 수를 얻기에 필요한 수십 번의 연구를 반복할 여유가 없다. 따라서 방법검출한계 측정을 무효화 할 수 있는 검정곡선 범위, 첨가정도, 바탕값의 오염 등과 같은 것을 잘 조절하는 것이 중요하다. 실험실에서는 최종적인 방법검출한계 계산값에 도달하는 정확한 과정에 대해서 기록해야 하며, 방법검출한계는 분석값의 품질을 확인할 수 있는 중요한 자료이기 때문에 추적할 수 있어야 한다. 방법검출한계 측정방법은 8.6항의 순서를 따른다.
 
-\hypertarget{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00-uxc218uxd589-uxd45cuxc900uxc808uxcc28-standard-operating-procedures-sop}{%
-\subsection{품질관리 및 품질평가 수행 표준절차 (Standard Operating Procedures, SOP)}\label{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00-uxc218uxd589-uxd45cuxc900uxc808uxcc28-standard-operating-procedures-sop}}
+\hypertarget{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00-uxc218uxd589-uxd45cuxc900uxc808uxcc28-standard-operating-procedures-sop-1}{%
+\subsection{품질관리 및 품질평가 수행 표준절차 (Standard Operating Procedures, SOP)}\label{uxd488uxc9c8uxad00uxb9ac-uxbc0f-uxd488uxc9c8uxd3c9uxac00-uxc218uxd589-uxd45cuxc900uxc808uxcc28-standard-operating-procedures-sop-1}}
 
 품질관리는 기기를 설치하는 것으로 시작하여, 분석관 구성 및 유지 보수와 같은 세심한 부분까지 포함한다. 일단 기기가 설치되면 표준운영절차를 확립하여 시료를 분석하여야 한다. 다음의 사항들은 필수적으로 표준운영절차에 포함해야 한다.
 
@@ -1872,8 +2962,8 @@ Cd^{2+} + 2NH_{3} → [Cd(NH_{3})_{2}]^{2+}~~~~~~~(3)
 특히 시약을 새롭게 바꾸거나 분석관의 튜브를 교체한 후 분석기의 민감도(gain)를 동일하게 설정하여 동일한 시험시료를 측정하는 것은 넓은 의미에서 좋은 품질관리 방법이다. 만약 이전의 측정값과 다르게 나온다면, 시약을 새롭게 만들거나 튜브를 교체한 후 분석기기에 변화가 있고 점검이 필요함을 조기에 파악하는 방법이다.
 Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 주는 기능이 포함되어있다. Water check, Reagent check 기능으로 분석 전 장비의 기저선, 기체분절 간격, detector energy를 분석 전 점검하여 기기의 상태를 일관성 있게 관리할 수 있다. 또한 표준용액열 및 검량선 설정하여 분석 중 계산된 농도 확인이 가능하며 Drift correction, Baseline correction, Recovery detection 등의 기능으로 교정된 값을 얻을 수 있다.
 
-\hypertarget{uxb0b4uxbd80uxd655uxc778-internal-checks}{%
-\subsection{내부확인 (Internal Checks)}\label{uxb0b4uxbd80uxd655uxc778-internal-checks}}
+\hypertarget{uxb0b4uxbd80uxd655uxc778-internal-checks-1}{%
+\subsection{내부확인 (Internal Checks)}\label{uxb0b4uxbd80uxd655uxc778-internal-checks-1}}
 
 시료분석 동안의 자료품질 보증을 위해 내부확인이 반드시 사용되어야 한다. 내부확인에 사용되는 방법으로는 시료분석을 위해 기기를 작동할 때 마다 시료중복 분석, 확인시료 분석, 내부표준물질 분석을 실시하여야 한다.
 
@@ -1892,8 +2982,8 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 1.4.2. 인증표준물질/표준물질 사용: 각 분석 시 앞서 언급된 내부확인 시료와 추적시료를 시료와 함께 분석되어야 하며 최소 하루에 한 번은 분석되어야 한다. 이론적으로는 매번 새로운 인증표준물질을 열어 사용할 것을 권장한다. 그러나 실제 대부분의 실험실에서는 비용적으로 부담을 많이 느낀다. Scripps Institute of Oceanography와 Royal Netherlands Institute for Sea Research의 실험실은 표준물질병을 열고 최대 2일까지 사용하는 경우도 있으나 한번 사용한 표준물질을 당일 이후에 사용할 때에 오염되지 않도록 주의하여야 한다.
 일부 실험실에서 농도가 다른 여러 개의 표준물질로 검량선을 작성하려는 시도가 있다. 그러나 농도가 다른 여러 종류의 표준물질을 구비하는 것은 비용적으로 상당한 부담이 될 수 있다. 매월 각 채널에서 시료와 함께 분석된 인증표준물질과 표준물질의 참값(특성값) 및 분석평균값과 표준편차를 포함하는 표를 자료보고서에 포함하여야 한다. 이상적으로는 인증표준물질과 표준물질의 분석값은 참값(특성값)과 같아 자료의 추가적인 보정이 없어야 한다. 만약 인증표준물질과 표준물질의 분석값이 참값(특성값)과 다르면, 다른 것을 표시하여 주의를 할 수 있도록 해야 한다. 아직 인증표준물질과 표준물질을 이용하여 자료를 조정 또는 수정하는 것에 대한 이견이 있다. 만약 인증표준물질과 표준물질을 미지의 시료로 분석하였다면, 시료의 분석값을 인증표준물질 또는 표준물질의 분석값(특성값)을 이용하여 보정할 것을 권장한다. 실제 시료분석을 담당하는 분석자가 분석 시 기기상태를 잘 알고 있기 때문에, 인증표준물질과 표준물질 분석값을 이용하여 시료의 분석값을 조정 또는 수정을 직접 하는 것이 바람직하다. 조정 내용을 문서화할 때 조정/수정된 값을 인정표준물질의 참값(특성값) 및 분석값(평균과 표준편차)과 함께 보고하여야 한다.
 
-\hypertarget{uxc790uxb8ccuxbe44uxad50}{%
-\subsection{자료비교}\label{uxc790uxb8ccuxbe44uxad50}}
+\hypertarget{uxc790uxb8ccuxbe44uxad50-1}{%
+\subsection{자료비교}\label{uxc790uxb8ccuxbe44uxad50-1}}
 
 먼저 초기 확인과 수정을 수행한 후, 일차 또는 이차 품질관리(Quality Control, QC) 점검들이 수행되어야 한다. 일차 품질관리는 특이값 및 명백한 오류를 식별하기 위해 자료를 연구하는 과정입니다. 이러한 특이값은 별도로 표시하거나, 수정 가능한 오류를 식별할 수 있는 경우 자료를 수정한다. 이차 품질관리는 보고된 값의 계통 편향을 정량화하기 위해 자료를 객관적으로 연구하는 과정이다.
 
@@ -1901,8 +2991,8 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 
 1.5.2. 이차 품질관리는 역사적인 자료를 이용하여 계통 편향을 감지하기 위해서 사용될 수 있다. 전 대양에 있는 GO-SHIP (이전 CLIVAR)과 WOCE 단면도 자료를 공공자료로 CCHDO(cchdo.ucsd.edu)와 같은 자료실을 통해 접근할 수 있다. GLODAP에 있는 편향이 조정된 자료를 사용할 것을 권장한다. 분석 중에 잠재적인 편향을 발견하게 되면 분석 절차상 편향을 낼 수 있는 가능한 요소를 찾아낸다. 그리고 편향 수정을 하지 않고 메타데이터에 편향 문제에 반드시 기록하여야 한다.
 
-\hypertarget{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxce21uxc815uxbc29uxbc95}{%
-\subsection{방법검출한계 측정방법}\label{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxce21uxc815uxbc29uxbc95}}
+\hypertarget{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxce21uxc815uxbc29uxbc95-1}{%
+\subsection{방법검출한계 측정방법}\label{uxbc29uxbc95uxac80uxcd9cuxd55cuxacc4-uxce21uxc815uxbc29uxbc95-1}}
 
 1.6.1. 분석시스템 준비: 방법검출한계 시료는 방법 선택에 명시되어 있는 필수 품질관리 확인 사항을 통과하고 동작이 적절한 기계를 사용해서 분석한다. 분석시스템의 청결이 방법검출한계 계산에 영향을 미친다. 따라서 이미 사용하고 있던 분석기의 방법검출한계를 측정할 때는 이전 시료로부터 발생하는 오염을 피하기 위한 사전예방 조처를 해야 한다. 대부분의 실험실에서는 정기적으로 분석기 유지보수를 수행하여 분석기가 아주 깨끗하고 적절히 반응하도록 해야 한다.
 
@@ -1972,8 +3062,8 @@ s: 반복 측정되는 시료 표준편차
 
 1.6.11. 방법검출한계 계산예제: 이온선택성 전극에 의한 용존 암모늄이온 측정용 전극의 제조사 검출한계가 0.05 mg/L라고 명시되어 있다. 방법검출한계를 확인하고자 한다. 먼저 전극을 1, 5, 10 mg/L, 바탕값으로 교정을 하였다. 1단계로 제조사의 주장이 시작점이다. 제조사 검출한계인 0.05 mg/L에 5배를 곱하여 나온 0.25 mg/L를 초기 첨가 수준으로 한다. 0.05\textasciitilde0.25 mg/L사이의 어떤 값도 첨가 수준이 될 수 있다. 측정값과 계산은 MDL\_cal\_example.xlsx를 참고한다.
 
-\hypertarget{uxbb38uxc11cuxd654}{%
-\subsection{문서화}\label{uxbb38uxc11cuxd654}}
+\hypertarget{uxbb38uxc11cuxd654-1}{%
+\subsection{문서화}\label{uxbb38uxc11cuxd654-1}}
 
 1.7.1. 관측보고서: 관측보고서에는 다음과 같은 사항이 포함되어야 한다.
 
@@ -2015,11 +3105,11 @@ s: 반복 측정되는 시료 표준편차
 
 1.7.2. 채수자료파일: 영양염 분석값 보고 파일에는 시료 채취 시 획득된 센서 정보 및 다른 화학 변수들의 분석값과 통합하여 보고한다. 파일에는 보고된 각 항목들의 자료 품질관리와 관련한 플래그를 반드시 포함해야 한다.
 
-\hypertarget{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxcd1duxc9c8uxc18c-uxbd84uxc11duxc808uxcc28}{%
-\section{기체분절 영양염 자동분석기를 사용한 해수 중 총질소 분석절차}\label{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxcd1duxc9c8uxc18c-uxbd84uxc11duxc808uxcc28}}
+\hypertarget{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxcd1duxc9c8uxc18c-uxbd84uxc11duxc808uxcc28-1}{%
+\section{기체분절 영양염 자동분석기를 사용한 해수 중 총질소 분석절차}\label{uxae30uxccb4uxbd84uxc808-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30uxb97c-uxc0acuxc6a9uxd55c-uxd574uxc218-uxc911-uxcd1duxc9c8uxc18c-uxbd84uxc11duxc808uxcc28-1}}
 
-\hypertarget{uxbd84uxc11d-uxc0acuxc804uxc900uxbe44}{%
-\subsection{분석 사전준비}\label{uxbd84uxc11d-uxc0acuxc804uxc900uxbe44}}
+\hypertarget{uxbd84uxc11d-uxc0acuxc804uxc900uxbe44-1}{%
+\subsection{분석 사전준비}\label{uxbd84uxc11d-uxc0acuxc804uxc900uxbe44-1}}
 
 1.1.1. 영양염 자동분석기기 준비
 1.1.1.1. 총질소 분석에 사용되는 TrAAcs 800, sampler, 컴프레셔, 전처리장치, 컴퓨터 전원을 켠다.
@@ -2053,8 +3143,8 @@ s: 반복 측정되는 시료 표준편차
 - 채수 직후 --80 ℃ 초저온 냉동 보관
 - 보관 기간 한 달 이내
 
-\hypertarget{uxbd84uxc11duxc900uxbe44}{%
-\subsection{분석준비}\label{uxbd84uxc11duxc900uxbe44}}
+\hypertarget{uxbd84uxc11duxc900uxbe44-1}{%
+\subsection{분석준비}\label{uxbd84uxc11duxc900uxbe44-1}}
 
 1.2.1. TrAAcs 800 분석프로그램 (AACE) 분석파일 작성
 1.2.1.1. Set up - Analysis - New analysis에서 새로운 Analysis file을 생성한다(아래 그림 참조).
@@ -2131,8 +3221,8 @@ s: 반복 측정되는 시료 표준편차
 1.2.4.3. 시스템창의 stop을 눌러 분석창을 닫은 후 분석기기와 sampler의 전원을 끄고 펌프덮개를 열어 펌프튜브의 손상을 방지한다.
 1.2.4.4. 사용한 시약병/부피플라스크 등은 씻어 다음 분석 시 사용될 수 있도록 준비한다(세척순서 : 초순수 -- 10\% 염산 -- 초순수 3번 -- 건조).
 
-\hypertarget{uxc790uxb8cc-uxbd84uxc11d-uxbc0f-uxacc4uxc0b0}{%
-\section{자료 분석 및 계산}\label{uxc790uxb8cc-uxbd84uxc11d-uxbc0f-uxacc4uxc0b0}}
+\hypertarget{uxc790uxb8cc-uxbd84uxc11d-uxbc0f-uxacc4uxc0b0-2}{%
+\section{자료 분석 및 계산}\label{uxc790uxb8cc-uxbd84uxc11d-uxbc0f-uxacc4uxc0b0-2}}
 
 1.1. 분석이 완료되면 retrieve - view chart를 클릭하면 분석한 파일 이름을 선택할 수 있고 파일을 선택하면 아래 그림과 같이 피크가 나온다. 모든 분석결과에 대해 아래 빨간색 박스로 표시된 부분을 눌러 피크의 위치를 조정한다. 피크위치를 설정할 때는 peak window에서 일정한 위치를 선정하여 일관성을 유지하도록 한다. 박스안의 계산기 버튼을 눌러 농도를 재계산한다.
 \includegraphics{E:/R/SOP/SOP_C07_TN/images/C07_image10_Retrieve＿View Chart 이동.png}
@@ -2142,8 +3232,8 @@ s: 반복 측정되는 시료 표준편차
 \includegraphics{E:/R/SOP/SOP_C07_TN/images/C07_image13_파일 형식 선택 저장.png}
 1.1. 시료 분석값이 검량곡선에 사용된 가장 높은 표준용액열 보다 높은 경우 시료를 희석하여 재분석한다.
 
-\hypertarget{uxcc38uxace0uxbb38uxd5cc-2}{%
-\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-2}}
+\hypertarget{uxcc38uxace0uxbb38uxd5cc-5}{%
+\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-5}}
 
 1.1. 김기동, 허미경, 서용찬, 총질소와 총인 수동 및 자동 분석의 비교평가(Ⅰ) - 총질소분석, 한국환경분석학회지, Vol. 9, No.~2, p.199-206, 2006.
 
@@ -2152,13 +3242,13 @@ s: 반복 측정되는 시료 표준편차
 \hypertarget{uxbd80uxb85d-1.-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30traacs-800uxc758-uxc7a5uxbe44uxad6cuxc131uxacfc-uxae30uxb2a5}{%
 \section{부록 1. 영양염 자동분석기(TrAAcs 800)의 장비구성과 기능}\label{uxbd80uxb85d-1.-uxc601uxc591uxc5fc-uxc790uxb3d9uxbd84uxc11duxae30traacs-800uxc758-uxc7a5uxbe44uxad6cuxc131uxacfc-uxae30uxb2a5}}
 
-\hypertarget{uxce21uxc815uxc6d0uxb9ac-1}{%
-\subsection{측정원리}\label{uxce21uxc815uxc6d0uxb9ac-1}}
+\hypertarget{uxce21uxc815uxc6d0uxb9ac-2}{%
+\subsection{측정원리}\label{uxce21uxc815uxc6d0uxb9ac-2}}
 
 연속흐름분석법(CFA, Continuous Flow Analysis)은, 분석관 내부에 일정량의 시약과 시료를 주입하고 공기를 규칙적으로 주입하여 분절하면서 시료와 시약을 잘 혼합하여 발색시켜 flowcell이 장착된 비식계로 흡광도를 측정하여 농도를 결정한다.
 
-\hypertarget{uxc7a5uxbe44uxad6cuxc131-uxbc0f-uxae30uxb2a5}{%
-\subsection{장비구성 및 기능}\label{uxc7a5uxbe44uxad6cuxc131-uxbc0f-uxae30uxb2a5}}
+\hypertarget{uxc7a5uxbe44uxad6cuxc131-uxbc0f-uxae30uxb2a5-1}{%
+\subsection{장비구성 및 기능}\label{uxc7a5uxbe44uxad6cuxc131-uxbc0f-uxae30uxb2a5-1}}
 
 1.2.1 Console(콘솔, 본체)
 
@@ -2183,8 +3273,8 @@ s: 반복 측정되는 시료 표준편차
 1.2.5.1 30mm 길이의 Flow cell이 장착된 비색계가 기본 2대 장착되어 있으며 각각 550nm, 800nm에서 총질소, 총인을 분석한다.
 1.2.5.2 또한 Software로 비색계의 감도(Gain) 및 Baseline을 조정할 수 있다.
 
-\hypertarget{sampler}{%
-\subsection{Sampler}\label{sampler}}
+\hypertarget{sampler-1}{%
+\subsection{Sampler}\label{sampler-1}}
 
 \begin{figure}
 \centering
@@ -2210,8 +3300,8 @@ s: 반복 측정되는 시료 표준편차
 \caption{캡션을 입력하세요}
 \end{figure}
 
-\hypertarget{uxbd80uxb85d-2.-flow-diagram}{%
-\section{부록 2. Flow Diagram}\label{uxbd80uxb85d-2.-flow-diagram}}
+\hypertarget{uxbd80uxb85d-2.-flow-diagram-1}{%
+\section{부록 2. Flow Diagram}\label{uxbd80uxb85d-2.-flow-diagram-1}}
 
 \hypertarget{uxcd1duxc9c8uxc18c}{%
 \subsection{총질소}\label{uxcd1duxc9c8uxc18c}}
@@ -2231,17 +3321,17 @@ s: 반복 측정되는 시료 표준편차
 \caption{캡션을 입력하세요}
 \end{figure}
 
-\hypertarget{uxbd80uxb85d-3.-sample-rack-position}{%
-\section{부록 3. Sample rack position}\label{uxbd80uxb85d-3.-sample-rack-position}}
+\hypertarget{uxbd80uxb85d-3.-sample-rack-position-1}{%
+\section{부록 3. Sample rack position}\label{uxbd80uxb85d-3.-sample-rack-position-1}}
 
-\hypertarget{sample-rack-position}{%
-\subsection{Sample rack position}\label{sample-rack-position}}
+\hypertarget{sample-rack-position-1}{%
+\subsection{Sample rack position}\label{sample-rack-position-1}}
 
 0은 분석 시 sample probe를 세척하고 시료와 시료 간 sample wash solution이 들어가는 부분이기 때문에 실제 시료 및 표준용액을 높는 위치는 1부터 시작한다.
 \includegraphics{E:/R/SOP/SOP_C07_TN/images/C07_image20_Standard rack position_1.png}
 
-\hypertarget{sample-rack-position-1}{%
-\subsection{Sample rack position}\label{sample-rack-position-1}}
+\hypertarget{sample-rack-position-2}{%
+\subsection{Sample rack position}\label{sample-rack-position-2}}
 
 \begin{figure}
 \centering
@@ -2249,8 +3339,8 @@ s: 반복 측정되는 시료 표준편차
 \caption{캡션을 입력하세요}
 \end{figure}
 
-\hypertarget{uxbd80uxb85d-4.-uxc2dcuxb8ccuxc0acuxc774-uxacf5uxae30uxc218uxcd95inter-sample-air-compression-isac}{%
-\section{부록 4. 시료사이 공기수축(Inter Sample Air Compression, ISAC)}\label{uxbd80uxb85d-4.-uxc2dcuxb8ccuxc0acuxc774-uxacf5uxae30uxc218uxcd95inter-sample-air-compression-isac}}
+\hypertarget{uxbd80uxb85d-4.-uxc2dcuxb8ccuxc0acuxc774-uxacf5uxae30uxc218uxcd95inter-sample-air-compression-isac-1}{%
+\section{부록 4. 시료사이 공기수축(Inter Sample Air Compression, ISAC)}\label{uxbd80uxb85d-4.-uxc2dcuxb8ccuxc0acuxc774-uxacf5uxae30uxc218uxcd95inter-sample-air-compression-isac-1}}
 
 시료 간 공기수축(ISAC)은 자동시료주입기에서 시료 흡입을 마친 후 다음 시료를 흡입 할 준비를 위해서 세척액으로 이동할 때, 그리고 세척을 마친후 다음 시료로 이동하는 동안 흡입된 공기방울이 펌프롤러에 눌리면서 시료주입 튜브 내 압력이 대기압과 유사하거나 약간 낮아져 발생하는 현상이다. 시료주입 튜브 내 압력이 감소하면서 눌려진 공기방울 앞쪽의 시료 흐름이 순간적으로 감소하고 시약과 혼합되는 시료의 부피가 감소된다. 결과적으로, 이러한 압력의 변화로 정상적일 때 보다 적은 양의 시료가 주입되어 농도가 낮은 구간이 발생한다.
 
@@ -2302,13 +3392,13 @@ Double ISAC = 목표시간 +시료주입시간+세척시간
 \hypertarget{uxc6a9uxc874uxc0b0uxc18c-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}{%
 \chapter{용존산소 분석 표준운영절차서}\label{uxc6a9uxc874uxc0b0uxc18c-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}}
 
-\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-4}{%
-\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-4}}
+\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-5}{%
+\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-5}}
 
 해수시료의 용존산소 측정은 해수에 녹아 있는 산소가 아이오다이드 이온(I\textsuperscript{-})을 트리아이오다이드(I\textsuperscript{3-})로 정량적으로 산화시킨 후 발생된 트리아이오다이드(I\textsuperscript{3-})를 티오황산염 용액으로 적정하여 화학적으로 정량화하는 Winkler(1888) 적정법을 기초로 Carpenter(1965)가 변경한 적정법을 사용한다. 이 표준운영절차서는 해양수산부의 해양환경공정시행법 (2013-230)에 기초하고 있으며, 종말점 결정에 전기화학적인 방법의 적용, 분광광도법의 적용방법이 추가되어 있다.
 
-\hypertarget{uxce21uxc815-uxc6d0uxb9ac-2}{%
-\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-2}}
+\hypertarget{uxce21uxc815-uxc6d0uxb9ac-3}{%
+\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-3}}
 
 일정량의 해수시료에 염화망간(MnCl\textsubscript{2})을 첨가한 다음 곧 바로 알카리아오다이드화나트륨(NaOH/NaI)을 첨가하면 강한 알카리 환경에서 망간이온(Mn\textsuperscript{2+})은 수산화망간(Mn(OH)\textsubscript{2})으로 침전한다(식1). 이때 수산화망간은 해수시료속에 용존되어 있는 용존산소와 반응하여 수화된 4가의 망간산화물(MnO(OH)\textsubscript{2})의 갈색 침전물을 형성한다(식2). 시료병에 황산을 첨가하여 강한 산성환경을 만들어주면 갈색 침전물인 수화된 4가의 망간산화물(MnO(OH)\textsubscript{2})이 산화제로 작용하여 시료속에 첨가된 아오다이드이온(I\textsuperscript{-})을 아이오딘(I\textsubscript{2})으로 산화시킨다(식3). 이렇게 생성된 아이오딘(I\textsubscript{2})은 시료에 과잉으로 존재하는 아오다이드이온(I\textsuperscript{-})과 결합하여 트리아이오다이드 착물(I\textsuperscript{3-})을 형성한다(식4). 생성된 트리아이오다이드 착물을 티오황산나트륨 용액으로 정량하여 해수시료속에 존재하고 있는 용존산소 농도를 계산한다. 티오황산염은 트리아이오다이드 착물(I\textsuperscript{3-})을 아이오다이드이온(I\textsuperscript{-})으로 환원시키는 역할을 한다. 생성된 트라이아이오다이드 착물(I\textsuperscript{3-})을 아이오다이드이온(I\textsuperscript{-})으로 완전히 환원시키는데 사용된 티오황산염량은 생성된 트리아이오다이드 착물(I\textsuperscript{3-})량의 두배이다(식5). 종말점을 정밀하게 확인하기 위해서 적정이 완료되기 직전에 녹말용액을 첨가하면 아직 아이오다이드이온(I\textsuperscript{-})로 환원되지 않고 남아 있는 트리아이오다이드 착물(I\textsuperscript{3-})과 반응하여 푸른색을 띤다(식6). 푸른색이 사라지면 시료속의 트리아이오다이드 착물(I\textsuperscript{3-})이 완전히 아이오다이드이온(I\textsuperscript{-})으로 환원되었음를 의미한다. 그리고 2몰의 티오황산염이 1몰의 트리아이오다이드 착물(I\textsuperscript{3-})을 환원시키므로 이때까지 사용된 티오황산염의 1/2몰이 시료속의 존재했던 트리아이오다이드 착물(I\textsuperscript{3-})의 몰수이고, 이는 수환된 4간의 망간산화물(MnO(OH)\textsubscript{2})에서 생성된 1몰의 아이오딘(I\textsubscript{2})에 해당한다. 해수시료속의 용존산소(O\textsubscript{2}) 1몰은 2몰의 아이오딘(I\textsubscript{2})을 생성하므로 1몰의 아이오딘(I\textsubscript{2})은 해수시료의 용존산소(O\textsubscript{2}) 1/2몰에 해당한다. 따라서 해수시료중의 용존산소(O\textsubscript{2})는 트리아이오다이드 착물(I\textsuperscript{3-})을 아다이드이온(I\textsuperscript{-})으로 환원시키는 소비된 티오황산염량에 4를 곱하여 계산할 수 있다.
 
@@ -2331,13 +3421,13 @@ Double ISAC = 목표시간 +시료주입시간+세척시간
 
 이 방법으로 측정가능한 해수중 용존산소 법위는 0-400 μmol kg\textsuperscript{-1}이다. 이 방법의 정확도는 0.1\% 미만 또는 ±0.3 μmol kg\textsuperscript{-1}이다.
 
-\hypertarget{uxbc29uxd574uxbb3c-2}{%
-\section{방해물}\label{uxbc29uxd574uxbb3c-2}}
+\hypertarget{uxbc29uxd574uxbb3c-3}{%
+\section{방해물}\label{uxbc29uxd574uxbb3c-3}}
 
 이 분석법은 \textbf{황화수소가 포함된 해수시료 분석}에는 부적합하다.
 
-\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-2}{%
-\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-2}}
+\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-3}{%
+\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-3}}
 
 해수중 용존산소 분석에 필요한 기구 및 기기는 크게 시료채취기구(4.1), 적정기구(4.2)등이 있다. 실험에 사용되는 초자류를 10\%의 염산으로 세척한 후 초순수로 3회 헹구어 사용한다.
 
@@ -2397,8 +3487,8 @@ Double ISAC = 목표시간 +시료주입시간+세척시간
 
 250 ml 용량정도의 플라스틱병으로 초순수를 담아 눌러서 소량 배출하여 적정시 세척에 사용된다.
 
-\hypertarget{uxc2dcuxc57duxc81cuxc870-2}{%
-\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-2}}
+\hypertarget{uxc2dcuxc57duxc81cuxc870-3}{%
+\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-3}}
 
 용존산소 분석에 사용되는 시약은 염화망간(5.1), 알칼리 요오드화나트륨용액(5.2), 황산용액(5.3), 녹말지시약(5.4), 티오황산나트륨(5.5). 요오드화칼륨(5.6)등이 있다.
 
@@ -2644,13 +3734,13 @@ KIO\textsubscript{3}를 제조할 때 온도(t\textsubscript{p})에서 농도를
 \hypertarget{chlorophyll-a-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}{%
 \chapter{chlorophyll a 분석 표준운영절차서}\label{chlorophyll-a-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}}
 
-\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-5}{%
-\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-5}}
+\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-6}{%
+\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-6}}
 
 식물플랑크톤의 광합성 색소는 chlorophyll a, b, c 와 여러 보조색소로 구성되어 있다. 이 중 chlorophyll a 는 모든 식물플랑크톤에 포함되어 있기 때문에 식물플랑크톤의 생체량을 가장 잘 평가할 수 있는 장점이 있다. 식물플랑크톤의 현존량(생체량, 생물량)을 클로로필양으로 측정하는데는 분광광도계나 (터너) 형광분광광도계를 사용한다.
 
-\hypertarget{uxce21uxc815-uxc6d0uxb9ac-3}{%
-\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-3}}
+\hypertarget{uxce21uxc815-uxc6d0uxb9ac-4}{%
+\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-4}}
 
 \hypertarget{uxbd84uxad11uxad11uxb3c4uxacc4uxc5d0-uxc758uxd55c-uxce21uxc815}{%
 \subsection{분광광도계에 의한 측정}\label{uxbd84uxad11uxad11uxb3c4uxacc4uxc5d0-uxc758uxd55c-uxce21uxc815}}
@@ -2669,13 +3759,13 @@ KIO\textsubscript{3}를 제조할 때 온도(t\textsubscript{p})에서 농도를
 
 이 방법은 아세톤으로 추출된 chlorophyll을 형광광도계를 이용하여 여기파장 (exiting wavelength) 436nm, 형광파장 (emission wavelength) 670nm 에서 형광을 측정하여 chlorophyll a 와 phaeo-pigment를 측정하는 방법이다. 측정의 정밀도는 chlorophyll a 의 농도 5μg/L에서 ± 10 \% 이내이다.
 
-\hypertarget{uxbc29uxd574uxbb3c-3}{%
-\section{방해물}\label{uxbc29uxd574uxbb3c-3}}
+\hypertarget{uxbc29uxd574uxbb3c-4}{%
+\section{방해물}\label{uxbc29uxd574uxbb3c-4}}
 
 광합성 색소인 chlorophyll a, b, c의 추출용액은 광분해가 쉽게 일어나기 때문에 여과 등의 실험과정에서 직사광선을 피해야 한다. 750nm 는 시료 중의 현탁물질에 의한 탁도 정도를 알기 위한 흡광도이다. 분광광도계의 측정 파장을 정확하게 맞추지 않으면 오차가 크게 발생한다.
 
-\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-3}{%
-\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-3}}
+\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-4}{%
+\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-4}}
 
 해수중 총질소 분석에는 필요한 기구 및 기기는 여과기(4.1), 유리섬유여과지(4.2), 원심분리기(4.3), 마개 있는 원심분리관 또는 시험관 (보통 15mL)(4.4), 교반기(4.5), 분광광도계 측정법으로 분석하는 경우 분광광도계(4.6), 터너형 형광광도계 측정법으로 분석하는 경우 터너 형광광도계(4.7), 형광분광광도계 측정법으로 분석하는 경우 형광분광광도계(4.8)과 스크루 형 주사기(4.9), 스크루 형 filter holder(4.10) 등이 있다.
 
@@ -2729,8 +3819,8 @@ KIO\textsubscript{3}를 제조할 때 온도(t\textsubscript{p})에서 농도를
 
 분광광보법보다 적은 양의 시료 여과로 엽록소 a 측정이 가능한 형광분광광도계를 사용하는 경우 25mm 여과지를 사용할 수 있는 스크루형 filter holder가 필요하다.
 
-\hypertarget{uxc2dcuxc57duxc81cuxc870-3}{%
-\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-3}}
+\hypertarget{uxc2dcuxc57duxc81cuxc870-4}{%
+\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-4}}
 
 엽록소 a 분석에 사용되는 시약은 아세톤(5.1), 탄산마그네슘 용액(5.2), 염산용액(5.3, 5.4), 플로레신 나트륨 용액(5.5) 등 이다.
 
@@ -2870,13 +3960,13 @@ f = 3 (파장, 480nm)
 \hypertarget{uxc6a9uxc874uxc720uxae30uxd0c4uxc18c-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}{%
 \chapter{용존유기탄소 분석 표준운영절차서}\label{uxc6a9uxc874uxc720uxae30uxd0c4uxc18c-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}}
 
-\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-6}{%
-\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-6}}
+\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-7}{%
+\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-7}}
 
 용존유기탄소의 분석은 여과된 해수 시료 중에 용존되어 있는 유기물을 금속 촉매를 이용한 고온 연소장치로 완전히 산화시킬 때 발생하는이산화탄소(CO\textsubscript{2})의 양을 비분산형 적외선 감지기(NDIR)로 측정하여 용존유기탄소량으로 나타내는 원리이다. 이때 시료 중의 용존무기탄소는 산처리하여 질소기체로 에 의해 제거된다. 이 표준운영절차서는 해양수산부의 해양환경공정시행법 (2013-230)에 기초하고 있으며, 분석기기 준비 및 안정화, 표준물질 분석을 통한 품질관리도 작성이 추가되어 있다. 이 방법으로 측정 가능한 해수중 용존유기탄소 검출한계는 99\% 신뢰구간에서 0.05 mgC/L(4.16 μmolC/L)이다. 이 방법의 정밀도는 5 mgC/L(462.2 μM)에서 ±0.08 mg C/L(6.66 μM)이다.
 
-\hypertarget{uxce21uxc815-uxc6d0uxb9ac-4}{%
-\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-4}}
+\hypertarget{uxce21uxc815-uxc6d0uxb9ac-5}{%
+\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-5}}
 
 주사기로 산성화된 시료를 자동 시료주입기에 있는 시료를 흡입하여 이산화탄소가 없는 기체를 이용하여 시료 속에 있는 이산화탄소를 제거한다. 이 시료를 촉매로 채워진 연소관에 주입하고 연소관 온도를 섭씨 680도까지 가열하여 시료 중의 유기탄소를 분해하여 산소로 산화시켜 이산화탄소로 전환하여 기체의 수분과 염소를 제거하여 NDIR 검출기로 이산화탄소를 측정하여 시료속의 용존 유기물을 정량화한다.
 현재 다양한 회사에서 고온촉매산화법(High-Temperature Catalytic Oxidation, HTCO)을 사용하는 분석기기를 상업용으로 개발하였으며, 기본 구성은 아래 다이아그램에 있는 Shimadzu사의 HTCO 분석기기와 유사하다. 다만 제조사에 따라 미세한 차이는 있을 수 있다.
@@ -2887,13 +3977,13 @@ f = 3 (파장, 480nm)
 \caption{캡션을 입력하세요}
 \end{figure}
 
-\hypertarget{uxbc29uxd574uxbb3c-4}{%
-\section{방해물}\label{uxbc29uxd574uxbb3c-4}}
+\hypertarget{uxbc29uxd574uxbb3c-5}{%
+\section{방해물}\label{uxbc29uxd574uxbb3c-5}}
 
 이 분석법에 사용된 NDIR 검출기는 기체속의 수분과 염소 성분에 민감하나 제습기와 할로겐 제거기로 이들 성분을 제거하기 때문에 특별한 방해요인은 없다.
 
-\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-4}{%
-\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-4}}
+\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-5}{%
+\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-5}}
 
 해수중 용존유기탄소 분석에 필요한 기구 및 기기는 크게 시료채취기구(4.1), 여과기구(4.2), 전자저울(4.3)등이 있다. 실험에 사용되는 초자류를 10\%의 염산으로 세척한 후 초순수로 3회 헹구어 사용한다.
 
@@ -2918,8 +4008,8 @@ f = 3 (파장, 480nm)
 
 저울 용량은 300g이고 정밀도가 0.001g인 전자저울을 사용한다.
 
-\hypertarget{uxbd84uxc11duxae30uxae30-1}{%
-\subsection{분석기기}\label{uxbd84uxc11duxae30uxae30-1}}
+\hypertarget{uxbd84uxc11duxae30uxae30-2}{%
+\subsection{분석기기}\label{uxbd84uxc11duxae30uxae30-2}}
 
 1.4.1. 자동시료주입기
 자동시료 주입기는 24mL vial\emph{93 ea, 9ml vial}93 ea, 40mL*68 ea
@@ -2935,8 +4025,8 @@ f = 3 (파장, 480nm)
 1.4.5. 스퀴즈병
 250 ml 용량정도의 플라스틱병으로 초순수를 담아 눌러서 소량 배출하여 적정시 세척에 사용된다.
 
-\hypertarget{uxc2dcuxc57duxc81cuxc870-4}{%
-\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-4}}
+\hypertarget{uxc2dcuxc57duxc81cuxc870-5}{%
+\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-5}}
 
 용존유기탄소 분석에 사용되는 시약은 저탄소수(5.1), 표준용액(5.2), 산화효율측정 용액(5.3), 운반기체(5.4)등이 있다. 표준용액열 제조에 사용되는 초자는 부피 측정의 정확도에 문제가 발생하지 않도록 고온으로 연소하지 않고 10\% 염산에 24시간 이상 담근 후 초순수로 씻어 알루미늄 호일로 입구를 막아 섭씨 100도 이하에서 건조하여 준비한다.
 
@@ -3063,8 +4153,8 @@ LCW로 측정한 기기 바탕값 면적을 분석번호로 그래프를 작성�
 \hypertarget{uxbd84uxc11duxc808uxcc28-uxd750uxb984uxb3c4-3}{%
 \section{분석절차 흐름도}\label{uxbd84uxc11duxc808uxcc28-uxd750uxb984uxb3c4-3}}
 
-\hypertarget{uxcc38uxace0uxbb38uxd5cc-3}{%
-\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-3}}
+\hypertarget{uxcc38uxace0uxbb38uxd5cc-6}{%
+\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-6}}
 
 Turpas, L.M., Popp, B.N., Karl, D.M. (1994) Dissolved organic carbon in oligotrophic waters: experiments on sample preservation, storage and analysis. Mar.Chem. 45:207-216.\\
 Wiebinga, C.J., de Baar, H.J.W. (1998) Determination of the distribution of dissolved organic carbon in the Indian sector of the Southern Ocean. Mar.Chem. 61:185-201.
@@ -3072,13 +4162,13 @@ Wiebinga, C.J., de Baar, H.J.W. (1998) Determination of the distribution of diss
 \hypertarget{uxc6a9uxc874uxbb34uxae30uxd0c4uxc18c-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}{%
 \chapter{용존무기탄소 분석 표준운영절차서}\label{uxc6a9uxc874uxbb34uxae30uxd0c4uxc18c-uxbd84uxc11d-uxd45cuxc900uxc6b4uxc601uxc808uxcc28uxc11c}}
 
-\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-7}{%
-\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-7}}
+\hypertarget{uxbaa9uxc801-uxbc0f-uxbc94uxc704-8}{%
+\section{목적 및 범위}\label{uxbaa9uxc801-uxbc0f-uxbc94uxc704-8}}
 
 해수중 용존무기탄소의 총량을 해수 1kg 당 탄소의 몰수(mol C kg\textsuperscript{-1})로 정량하는 분석법이다. 일반적인 해수중 용존무기탄소 농도범위(1800\textasciitilde2300 μmol kg\textsuperscript{-1})와 흑해와 같이 용존무기탄소 농도가 높은(3800\textasciitilde4300 μmol kg\textsuperscript{-1}) 경우에도 적용가능하다.
 
-\hypertarget{uxce21uxc815-uxc6d0uxb9ac-5}{%
-\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-5}}
+\hypertarget{uxce21uxc815-uxc6d0uxb9ac-6}{%
+\section{측정 원리}\label{uxce21uxc815-uxc6d0uxb9ac-6}}
 
 일정량의 해수시료를 스트리핑 용기에 넣고 산성화 시킨 뒤 비반응성 기체로 불어내는 방법을 사용한다. 탄산칼슘과 같은 고체 탄산염이 존재하는 경우 실험결과에 영향을 미칠 수 있다. 불어낸 기체 중 CO\textsubscript{2}의 양은 에탄올아민이 포함된 반응용액에 기체를 통과시켜 CO\textsubscript{2}를 포획하고 생성된 하이드록시 에틸 탄산을 전기량법으로 적정하여 정량한다. 반응용액의 pH는 티몰프탈레인 지시약의 투과율을 약 610nm 에서 측정해 모니터링한다. 반응용액의 투과율을 일정하게 유지하기 위해 전기량계에서 수산화이온을 만들어낸다. 반응용액 내에서 일어나는 반응은 아래와 같다.
 
@@ -3095,8 +4185,8 @@ Wiebinga, C.J., de Baar, H.J.W. (1998) Determination of the distribution of diss
 
 전기량 정량법의 전체적인 효율은 농도를 알고있는 탄산나트륨(Na\textsubscript{2}CO\textsubscript{3})의 CO\textsubscript{2} 양을 통해 보정한다.
 
-\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-5}{%
-\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-5}}
+\hypertarget{uxae30uxad6c-uxbc0f-uxae30uxae30-6}{%
+\section{기구 및 기기}\label{uxae30uxad6c-uxbc0f-uxae30uxae30-6}}
 
 1980년대 후반 해수중 용존무기탄소의 정밀분석을 위해 전기량계를 활용하는 분석시스템 SOMMA (Single Operator Multi-parameter Metabolic Analyzer)가 개발된 이후 1990년대 초반 전기량계를 이용해 해수중 용존무기탄소를 자동으로 분석하는 상업용 제품이 출시되었다. 이 표준운영절차서는 독일 MRIANDA사의 VINDTA 3C 활용을 기준으로 기술한다.
 
@@ -3120,8 +4210,8 @@ UIC의 전기량계가 주로 이용된다(UIC CM5017O, 자산번호 5420160221)
 
 실험장비인 VINDTA 3C와 전기량계인 UIC CM5017O를 통합해 제어하고 실험결과를 수집/저장하기 위한 전용 프로그램 VINDTA 프로그램 실행을 위한 PC
 
-\hypertarget{uxc2dcuxc57duxc81cuxc870-5}{%
-\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-5}}
+\hypertarget{uxc2dcuxc57duxc81cuxc870-6}{%
+\section{시약제조}\label{uxc2dcuxc57duxc81cuxc870-6}}
 
 용존무기탄소 분석에는 고순도 질소(4.1), CO\textsubscript{2} 제거제(4.2), 인산(4.3), 시료 정제제(4.4), 전기량계 반응용액(4.5)이 필요하다.
 
@@ -3164,8 +4254,8 @@ H\textsubscript{2}S가 포함된 시료는 이를 제거하기 위한 처리가 
 
 모든 분석과정은 전기량계에 새로운 반응용액 사용과 함께 시작한다.기본 분석 순서는 1) 전기량계 반응기에 새로운 반응용액을 채운 뒤, 2) 해수를 이용해 2회 ``junk'' 분석을 수행해 분석장비의 성능상태를 점검한 뒤, 3) 분석장비의 바탕값을 확인하고, 4) CO\textsubscript{2} CRM을 분석한 뒤, 5) TCT 값이 24를 넘지 않도록 시료분석을 수행하는 것이다. CO\textsubscript{2} CRM 분석결과를 이용해 시료분석값을 보정하므로 장비에 대한 별도의 기계적인 보정작업은 수행하지 않는다.
 
-\hypertarget{uxbc14uxd0d5uxac12-uxce21uxc815}{%
-\subsection{바탕값 측정}\label{uxbc14uxd0d5uxac12-uxce21uxc815}}
+\hypertarget{uxbc14uxd0d5uxac12-uxce21uxc815-1}{%
+\subsection{바탕값 측정}\label{uxbc14uxd0d5uxac12-uxce21uxc815-1}}
 
 VINDTA 프로그램의 ``BLANK'' 버튼을 눌러 바탕값 측정을 수행한다. 해수시료를 넣지 않은 상태에서 분석장비를 거쳐나온 캐리어 기체의 CO\textsubscript{2} 값을 측정하는 과정으로 10분간 누적된 카운트수를 10으로 나누어 1분 동안 분석장비와 캐리어 기체가 만들어내는 카운트수를 구한다. 분석을 시작하기 적합한 바탕값 카운트수는 25 이하이며, 25보다 큰 경우에는 바탕값 측정을 한번 더 수행한다. 바탕값 측정을 통해 바탕값 카운트수가 25 이하로 확인되면 VINDTA 프로그램상에서 `blank' 값을 50으로 조정하고 이후 분석을 진행한다.
 
@@ -3257,8 +4347,8 @@ Scripps 해양연구소 Dr.~Dickson의 CO\textsubscript{2} CRM을 주기적으�
 경계하한(lower warning limit) \(LCL=0\)\\
 관리하한(lower control limit) \(LCL=0\)
 
-\hypertarget{uxcc38uxace0uxbb38uxd5cc-4}{%
-\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-4}}
+\hypertarget{uxcc38uxace0uxbb38uxd5cc-7}{%
+\section{참고문헌}\label{uxcc38uxace0uxbb38uxd5cc-7}}
 
 Dickson, A.G. 1992. The determination of total dissolved inorganic carbon in sea water. The first stage of a collaborative study. U.S. Department of Energy No.DOE/RL/01830T-H14.\\
 Huffman, Jr., E.W.D. 1977. Performance of a new automatic carbon dioxide coulometer. Microchem. J. 22: 567--573.\\
