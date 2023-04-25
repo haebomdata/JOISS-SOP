@@ -60,9 +60,8 @@ SEAL사의 기체분절 연속흐름 분석장비(CFA system)인 QuAAtro를 사�
 
 #### 인공해수(Artifical Seawater, ASW)
 인공해수는 표준용액열을 제조할 때 표준원액을 희석하는데 사용된다.
-
 - Sodium chloride (NaCl) - 35 g  
-- Sodium hydrogen carbonate (NaHCO3) - 0.5 g  
+- Sodium hydrogen carbonate(NaHCO~3~) - 0.5 g  
 - 1000 mL 플라스틱재질 부피플라스크(용존실리카를 동시분석 할 경우)에 Sodium chloride 35 g, Sodium hydrogen carbonate 0.5 g을 초순수 약 800 mL에 완전히 용해시킨 초순수를 추가하여 1000 mL까지 맞춘다.
 
 #### 50% Triton X-100 용액
@@ -86,7 +85,7 @@ Sigma사의 Triton X-100 용액을 Isopropanol로 50:50으로 희석하여 제�
 
 #### Sulfanilamide
 
-- Sulfanilamide(C6H8N2O2S) - 5 g 
+- Sulfanilamide(C~6~H~8~N~2~O~2~S) - 5 g  
 - 염산(HCl) - 50 mL
 - 50% Triton X-100 (5.1.2) - 1 mL
 - 500 mL 부피플라스크에 초순수 약 300 mL를 넣고 진한 염산 50 mL를 넣은 후 미리 무게를 측정해둔 Sulfanilamide 5 g을 첨가하여 완전히 용해시킨다.  
@@ -96,7 +95,7 @@ Sigma사의 Triton X-100 용액을 Isopropanol로 50:50으로 희석하여 제�
 
 #### NEDD 용액
 
-- N-(1-naphthyl) Ethylene Diamine Dihydrochloride (C12H14N2·2HCl) - 0.5 g
+- N-(1-naphthyl) Ethylene Diamine Dihydrochloride (C~12~H~14~N~2~·2HCl) - 0.5 g  
 - 염산(HCl) - 5 mL 
 - 50% Triton X-100(5.1.3) - 1 mL
 - 500 mL 부피플라스크에 초순수 약 300 mL를 넣고 미리무게를 재어둔 NEDD 0.5 g을 넣어 녹인다. 진한 염산 5 mL를 추가하여 잘 혼합한다. 시약이 완전히 녹으면 초순수를 첨가하여 부피플라스크의 500 mL 눈금까지 맞춘다. 50% Triton X-100 (5.1.3) 1 mL를 넣어서 잘 혼합한다.
@@ -104,13 +103,13 @@ Sigma사의 Triton X-100 용액을 Isopropanol로 50:50으로 희석하여 제�
 
 #### Stock Imidazole buffer
 
-- Imidazole(C3H4N2) - 6.81 g
+- Imidazole(C~3~H~4~N~2~) - 6.81 g  
 - 염산(HCl) - 약 1.5 mL 
 - 미리 무게를 측정한 Imidazole 6.81 g을 1000 mL 부피플라스크에 넣고 초순수 약 800 mL로 용해시킨다. 초순수를 추가하여 정확히 1000 mL까지 맞춘 후 1000 mL 시약병에 옮겨 담는다. 센서를 보정한 pH측정기로 pH를 측정하면서 진한 염산(HCl)을 조금씩 추가하여 완충용액의 pH를 7.8로 맞춘다. 
 
 #### Copper Sulfate 0.01 M
 
-- Copper Sulfate(CuSO4·5H2O) - 0.25 g
+- Copper Sulfate(CuSO~4~·5H~2~O) - 0.25 g  
 - Copper Sulfate 0.25 g을 500 mL 부피플라스크에 넣고 초순수 약 300 mL를 넣어 완전히 녹인 후 초순수로 500 mL까지 맞춘다.
 
 #### Daily Working Imidazole buffer
@@ -160,12 +159,16 @@ Sigma사의 Triton X-100 용액을 Isopropanol로 50:50으로 희석하여 제�
 품질평가가 효과적으로 수행되도록 보장할 목적으로 수행되는 전체 활동체계를 말한다. 품질평가는 분석과 분석체계 성능의 품질에 대한 지속적인 평가를 제공한다.	
 		
 #### 정확도(Accuracy)
-정확도는 측정값이 참값에 일치하는 정도를 반영하는 편이(Bias)와 정밀도(Precision)의 결합이다. 정확도는 측정값과 표준물질의 명시된 특성값과 일치하는 정도이다. 정확한 방법은 편이가 없는 결과를 제공한다. 정확도는 평가하기 몹시 어려운 정량평가이지만 계통오차를 일으키는 원인을 찾는데 활용한다.
+
+정확도는 측정값이 참값에 일치하는 정도를 반영하는 편이(Bias)와 정밀도(Precision)의 결합이다. 정확도는 측정값과 표준물질의 명시된 특성값과 일치하는 정도이다. 정확한 방법은 편이가 없는 결과를 제공한다. 정확도는 평가하기 몹시 어려운 정량평가이지만 계통오차를 일으키는 원인을 찾는데 활용한다.  
+
+정확도 = [측정값 - 표준물질특성값/측정평균] × 100
+
 		
 #### 정밀도(Precision)
 동일한 시료에서 분석하고자 하는 항목을 연속적으로 반복 실험할 때 발생하는 무작위오차(random error)를 의미하고, 특정한 실험과정의 재현성을 측정하는 항목이다. 최종결과 또는 시료채취에서 전처리 등을 포함하는 전체과정 또는 특정한 단계에 적용할 수 있다.  동일한 시료에 대한 반복측정 값의 평균과 표준편차로 평가한다. 동일한 시료의 반복 분석할 때 분석값들의 상호간에 가까운 정도를 설명하는 것으로 때로는 재현성으로 불리기도 한다. 정밀도는 절대표준편차(absolute standard deviation), 상대표준오차 (relative standard deviation, RSD), 분산(variance), 변동계수 (coefficient of variation, CV), 상대백분율차이(relative percent difference), 측정의 절대범위(absolute range of a series of measurement) 등으로 표시된다. RSD는 일반적으로 농도가 낮을수록 커지는 경향이 있다. 
 
-% RSD =  
+% RSD = [표준편차(s)/측정평균] × 100
 
 #### 방법검출한계(Method Detection Limit, MDL)
 방법검출한계는 일정 농도의 시료를 반복 분석하여 특정 신뢰도 수준에서 바탕값과 다른가를 통계적으로 판단한 값으로 측정할 수 있는 분석성분의 최소한의 농도값이다. 이는 매질, 분석기기, 분석자에 따라 차이가 나기 때문에 잘 확립된 분석방법으로 숙련된 인력으로 결정한다. 방법검출한계는 같은 분석법을 사용하고 있는 다른 실험실들 사이의 분석능력을 비교하거나 같은 실험실에서 다른 분석방법간의 차이, 또는 분석 인력간의 차이를 비교하는 좋은 방법이다. 미국 EPA에서는 방법검출한계를 99%의 신뢰도에서 분석성분 농도가 0보다 클 경우 이를 성분의 최소 측정 농도로 정의한다. 통계학적으로 99%신뢰도 구간이 의미하는 것은 방법검출한계와 같은 농도로 분석하는 성분이 검출된 것은 이 성분의 농도가 0보다 높게 존재할 가능성이 99%라는 것을 의미한다. 다른 말로는 1%는 분석하는 성분 농도가 0이지만 실제 존재하고 있는 것으로 거짓으로 측정된 것을 의미한다. 방법검출한계는 통계적인 개념으로 분석성분이 방법검출한계보다 낮은 농도로 측정될 가능성이 충분히 있다(기기검출한계와는 구별되어야 함). 방법검출한계는 분석의 불확도를 다루는 절차일 뿐이고 시료의 채취, 운반, 보관, 분석의 전 과정에서 불확도의 요소가 있다. 
@@ -237,6 +240,22 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 	(2) 올바른 Students t-value 사용  
 	(3) 모든 유효숫자사용  
 	바탕검출한계 계산에서 흔히 하는 실수는 시료표준편차(s) 대신 모집단 표준편차(σ)를 사용하는 것이다. 
+	
+Sample standard deviation (s):  
+$$
+s=\sqrt{\frac {\Sigma {(x- \bar x)}^{2}} {n-1}}
+$$
+$\bar x$: sample mean; n-1: degree of freedom;  
+
+Population standard deviation (σ):
+$$
+\sigma=\sqrt{\frac {\Sigma {(x- \mu)}^{2}} {n}}
+$$
+$\mu$: population mean; n: number of population
+
+방법검출한계 $={t_{(n-1, ~1-\infty=0.99)}\times s}$  
+$t_{(n-1, ~1-\infty=0.99)}$: 99%신뢰도 수준과 자유도 n-1에서 추정된 표준편차에 대한 students’ t value  
+$s$ : 반복분석의 표준편차
 
 앞에서 계산한 방법검출한계를 위한 95% 신뢰도 구간 추정은 자유도 분포 분의 chi 제곱(X2/df)의 백분위 수로부터 유도된 다음식에 따라 계산된다. 
 
@@ -246,9 +265,10 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 
 #### S/N시험
 바탕검출한계 과정에서 검출한계는 신호/잡음의 비가 2.5-5일 때 추정된다. S/N비는 초기 검출한계 추정과 최종 바탕검출한계 결정을 평가하는데 유용하다. 신호/잡음비가 2.5보다 작은 것은 연속 반복측정의 임의 오차가 아주 높아 측정된 바탕검출한계가 높다는 것이다. 이는 반복시료에 첨가를 더 많이 하여 신호를 높여야 한다. 만약 신호/잡음의 비가 10보다 커다면 첨가 농도가 너무 높아 계산된 바탕검출한계가 실제 검출한계를 대표할 수 없다. 이 경우에 첨가를 적게 하여야 한다. 신호/잡음의 비가 10이상이더라도 분석방법이 아주 정확할 수도 있다. 이 경우에는 분석자의 경험이 아주 중요하다. 
-	(S/N) est = Xave/s
-	Xave: 계산된 농도나 반복측정의 분석 신호의 평균
-	s: 반복 측정되는 시료 표준편차	
+
+(S/N)~est~ = X~ave~/s  
+X~ave~: 계산된 농도나 반복측정의 분석 신호의 평균  
+s: 반복 측정되는 시료 표준편차	
 
 #### 바탕검출한계 결정주기
 바탕검출한계가 여러 가지 이유로 시간에 따라 변하기 때문에 필요하면 주기적으로 바탕검출한계 계산을 수행한다(새로운 분석법을 사용하기 전 또는 1년 주기로 갱신함). 만약 방법에 특정한 주기를 명시되어 있지 않으면 새로운 분석자가 분석을 시작하거나 분석시스템의 성능이 변하거나 하면 방법검출한계 시험을 시행한다. 그리고 분석과정이 변경될 때마다 재계산해야 한다. 일부 시험실에서는 1년 단위로 방법검출한계의 유효기간을 정하여 항상 사용이 가능한 방법검출한계 값을 유지한다. 
@@ -303,8 +323,17 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 
 #### 컴퓨터에서 분석프로그램 (AACE)의 준비
 1.1.1.1. AACE 프로그램을 실행한다.
-1.1.1.1. AACE 프로그램을 실행하면 아래와 같은 화면이 나타난다.             
-1.1.1.1. 시스템창의 charting 버튼을 클릭하면 5항목(NO2-N, NO2+NO3-N, NH4-N, SiO2-Si, PO4-P)의 분석창이 뜨면서 장비가 작동하게 된다.
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image1_AACE 프로그램.png)
+
+1.1.1.1. AACE 프로그램을 실행하면 아래와 같은 화면이 나타난다.
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image2_AACE 프로그램 실행 화면.png)
+
+1.1.1.1. 시스템창의 charting 버튼을 클릭하면 5항목(NO~2~-N, NO~2~+NO~3~-N, NH~4~-N, SiO~2~-Si, PO~4~-P)의 분석창이 뜨면서 장비가 작동하게 된다.
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image3_Charting 메뉴 각 항목 분석 화면.png)
+
 1.1.1.1. 각 창에 마우스 커서를 두고 우클릭하여 smoothing을 0으로 설정하고 암모늄이온 분석창은 smoothing을 8로 설정한다.  피크 정상부분이 평평하지 않으면 smoothing값을 높여 피크정상부분을 평형하게 하려는 시도가 종종 있으나 이는 권장하지 않는다. Smoothing 값을 크게 하면 분석 시 피크가 완만하게 상승하고 피크 정상 부분의 평평한 상태로 유지되는 시간이 짧아 피크가 뾰족한 모양으로 나와 안정된 분석값을 얻기 어렵다.
 
 #### 기기세척 및 안정화
@@ -326,9 +355,17 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 ### 분석준비
 #### QuAAtro 분석프로그램 (AACE) 분석파일 작성
 1.1.1.1. Set up - Analysis - New analysis에서 새로운 Analysis file을 생성한다(아래 그림 참조).
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image4_새로운 Analysis file 생성.png)
+
 1.1.1.1. 위에서 New analysis 항목을 선택하게 되면 아래와 같이 Set Up: Analysis-new****.anl 창이 나타난다. 이 창에는 Main Page, Tray Protocol, Channel 1~5 탭들을 확인할 수 있다.
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image5_Main Page 탭 설정 화면.png)
+
 1.1.1.1. Main Page : 각 채널들에 공통적으로 적용되는 항목을 설정하며 분석명과 Sample/Wash time을 설정할 수 있다. 한국해양과학기술원에서는 Sample/Wash time을 45초/15초로 설정하여 사용하고 있다. 이 시간을 변경하게 되면 peak 정상부분이 변형되는 ISAC현상이 나타날 수 있으니 변경 시에는 충분한 검토가 필요하다. Peak 정상부분에 ISAC현상이 일어날 경우에 대한 조치는 제조사에서 제공한 매뉴얼(부록4)을 참고하여 조치를 해야한다.
 1.1.1.1. Tray Protocol : 분석 시 필요한 시료 목록을 작성한다.  
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image6_Tray Protocol 탭 시료 목록 작성 화면.png)
 
 - primer: 분석기기의 시작을 위해 맨 처음 분석되는 시료로 분석기기의 운용 프로그램에서 primer를 peak로 인식해야만 그 후 분석하는 시료의 peak와 tray protocol에 입력한 분석 순서를 일치시킬 수 있다. primer의 peak 높이는 약 30%로 설정되어 있으며(분석기기 매뉴얼 권장 사항) 5가지 영양염 항목들이 모두 포함되어있어야 한다. primer의 피크 높이는 main page에서 수정 가능하다. 
 
@@ -344,7 +381,10 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 
 - MDL시료: 제조사의 검출한계나 예상 검출한계의 5배의 농도로 결정된 시료(용존 아질산이온 약 0.1 μM, 용존 질산이온 약 1 μM, 용존 암모늄이온 0.2 μM, 용존실리카 3.5 μM, 용존 인산이온 0.1 μM). 방법검출한계 측정용 첨가시료로 매 분석 시 7번 반복 분석하여 방법검출한계 점검(8.7 방법검출한계 계산 방법 참고).
 
-- NO3 Recovery: 5μM로 농도가 동일한 NO2, NO3 용액을 매 분석마다 분석하여 카드뮴-구리 환원관의 환원효율을 점검하고 환원효율이 95% 이하일 경우 충분히 환원되지 않았다고 판단되므로 카드뮴-구리 환원관을 교체한다.
+- NO3 Recovery: 5μM로 농도가 동일한 NO2, NO3 용액을 매 분석마다 분석하여 카드뮴-구리 환원관의 환원효율을 점검하고 환원효율이 95% 이하일 경우 충분히 환원되지 않았다고 판단되므로 카드뮴-구리 환원관을 교체한다.  
+
+환원효율 $= \frac{5\mu M ~ NO_{3} 분석결과}{5\mu M ~ NO_{2} 분석결과}~~~ \times 100$ (%)
+
 분석 전 환원용액의 결과를 알기 어렵기 때문에 NO2,NO3의 gain값 및 std A 표준용액의 peak 높이(%)를 관찰한다. peak가 이전에 비해 낮아지고, gain이 높아졌다면 이전에 비해 환원율이 떨어졌다는 의미로 카드뮴-구리 환원관을 교체 후 시료를 분석한다.
 
 - QC: 안정성이 뛰어난 표준물질 여러 종류를 매 분석마다 3번씩 반복 분석하여 분석 정밀도를 계산한다(8.2.3). 농도가 검증된 인증 표준물질을 이용할 경우 3번 반복 분석한 결과로 분석 정확도(8.2.2)를 계산하여 분석 품질을 평가하고 관리할 수 있다. 
@@ -352,6 +392,9 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 - Cup: 시료를 sampler의 rack에 배치한 후 sampler rack의 번호를 입력하는 칸. cup 번호를 정확히 입력해야만 올바른 시료를 sampler가 흡입할 수 있다.
 
 1.1.1.1. Channel : 각각의 channel을 선택하면 각 channel에 할당된 분석방법 (method), baseline, drift, carryover correction등의 실행 여부를 프로그램에서 자동적으로 선택할 수 있다. 검정곡선에 사용되는 용액의 농도(calibrants 1~10), 검정곡선 fitting의 종류, 신호의 순간적인 변동(noise)에 의한 오차를 줄이는 smoothing, peak determination window time 등을 설정한다. 일반적으로 질산이온, 아질산이온, 인산이온, 용존실리카 등은 smoothing을 0으로 설정하여 분석한다. 그러나 암모늄이온은 smoothing을 8로 설정한다(JAMSTEC, Coverly recommendation). 각각에 대한 자세한 설명은 기기 매뉴얼을 참고한다.
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image7_Channel 탭 설정 화면.png)
+
 1.1.1.1. 위의 창에서 채널별로 설정을 모두 완성한 후 OK를 클릭하면 Main 창의 analysis 칸에 기입한 이름(분석명.anl)으로 저장된다. 추후 분석 시 Set up - Analysis 항목에서 저장된 Analysis file을 선택하거나 위의 system 창 좌측하단 분석명이 있는 곳을 더블 클릭하여 기존에 작성된 파일에서 sample table 등을 포함한 기타 수정사항을 변경하여 사용한다. 
 
 #### 제조한 시약 연결 및 baseline 확인
@@ -379,7 +422,15 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 
 1.1. 분석이 완료되면 retrieve - view chart를 클릭하면 분석한 파일 이름을 선택할 수 있고 파일을 선택하면 아래 그림과 같이 피크가 나온다. 모든 분석결과에 대해 아래 빨간색 박스로 표시된 부분을 눌러 피크의 위치를 조정한다. 피크위치를 설정할 때는 peak window에서 일정한 위치를 선정하여 일관성을 유지하도록 한다. 박스안의 계산기 버튼을 눌러 농도를 재계산한다. 
 
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image8_Retrieve＿View Chart 이동.png)
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image9_peak 위치 조정.png)
+
 1.1. 엑셀을 이용하여 자료를 재계산할 경우 [file] - [export] - [ASCⅡ file] - chart를 선택 후, sylk format으로 내보낸다. 파일은 설정한 경로에 excel파일로 저장된다.
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image10_File_Export To 이동.png)
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image11_파일 형식 선택 저장.png)
 
 1.1. 시료 분석값이 검량곡선에 사용된 가장 높은 표준용액열 보다 높은 경우 시료를 희석하여 재분석한다.
 
@@ -398,6 +449,10 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 
 #### Console(콘솔, 본체)
 
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image12_영양염 자동분석기.png)
+
+분석항목 - Channel 1: PO~4~-P Channel 2: NO~2~+NO~3~-N, Channel 3: NH~4~-N, Channel 4: SiO~2~-Si, Channel 5: NO~2~-N
+
 #### 펌프
 3개의 proportional pump로 각각의 펌프는 시약 및 시료를 분석관에 주입 할 수 있는 튜브를 10개씩 부착한다. 각각의 펌프는 펌프튜브를 눌러주는 platen과 12개의 롤러로 구성되어 있고 펌프가 한 바퀴 회전하는데 12초가 걸린다. 
 
@@ -405,6 +460,9 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 1.2.3.1 분석항목에 따라 들어가는 시약의 양이 다르므로 튜브의 Flow rate를 조절하기 위해 각각 다른 튜브를 사용한다. 튜브의 굵기는 color code로 구분한다. 튜브별 flow rate와 color code는 아래 표에 정리되어 있다.
 1.2.3.2 튜브의 굵기는 Color Code로 구분한다.
 1.2.3.3 튜브 교체시기 : 분석항목과 시약에 따라 차이가 발생 할 수 있으나, 보통 운전 150~200시간마다 교체한다.
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/image01.png)
+
 
 #### 분석관(Manifold)
 혼합코일, 카드뮴코일의 교환밸브 등으로 이루어져 있으며, 시료가 시약과 혼합이 되어 비색계로 들어간다.
@@ -416,10 +474,11 @@ Seal사의 분석 프로그램 AACE에서는 표준철차 수행에 도움을 �
 ### Sampler
 Sample probe는 재질에 따라 선택 가능하며, tray는 60x2 / 90x2 Sample rack으로 선택 가능하다.
 
-
-
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image13_Sampler.png)
 
 ## 부록 2.  Flow Diagram
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image14_Flow Diagram.png)
 
 ## 부록 3.  Sample rack position
 
@@ -428,11 +487,19 @@ Sample probe는 재질에 따라 선택 가능하며, tray는 60x2 / 90x2 Sample
 
 1 : STD.A, 2 : STD.B, 3 : STD.C, 4 : STD.D, 5 : STD.E
 
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image15_Standard rack position_1.png)
+
 ### 3.2 Sample rack position
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image16_Standard rack position_2.png)
 
 ## 부록 4.  시료사이 공기수축(Inter Sample Air Compression, ISAC)
 시료 간 공기수축(ISAC)은 자동시료주입기에서 시료 흡입을 마친 후 다음 시료를 흡입 할 준비를 위해서 세척액으로 이동할 때, 그리고 세척을 마친후 다음 시료로 이동하는 동안 흡입된 공기방울이 펌프롤러에 눌리면서 시료주입 튜브 내 압력이 대기압과 유사하거나 약간 낮아져 발생하는 현상이다. 시료주입 튜브 내 압력이 감소하면서 눌려진 공기방울 앞쪽의 시료 흐름이 순간적으로 감소하고 시약과 혼합되는 시료의 부피가 감소된다. 결과적으로, 이러한 압력의 변화로 정상적일 때 보다 적은 양의 시료가 주입되어 농도가 낮은 구간이 발생한다.
-따라서 긴 시료를 흡입 할 경우 다이어그램에 표시된 것처럼 시료피크 정상의 끝부분에서 피크가 움푹 파인 모양이 나타난다. 움푹 파인 정도가 크거나, 피크의 중간부분에 위치할 경우 분석결과의 정확도가 떨어진다. 이를 방지하기 위해 펌프와 시료주입 피팅 사이의 시료주입 튜브 의 길이를 조정하여 ISAC구간을 피크정상에서 벗어나 피크의 시작부분이나 끝부분에 위치하게끔 조절해야한다. ISAC구간을 계산하는 방법은 다음과 같다. 공기방울이 펌프를 지나 주입피팅에 도달하는데 걸리는 시간이 시료 당 분석 소요시간(시료주입+세척시간)보다 약 2~8초(목표는 3초) 짧아야한다. 
+따라서 긴 시료를 흡입 할 경우 다이어그램에 표시된 것처럼 시료피크 정상의 끝부분에서 피크가 움푹 파인 모양이 나타난다.
+
+![](E:/R/SOP/JOISS-SOP/images/[1차] SOP_C01_Nitrite_QuAAtro/C01_image17.png)
+
+움푹 파인 정도가 크거나, 피크의 중간부분에 위치할 경우 분석결과의 정확도가 떨어진다. 이를 방지하기 위해 펌프와 시료주입 피팅 사이의 시료주입 튜브 의 길이를 조정하여 ISAC구간을 피크정상에서 벗어나 피크의 시작부분이나 끝부분에 위치하게끔 조절해야한다. ISAC구간을 계산하는 방법은 다음과 같다. 공기방울이 펌프를 지나 주입피팅에 도달하는데 걸리는 시간이 시료 당 분석 소요시간(시료주입+세척시간)보다 약 2~8초(목표는 3초) 짧아야한다. 
 현재 한국해양과학기술원에서 시간당 시료분석 개수는 60개이고, 자동 시료주입구의 시료와 세척의 시간 비는 3:1이다.
 
 - 시료주입:45초 
@@ -449,122 +516,3 @@ Sample probe는 재질에 따라 선택 가능하며, tray는 60x2 / 90x2 Sample
 마. 만약 튜브의 적정 길이가 너무 짧아 주입피팅까지 도달하지 않으면 목표시간을 한 번 더 더해줄 수 있다.  
 Double ISAC = 목표시간 +시료주입시간+세척시간  
             = 57초 + 45초 + 15초 = 117초
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 기체분절 영양염 자동분석기를 사용한 해수 중 용존 영양염 분석절차
-## 자료 분석 및 계산
-## 참고문헌
-## 부록1. 영양염 자동분석기(QuAAtro)의 장비구성과 기능
-## 부록2. Flow Diagram
-## 부록3. Sample rack position
-## 부록4. 시료사이 공기수축(Inter Sample Air Compression, ISAC)
-
-
-
-
-**9페이지**  
-5.1.2. 인공해수  
-Sodium chloride(NaCl) - 35 g  
-Sodium hydrogen carbonate(NaHCO~3~) - 0.5 g  
-
-
-**10페이지**  
-5.2.1. Sulfanilamide  
-5.2.1.1. Sulfanilamide(C~6~H~8~N~2~O~2~S) - 5 g  
-
-5.2.2. NEDD 용액  
-5.2.2.1. N-(1-naphthyl) Ethylene Diamine Dihydrochloride (C~12~H~14~N~2~·2HCl) - 0.5 g  
-
-
-**11페이지**  
-5.2.3. Stock Imidazole buffer  
-5.2.3.1. Imidazole(C~3~H~4~N~2~) - 6.81 g  
-
-5.2.4. Copper Sulfate 0.01 M  
-5.2.4.1. Copper Sulfate(CuSO~4~·5H~2~O) - 0.25 g  
-
-
-
-
-## 8. 품질관리 및 품질평가
-
-**17페이지**  
-정확도(Accuracy)  
-정확도 = [측정값 - 표준물질특성값/측정평균] × 100
-
-**18페이지**  
-정밀도(Precision)  
-% RSD = [표준편차(s)/측정평균] × 100
-
-**26페이지**  
-8.6.8. 바탕검출한계 계산  
-Sample standard deviation (s):  
-$$
-s=\sqrt{\frac {\Sigma {(x- \bar x)}^{2}} {n-1}}
-$$
-$\bar x$: sample mean; n-1: degree of freedom;  
-
-Population standard deviation (σ):
-$$
-\sigma=\sqrt{\frac {\Sigma {(x- \mu)}^{2}} {n}}
-$$
-$\mu$: population mean; n: number of population
-
-방법검출한계 $={t_{(n-1, ~1-\infty=0.99)}\times s}$  
-$t_{(n-1, ~1-\infty=0.99)}$: 99%신뢰도 수준과 자유도 n-1에서 추정된 표준편차에 대한 students’ t value  
-$s$ : 반복분석의 표준편차
-
-**28페이지**  
-(S/N)~est~ = X~ave~/s  
-X~ave~: 계산된 농도나 반복측정의 분석 신호의 평균  
-s: 반복 측정되는 시료 표준편차	
-
-
-
-
-## 9. 기체분절 영양염 자동분석기를 사용한 해수 중 총질소 분석절차
-
-**36페이지**  
-- NO3 Recovery  
-환원효율 $= \frac{5\mu M ~ NO_{3} 분석결과}{5\mu M ~ NO_{2} 분석결과}~~~ \times 100$ (%)
-
