@@ -35,20 +35,20 @@ $S_p(‰)= 0.0080 - 0.1692 ~ R_{T}^{\frac{1}{2}} +25.3851 ~ R_{T} + 14.0941 ~ R_
 ### 실험실 염분측정기(Bentch top Salinometer)
 현재 정밀염분 측정에 사용되는 대표적인 장비는 Guildline사의 Autosal 8400B이다. 이 기기는 현재 바다에서 WOCE기준에 맞는 염분자료를 제공하는 유일한 염분 측정기기이다. 이 기기에 대한 정밀한 사양은 기기 제조사에서 제공하는 정보를 확인한다.
 
-![Guildline사의 Autosal 8400B](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image1_Guildline사의 Autosal 8400B.png)
+![Guildline사의 Autosal 8400B](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image1_Guildline사의 Autosal 8400B.png)
 
 ### T-S bridge
 현장에서 온도와 전기전도도를 측정하여 염분을 계산하는 기기이지만 현재 해양에서 활용되지 않고 육상의 토양에서 염분을 측정하는 데 주로 이용된다. 아래 그림에 있는 장비는 5500 salinity bridge로 토양에서 연속으로 염분을 측정하는 장비로 전기전도도 범위가 2-40 mmho/cm이다. 해양에서는 T-S bridge를 사용하여 염분을 측정하는 경우가 거의 없으므로 이 기기에 대한 설명은 생략하겠다. 그리고 향후 해양환경공정시행법에서도 이 부분에 관한 내용은 삭제하는 것이 적절할 것으로 판단된다. 
-![5500 salinity bridge](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image2_5500 salinity bridge.png)
+![5500 salinity bridge](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image2_5500 salinity bridge.png)
 
 ### Seabird conductivity sensor (SBE 4C)
 SBE 4C 전기전도도 센서에 의한 전기전도도 측정은 30 cm^3^/s로 일정하게 해수를 흐르게 하는 펌프로 해수를 직경 0.4 cm의 T-C duct로 유입되면서 수온이 즉시 감지되고 duct를 통해 해수가 흐르는 동안 0.73초 뒤에 전기전도도 셀로 해수가 들어간다. 펌프 속도가 일정하여서 항상 0.73초의 시간이 지연된다. 이 센서는 단독으로 운영되는 것이 아니라 주로 SBE 9plus data loger에 연결하여 사용한다.
-![Seabird conductivity sensor](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image3_Seabird conductivity sensor.png) 
+![Seabird conductivity sensor](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image3_Seabird conductivity sensor.png) 
 
 ### YSI, Hydrolab etc. multiprobe sensor
 아래 그림의 좌측은 YSI multiprobe이고 우측이 Hydrolab의 multiprobe이다. 이런 종류의 측정기에 사용되는 전기전도도 센서의 특징은 두 개의 전극이 부피를 알고 있는 공간에 설치되어 있고, 이 공간에 전기전도도 측정 대상 용액이 출입할 수 있는 구멍과 온도를 측정하는 센서가 함께 결합되어 있다. 두 전극에 전기를 연결하여 부피를 알고 있는 용액의 전기전도도와 온도를 측정하여 전극 사이의 전기전도도로 전환하여 염분을 계산한다.  
-![YSI multiprobe](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image4_YSI multiprobe.png)  
-![Hydrolab multiprobe](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image5_Hydrolab multiprobe.png)
+![YSI multiprobe](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image4_YSI multiprobe.png)  
+![Hydrolab multiprobe](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image5_Hydrolab multiprobe.png)
 
 4.5	각 기기들 간의 측정범위, 정밀도, 해상도는 아래의 표와 같다.
 
@@ -82,7 +82,7 @@ SBE 4C 전기전도도 센서에 의한 전기전도도 측정은 30 cm^3^/s로 
 - 탈이온수 또는 증류수를 사용하여 Low-End Specific Conductance Check을 수행하고 (5 μS/cm이하 전기전도도 용액 사용), 이러한 확인은 최소 1주일에 한 번씩 수행되어야 한다. 그리고 Low-End Specific Conductance Check수행에 사용된 용액의 전기전도도 값을 표시하고 측정된 전기전도도 값을 온도와 함께 교정기록지에 기록한다.
 -최소 한 달에 한 번씩은 전기전도도센서 교정에 사용된 표준용액에 따라 500 또는 1000 μS/cm 용액으로 Mid-Range Specific Conductance Check를 수행해야 하고 사용된 용액의 전기전도도와 Mid-Range conductivity solution 측정된 전기전도도 값을 측정 온도와 함께 교정기록지에 기록해야한다. Mid-Range Specific Conductance Check는 선형성 시험이고 측정된 전기전도도 값과 용액에 표시된 전기전도도 값과의 차이는 10% 이내이어야 한다.  
 
-![교정기록지](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image6_교정기록지.png) 
+![교정기록지](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image6_교정기록지.png) 
 
 ##	Autosal 8400B를 이용한 염분측정방법
 
@@ -102,13 +102,13 @@ AUTOSAL은 현장에서 채수한 샘플의 염분 값을 측정하는 장비로
 - 안정도 : ±0.001 ℃/day
 (8)Scale Suppression : 0～2.2 Conductivity ratio (22 스텝)
 
-![UTOSAL(8400B)](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image7_AUTOSAL 8400B.png) 
+![UTOSAL(8400B)](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image7_AUTOSAL 8400B.png) 
 
-![computer interface](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image8_computer interface.png) 
+![computer interface](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image8_computer interface.png) 
 
-![외부펌프](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image9_외부펌프.png) 
+![외부펌프](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image9_외부펌프.png) 
 
-![Autosal Front Panel](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image10_Autosal Front Panel.png) 
+![Autosal Front Panel](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image10_Autosal Front Panel.png) 
 
 ### 준비물
 표준해수, 증류수, 위생장갑, 킴와이프, 샘플병, 전기테이프, 기록장, 바스켓(폐액통)
@@ -166,21 +166,21 @@ computer interface 연결한 상태에서는 – 값을 읽지 못한다.
 (1)컴퓨터에서 Salinometer Data Logger 실행  
 (2)File → New. Serial Number 입력 후 확인  
 
-![](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image11_New Serial Number 입력창.png) 
+![](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image11_New Serial Number 입력창.png) 
 
-![](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image12_컴퓨터와 Autosal 연결상태.png) 
+![](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image12_컴퓨터와 Autosal 연결상태.png) 
 
 (3) Run ID와 File Name 입력 후 OK
 
-![](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image13_Run ID와 File Name 입력창.png) 
+![](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image13_Run ID와 File Name 입력창.png) 
 
 (4)이 문구가 나오면 Autosal의 Function Switch를 Zero로 놓고 값을 확인한다. 0.0+000x : x=±5 이하면 정상, 그렇지 않으면 전자회로를 조정해야 한다.
 
-![](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image14_진행 중 안내창.png) 
+![](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image14_진행 중 안내창.png) 
 
 (5)Autosal의 Function Switch를 Standby로 돌리고 확인한다.
 
-![](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image15_확인창.png) 
+![](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image15_확인창.png) 
 
 (6)셀을 증류수로 6회 정도 세척한다.  
 - 테프론 튜브의 오염 방지를 위하여 킴와이프로 닦아준 후 증류수 병에 담근다.  
@@ -190,35 +190,35 @@ computer interface 연결한 상태에서는 – 값을 읽지 못한다.
 - Function Switch를 Read에서 Standby로 돌린다.  
 (7)해수로 전기전도도 셀을 20분 이상 충분히 적셔준다. 전기전도도 코일을 해수로 충분히 적셔 시료를 측정하기 위한 최적의 상태로 만들어 준다.
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image16_Settings 메뉴 General 탭.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image16_Settings 메뉴 General 탭.png) 
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image17.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image17.png) 
 
 - 테프론 튜브를 킴와이프로 닦아주고 해수(전에 쓰고 남은 표준해수 또는 해수)를 pump를 이용하여 셀 안에 채운 후 flushing한다. 이 세척 과정을 3~4회 반복 후 전기전도도 셀에 해수를 채워 Function Switch를 Read로 돌리고 10초 기다리는 동안에 Suppression Switch를 돌려 맞춘다. 측정범위를 벗어나면 display 지시 값이 깜박거린다. → 표준해수 Sal. 35는 Suppression Switch 1.9 → 20분 셀을 적신다.  
 - 1200초 동안 Reading이 끝나면 Function Switch를 Read에서 Standby로 돌린다.  
 - 만약 Maximum Standard Deviation이 0.000010이 넘어가면 아래의 화면이 나타난다. 마우스로 대략 중간값을 클릭하고 Accept Reading 클릭 
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image18.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image18.png) 
 위의 화면이 뜨지 않으면 Autosal이 충분히 안정된 상태이다.
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image19.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image19.png) 
 
 아니요를 클릭한다.
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image20_확인창.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image20_확인창.png) 
 
 확인을 클릭한다.
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image21_Bottle Label 입력 화면.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image21_Bottle Label 입력 화면.png) 
 
 - 마우스 오른쪽 버튼을 클릭 후 Bottle Label을 적을 수 있다.  
 - 예를 들어 63902#3 화면에 보이는 값은 3회 측정값의 평균이다.  
 를 클릭하면 각 1회씩(15초)의 평균값이 나오고 그 밑을 다시 한번 클릭하면 1초간의 데이터를 확인할 수 있다.  
 (8)남은 표준해수(다시 섞어줌)로 3회 15초간 적셔준다.  
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image22_Settings 메뉴 General 탭.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image22_Settings 메뉴 General 탭.png) 
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image23.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image23.png) 
 
 
 - 3회의 display 지시 값의 끝자리 숫자가 ±5 이상 변동이 없을 때까지 반복 측정한다.
@@ -246,7 +246,7 @@ Autosal Warming-up 종료 후 표준화 할 수 있다.
 (5)Function Switch를 Read로 돌리고 10초 기다리는 동안에 Suppression Switch를 돌려 맞춘다(측정범위를 벗어나면 display 지시 값이 깜박거린다 → 표준해수 Sal. 35는 Suppression Switch 1.9) → Reading이 끝나면 Function Switch를 Read에서 Standby로 돌린다 → 앞의 과정을 3회(매회 셀 안을 flushing 한 후 새로 셀을 채움) 반복 측정  
 (6)셀 안에 남아 있는 표준해수를 flushing 한 후 전기전도도 셀에 표준해수를 다시 채운다.
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image24_표준해수병 K15값 입력.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image24_표준해수병 K15값 입력.png) 
 
 - 파란 네모칸의 삼각플라스크병 모양을 누른다.  
 - Standard Seawater K15 칸에 오픈한 표준21해수병의 종이 상표에 있는 K15값을 입력한다.  
@@ -255,7 +255,7 @@ Autosal Warming-up 종료 후 표준화 할 수 있다.
 - Autosal display 지시 값이 위에 측정한 값과 비슷하게 나오면 Accept를 누른다.  
 - 아래 화면처럼 보정값 Ratio 및 Salinity 값이 적용되어 나온다.
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image25_Ratio 및 Salinity 값 확인.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image25_Ratio 및 Salinity 값 확인.png) 
 
 ### 해수 시료 염분측정 절차
 (1)해수 시료를 잘 섞어준 후 열고 테프론 튜브를 킴와이프로 닦아 해수 시료병에 담근다.  
@@ -269,11 +269,11 @@ Autosal Warming-up 종료 후 표준화 할 수 있다.
 (2)Function Switch를 Standby에서 Read로 돌리고 10초 기다리는 동안에 Suppression Switch를 돌려 맞춘다(측정범위가 벗어나면 display 지시 값이 깜박거린다 → 증류수 Suppression Switch 0.0 → Autosal의 display 지시 값을 기록장에 적어 놓는다(증류수는 깨끗하여 Autosal 측정 불가).  
 (3)Function Switch를 Read에서 Standby로 돌린다.
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image26_File 메뉴 Close 탭.png) 
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image26_File 메뉴 Close 탭.png) 
 
 (4)File → Close 선택한다.  
 
-![캡션](E:/R/SOP/SOP_P04_Salinity_autosal8400/images/P04_image27_진행 중 안내창.png)  
+![캡션](E:/R/SOP/JOISS-SOP/images/[2차] SOP_P04_Salinity_autosal8400/P04_image27_진행 중 안내창.png)  
 (5)Function Switch를 Standby에서 Zero로 돌리고 Zero 값 확인 후 기록장에 기록한다.  
 (6)Function Switch를 Zero에서 Standby로 돌린다.  
 (7)AUTOSAL 전원 스위치를 끈다(전원 스위치는 AUTOSAL 후면 아래에 위치).  
